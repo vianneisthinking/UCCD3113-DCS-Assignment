@@ -16,7 +16,7 @@ from dotenv import load_dotenv
 from fastapi import Depends, FastAPI, HTTPException, Query, status
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import func, text
-from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 from sqlalchemy.orm import Session
 
 from api import ai_client, routing
@@ -151,7 +151,17 @@ def register(payload: RegisterRequest, db: Session = Depends(get_db)):
     )
 
     db.add(user)
-    db.commit()
+    try:
+        db.commit()
+    except IntegrityError:
+        # The pre-check gives the common case a clear response, but two
+        # simultaneous requests can both pass it. The database constraint is
+        # authoritative, so translate that race into the same client error.
+        db.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Email already registered",
+        )
     db.refresh(user)
 
     return user

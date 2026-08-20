@@ -66,23 +66,23 @@
                 </button>
             </form>
 
-            <!-- Register Form with Domain and Complexity Restrictions -->
+            <!-- Register Form -->
             <form id="form-register" onsubmit="handleRegister(event)" class="space-y-4 hidden">
                 <div>
                     <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Full Name</label>
                     <input type="text" id="reg-name" required minlength="1" maxlength="100" placeholder="Alice Smith" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Email Address (Gmail / Yahoo / Outlook / Hotmail / iCloud)</label>
-                    <input type="email" id="reg-email" required placeholder="alice@gmail.com" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
-                    <p class="text-[11px] text-slate-400 mt-0.5">Allowed: @gmail.com, @yahoo.com, @outlook.com, @hotmail.com, @icloud.com</p>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Email Address</label>
+                    <input type="email" id="reg-email" required maxlength="254" autocomplete="email" placeholder="name@example.com" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                    <p class="text-[11px] text-slate-400 mt-0.5">Use any valid email address.</p>
                 </div>
                 <div>
                     <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Password</label>
                     <input type="password" id="reg-password" required minlength="8" maxlength="72" placeholder="e.g. Secret123!" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
                     <p class="text-[11px] text-slate-400 mt-0.5">Must be 8–72 characters, with at least 1 uppercase letter and 1 special symbol (!@#$%^&*).</p>
                 </div>
-                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-lg font-semibold transition shadow-md">
+                <button type="submit" id="register-submit" class="w-full bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-300 disabled:cursor-not-allowed text-white py-3 rounded-lg font-semibold transition shadow-md">
                     Create Account
                 </button>
             </form>
@@ -224,7 +224,6 @@
         // Deployment replaces config.js; keeping configuration outside this
         // file avoids rebuilding the customer site for every API environment.
         const API_BASE_URL = (window.APP_CONFIG?.API_BASE_URL || window.location.origin).replace(/\/$/, "");
-        const ALLOWED_EMAIL_DOMAINS = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'icloud.com'];
 
         let token = localStorage.getItem("access_token") || null;
         let currentUser = JSON.parse(localStorage.getItem("user_info")) || null;
@@ -405,11 +404,6 @@
 
         // ================= VALIDATION & AUTHENTICATION =================
         function validateRegistrationInput(email, password) {
-            const domain = email.split('@')[1]?.toLowerCase();
-            if (!domain || !ALLOWED_EMAIL_DOMAINS.includes(domain)) {
-                return `Registration restricted to specific email domains (${ALLOWED_EMAIL_DOMAINS.join(', ')}).`;
-            }
-
             const hasUppercase = /[A-Z]/.test(password);
             const hasSpecial = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password);
 
@@ -417,6 +411,17 @@
                 return "Password must contain at least one uppercase letter (A-Z) and one special symbol (!@#$%^&*).";
             }
             return null;
+        }
+
+        function getApiErrorMessage(data, fallback) {
+            if (typeof data?.detail === 'string') return data.detail;
+            if (Array.isArray(data?.detail)) {
+                return data.detail.map(item => {
+                    const field = Array.isArray(item.loc) ? item.loc[item.loc.length - 1] : null;
+                    return `${field ? `${field}: ` : ''}${item.msg || 'Invalid value'}`;
+                }).join(' ');
+            }
+            return fallback;
         }
 
         async function handleLogin(e) {
@@ -433,7 +438,7 @@
                 });
 
                 const data = await res.json();
-                if (!res.ok) throw new Error(data.detail || 'Login failed');
+                if (!res.ok) throw new Error(getApiErrorMessage(data, 'Login failed'));
 
                 token = data.access_token;
                 currentUser = { name: data.name, role: data.role };
@@ -450,8 +455,11 @@
         async function handleRegister(e) {
             e.preventDefault();
             hideAlert();
-            const name = document.getElementById('reg-name').value;
-            const email = document.getElementById('reg-email').value;
+            const submitButton = document.getElementById('register-submit');
+            if (submitButton.disabled) return;
+
+            const name = document.getElementById('reg-name').value.trim();
+            const email = document.getElementById('reg-email').value.trim().toLowerCase();
             const password = document.getElementById('reg-password').value;
 
             const validationError = validateRegistrationInput(email, password);
@@ -459,6 +467,9 @@
                 showAlert(validationError, 'error');
                 return;
             }
+
+            submitButton.disabled = true;
+            submitButton.textContent = 'Creating Account...';
 
             try {
                 const res = await fetch(`${API_BASE_URL}/auth/register`, {
@@ -468,15 +479,19 @@
                 });
 
                 const data = await res.json();
-                if (!res.ok) throw new Error(data.detail || 'Registration failed');
+                if (!res.ok) throw new Error(getApiErrorMessage(data, 'Registration failed'));
 
                 showAlert('Account registered successfully! Logging you in...', 'success');
                 document.getElementById('login-email').value = email;
                 document.getElementById('login-password').value = password;
-                setTimeout(() => handleLogin(e), 1000);
+                await new Promise(resolve => setTimeout(resolve, 600));
+                await handleLogin(new Event('submit'));
 
             } catch (err) {
                 showAlert(err.message, 'error');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Create Account';
             }
         }
 

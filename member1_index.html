@@ -105,7 +105,7 @@
 
             <!-- Complaint Form Modal -->
             <div id="complaint-modal" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex justify-center items-center p-4">
-                <div class="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl relative border border-slate-100">
+                <div class="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl relative border border-slate-100 max-h-[92vh] overflow-y-auto">
                     <div class="flex justify-between items-center mb-4">
                         <h3 class="text-xl font-bold text-slate-900" id="complaint-modal-title">Submit Support Ticket</h3>
                         <button onclick="toggleComplaintForm(false)" class="text-slate-400 hover:text-slate-600 text-xl font-bold">&times;</button>
@@ -113,9 +113,30 @@
                     
                     <form onsubmit="handleTicketSubmit(event)" class="space-y-4">
                         <div>
+                            <label for="ticket-subject" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Subject</label>
+                            <input id="ticket-subject" type="text" required minlength="3" maxlength="120" oninput="updateCharCounter()"
+                                placeholder="Brief summary of your issue"
+                                class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none text-slate-700">
+                        </div>
+
+                        <div>
+                            <label for="ticket-topic" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
+                                What can we help you with? <span class="normal-case font-normal text-slate-400">Optional</span>
+                            </label>
+                            <select id="ticket-topic" onchange="updateCharCounter()" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-white focus:ring-2 focus:ring-indigo-500 focus:outline-none text-slate-700">
+                                <option value="General enquiry">General enquiry</option>
+                                <option value="Account access">Account access</option>
+                                <option value="Billing or payment">Billing or payment</option>
+                                <option value="Delivery or order">Delivery or order</option>
+                                <option value="Technical support">Technical support</option>
+                                <option value="">Let AI decide</option>
+                            </select>
+                        </div>
+
+                        <div>
                             <div class="flex justify-between items-center mb-1">
                                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-500">
-                                    Describe your complaint (3 to 2000 characters)
+                                    Describe your issue
                                 </label>
                                 <span id="draft-indicator" class="hidden text-xs text-amber-600 font-semibold bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
                                     <i class="fa-solid fa-pen-to-square mr-1"></i> Editing Draft
@@ -125,9 +146,30 @@
                                 placeholder="Please provide exact details about your inquiry..." 
                                 class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none text-slate-700 resize-y"></textarea>
                             <div class="flex justify-between text-xs text-slate-400 mt-1">
-                                <span>Minimum 3 visible characters required.</span>
-                                <span><span id="char-count">0</span>/2000</span>
+                                <span>AI uses these details to classify the ticket.</span>
+                                <span id="char-counter"><span id="char-count">0</span> / 2000</span>
                             </div>
+                        </div>
+
+                        <fieldset class="rounded-xl border border-slate-200 bg-slate-50 p-4 space-y-4">
+                            <legend class="px-2 text-xs font-bold uppercase tracking-wider text-slate-500">Optional supporting information</legend>
+                            <div>
+                                <label for="ticket-reference" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Order / Reference ID</label>
+                                <input id="ticket-reference" type="text" maxlength="100" oninput="updateCharCounter()" placeholder="e.g. ORD-12345"
+                                    class="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-white focus:ring-2 focus:ring-indigo-500 focus:outline-none text-slate-700">
+                            </div>
+                            <div>
+                                <span class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Preferred contact method</span>
+                                <div class="flex flex-wrap gap-5 text-sm text-slate-700">
+                                    <label class="flex items-center gap-2"><input type="radio" name="contact-method" value="Email" checked onchange="updateCharCounter()" class="text-indigo-600 focus:ring-indigo-500"> Email</label>
+                                    <label class="flex items-center gap-2"><input type="radio" name="contact-method" value="Phone / Other" onchange="updateCharCounter()" class="text-indigo-600 focus:ring-indigo-500"> Phone / Other</label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="rounded-xl border border-indigo-100 bg-indigo-50 px-4 py-3 text-sm text-indigo-800 flex gap-3">
+                            <i class="fa-solid fa-wand-magic-sparkles mt-0.5"></i>
+                            <p>AI classification will automatically determine the appropriate support category and priority after submission.</p>
                         </div>
 
                         <div class="flex flex-wrap justify-between items-center gap-2 pt-2 border-t border-slate-100">
@@ -232,6 +274,37 @@
             }
         }
 
+        function getTicketFormData() {
+            const contact = document.querySelector('input[name="contact-method"]:checked');
+            return {
+                subject: document.getElementById('ticket-subject').value.trim(),
+                topic: document.getElementById('ticket-topic').value,
+                description: document.getElementById('complaint-text').value.trim(),
+                reference: document.getElementById('ticket-reference').value.trim(),
+                contact_method: contact?.value || 'Email'
+            };
+        }
+
+        function buildComplaint(data) {
+            const lines = [
+                `Subject: ${data.subject}`,
+                data.topic ? `Customer-selected topic: ${data.topic}` : null,
+                '',
+                data.description,
+                data.reference ? `\nOrder / Reference ID: ${data.reference}` : null,
+                `Preferred contact method: ${data.contact_method}`
+            ];
+            return lines.filter(line => line !== null).join('\n').trim();
+        }
+
+        function resetTicketForm() {
+            document.getElementById('ticket-subject').value = '';
+            document.getElementById('ticket-topic').value = 'General enquiry';
+            document.getElementById('complaint-text').value = '';
+            document.getElementById('ticket-reference').value = '';
+            document.querySelector('input[name="contact-method"][value="Email"]').checked = true;
+        }
+
         function toggleComplaintForm(show) {
             const modal = document.getElementById('complaint-modal');
             const textarea = document.getElementById('complaint-text');
@@ -240,7 +313,7 @@
 
             if (show) {
                 if (!activeDraftId) {
-                    textarea.value = '';
+                    resetTicketForm();
                     indicator.classList.add('hidden');
                     discardBtn.classList.add('hidden');
                 }
@@ -253,8 +326,11 @@
         }
 
         function updateCharCounter() {
-            const val = document.getElementById('complaint-text').value;
-            document.getElementById('char-count').innerText = val.length;
+            const count = buildComplaint(getTicketFormData()).length;
+            document.getElementById('char-count').innerText = count;
+            const counter = document.getElementById('char-counter');
+            counter.classList.toggle('text-rose-600', count > 2000);
+            counter.classList.toggle('font-bold', count > 2000);
         }
 
         // ================= DRAFT MANAGEMENT =================
@@ -269,8 +345,9 @@
         }
 
         function saveDraft() {
-            const val = document.getElementById('complaint-text').value.trim();
-            if (!val) {
+            const formData = getTicketFormData();
+            const complaint = buildComplaint(formData);
+            if (!formData.subject && !formData.description) {
                 showAlert('Cannot save an empty draft.', 'error');
                 return;
             }
@@ -279,13 +356,14 @@
             if (activeDraftId) {
                 const idx = drafts.findIndex(d => d.id === activeDraftId);
                 if (idx !== -1) {
-                    drafts[idx].complaint = val;
+                    drafts[idx] = { ...drafts[idx], ...formData, complaint };
                     drafts[idx].updated_at = new Date().toISOString();
                 }
             } else {
                 const newDraft = {
                     id: 'draft_' + Date.now(),
-                    complaint: val,
+                    ...formData,
+                    complaint,
                     updated_at: new Date().toISOString()
                 };
                 drafts.unshift(newDraft);
@@ -303,7 +381,12 @@
             if (!draft) return;
 
             activeDraftId = draft.id;
-            document.getElementById('complaint-text').value = draft.complaint;
+            document.getElementById('ticket-subject').value = draft.subject || '';
+            document.getElementById('ticket-topic').value = draft.topic ?? 'General enquiry';
+            document.getElementById('complaint-text').value = draft.description || draft.complaint || '';
+            document.getElementById('ticket-reference').value = draft.reference || '';
+            const contact = document.querySelector(`input[name="contact-method"][value="${draft.contact_method || 'Email'}"]`);
+            if (contact) contact.checked = true;
             document.getElementById('draft-indicator').classList.remove('hidden');
             document.getElementById('discard-draft-btn').classList.remove('hidden');
             updateCharCounter();
@@ -417,10 +500,16 @@
         async function handleTicketSubmit(e) {
             e.preventDefault();
             hideAlert();
-            const complaint = document.getElementById('complaint-text').value.trim();
+            const formData = getTicketFormData();
+            const complaint = buildComplaint(formData);
 
-            if (complaint.length < 3) {
-                showAlert('Complaint must contain at least three visible characters.', 'error');
+            if (formData.subject.length < 3 || formData.description.length < 3) {
+                showAlert('Enter a subject and at least three visible characters describing the issue.', 'error');
+                return;
+            }
+
+            if (complaint.length > 2000) {
+                showAlert('The combined ticket details exceed 2000 characters. Please shorten the description or supporting information.', 'error');
                 return;
             }
 

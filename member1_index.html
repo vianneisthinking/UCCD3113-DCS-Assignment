@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support Portal</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 min-h-screen text-slate-800 flex flex-col font-sans">
+
+    <a href="/" class="fixed bottom-5 right-5 z-50 rounded-full bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+        <i class="fa-solid fa-house mr-2"></i>Portal Home
+    </a>
+
+    <!-- Navigation Header -->
+    <header class="bg-indigo-600 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="showView('tickets')">
+                <i class="fa-solid fa-headset text-2xl"></i>
+                <h1 class="text-xl font-bold tracking-tight">Support Desk</h1>
+            </div>
+            
+            <div id="nav-user-controls" class="hidden flex items-center space-x-4">
+                <span id="user-display-name" class="text-sm font-medium bg-indigo-700 px-3 py-1.5 rounded-full border border-indigo-500"></span>
+                <button onclick="logout()" class="text-sm font-semibold hover:text-indigo-200 transition">
+                    <i class="fa-solid fa-right-from-bracket mr-1"></i> Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Global Alert / Toast Box -->
+    <div id="alert-container" class="max-w-6xl mx-auto px-4 mt-4 w-full hidden">
+        <div id="alert-box" class="p-4 rounded-lg text-sm font-medium flex justify-between items-center shadow-sm">
+            <span id="alert-message"></span>
+            <button onclick="hideAlert()" class="text-lg leading-none ml-4">&times;</button>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="max-w-6xl mx-auto px-4 py-8 flex-1 w-full">
+
+        <!-- ================= AUTH VIEW (LOGIN / REGISTER) ================= -->
+        <section id="auth-view" class="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-xl border border-slate-100">
+            <!-- Tabs -->
+            <div class="flex border-b border-slate-200 mb-6">
+                <button id="tab-login" onclick="switchAuthTab('login')" class="flex-1 py-2 font-semibold text-indigo-600 border-b-2 border-indigo-600">Login</button>
+                <button id="tab-register" onclick="switchAuthTab('register')" class="flex-1 py-2 font-semibold text-slate-400 border-b-2 border-transparent hover:text-slate-600">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="form-login" onsubmit="handleLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Email Address</label>
+                    <input type="email" id="login-email" required placeholder="alice@gmail.com" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Password</label>
+                    <input type="password" id="login-password" required placeholder="••••••••" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                </div>
+                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-lg font-semibold transition shadow-md">
+                    Sign In
+                </button>
+            </form>
+
+            <!-- Register Form with Domain and Complexity Restrictions -->
+            <form id="form-register" onsubmit="handleRegister(event)" class="space-y-4 hidden">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Full Name</label>
+                    <input type="text" id="reg-name" required minlength="1" maxlength="100" placeholder="Alice Smith" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Email Address (Gmail / Yahoo / Outlook / Hotmail / iCloud)</label>
+                    <input type="email" id="reg-email" required placeholder="alice@gmail.com" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                    <p class="text-[11px] text-slate-400 mt-0.5">Allowed: @gmail.com, @yahoo.com, @outlook.com, @hotmail.com, @icloud.com</p>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Password</label>
+                    <input type="password" id="reg-password" required minlength="8" maxlength="72" placeholder="e.g. Secret123!" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                    <p class="text-[11px] text-slate-400 mt-0.5">Must be 8–72 characters, with at least 1 uppercase letter and 1 special symbol (!@#$%^&*).</p>
+                </div>
+                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-lg font-semibold transition shadow-md">
+                    Create Account
+                </button>
+            </form>
+        </section>
+
+        <!-- ================= TICKETS VIEW (LIST & CREATE) ================= -->
+        <section id="tickets-view" class="hidden space-y-8">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900">Your Support Tickets</h2>
+                    <p class="text-sm text-slate-500 mt-1">You could track existing inquiries, view saved drafts, or submit a new complaint.</p>
+                    <p class="text-sm text-slate-500 mt-1">Thank you for using our system, We will did our best!</p>
+                </div>
+                <button onclick="toggleComplaintForm(true)" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl font-semibold transition flex items-center space-x-2 shadow-md">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Submit New Ticket</span>
+                </button>
+            </div>
+
+            <!-- Complaint Form Modal -->
+            <div id="complaint-modal" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex justify-center items-center p-4">
+                <div class="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl relative border border-slate-100">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold text-slate-900" id="complaint-modal-title">Submit Support Ticket</h3>
+                        <button onclick="toggleComplaintForm(false)" class="text-slate-400 hover:text-slate-600 text-xl font-bold">&times;</button>
+                    </div>
+                    
+                    <form onsubmit="handleTicketSubmit(event)" class="space-y-4">
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-500">
+                                    Describe your complaint (3 to 2000 characters)
+                                </label>
+                                <span id="draft-indicator" class="hidden text-xs text-amber-600 font-semibold bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+                                    <i class="fa-solid fa-pen-to-square mr-1"></i> Editing Draft
+                                </span>
+                            </div>
+                            <textarea id="complaint-text" required rows="5" minlength="3" maxlength="2000" oninput="updateCharCounter()"
+                                placeholder="Please provide exact details about your inquiry..." 
+                                class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none text-slate-700 resize-y"></textarea>
+                            <div class="flex justify-between text-xs text-slate-400 mt-1">
+                                <span>Minimum 3 visible characters required.</span>
+                                <span><span id="char-count">0</span>/2000</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap justify-between items-center gap-2 pt-2 border-t border-slate-100">
+                            <div class="flex space-x-2">
+                                <button type="button" onclick="saveDraft()" class="text-amber-700 hover:bg-amber-50 border border-amber-300 px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1">
+                                    <i class="fa-solid fa-bookmark"></i>
+                                    <span>Save Draft</span>
+                                </button>
+                                <button type="button" id="discard-draft-btn" onclick="discardCurrentDraft()" class="hidden text-rose-600 hover:bg-rose-50 border border-rose-200 px-3 py-2 rounded-xl text-xs font-bold transition">
+                                    Discard Draft
+                                </button>
+                            </div>
+
+                            <div class="flex space-x-2">
+                                <button type="button" onclick="toggleComplaintForm(false)" class="px-4 py-2 rounded-xl text-slate-600 hover:bg-slate-100 text-xs font-semibold transition">Cancel</button>
+                                <button type="submit" id="submit-ticket-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-xl text-xs font-semibold transition shadow-md">
+                                    Submit Ticket
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Unified List Grid (Drafts + Submitted Tickets) -->
+            <div id="tickets-container" class="grid gap-4 md:grid-cols-2"></div>
+            
+            <div id="tickets-empty" class="hidden text-center py-12 bg-white rounded-2xl border border-dashed border-slate-300">
+                <i class="fa-regular fa-folder-open text-4xl text-slate-300 mb-3"></i>
+                <p class="text-slate-500 font-medium">No support tickets or drafts found.</p>
+            </div>
+        </section>
+
+        <!-- ================= TICKET DETAIL VIEW ================= -->
+        <section id="ticket-detail-view" class="hidden space-y-6 max-w-3xl mx-auto">
+            <button onclick="showView('tickets')" class="text-indigo-600 hover:text-indigo-800 font-semibold flex items-center space-x-2 transition">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back to Tickets</span>
+            </button>
+
+            <div id="ticket-detail-card" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 space-y-6"></div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-100 border-t border-slate-200 py-4 text-center text-xs text-slate-500">
+        AI Support System &copy; 2026 Customer Portal
+    </footer>
+
+    <script src="/config.js"></script>
+    <script>
+        // Deployment replaces config.js; keeping configuration outside this
+        // file avoids rebuilding the customer site for every API environment.
+        const API_BASE_URL = (window.APP_CONFIG?.API_BASE_URL || window.location.origin).replace(/\/$/, "");
+        const ALLOWED_EMAIL_DOMAINS = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'icloud.com'];
+
+        let token = localStorage.getItem("access_token") || null;
+        let currentUser = JSON.parse(localStorage.getItem("user_info")) || null;
+        let activeDraftId = null; // Tracks if an existing draft is currently opened in the modal
+
+        document.addEventListener("DOMContentLoaded", () => {
+            if (token && currentUser) {
+                initAuthenticatedState();
+            } else {
+                showView('auth');
+            }
+        });
+
+        // ================= NAVIGATION & VIEWS =================
+        function showView(viewName) {
+            document.getElementById('auth-view').classList.add('hidden');
+            document.getElementById('tickets-view').classList.add('hidden');
+            document.getElementById('ticket-detail-view').classList.add('hidden');
+
+            if (viewName === 'auth') {
+                document.getElementById('auth-view').classList.remove('hidden');
+            } else if (viewName === 'tickets') {
+                document.getElementById('tickets-view').classList.remove('hidden');
+                loadCustomerTickets();
+            } else if (viewName === 'detail') {
+                document.getElementById('ticket-detail-view').classList.remove('hidden');
+            }
+        }
+
+        function switchAuthTab(tab) {
+            hideAlert();
+            const formLogin = document.getElementById('form-login');
+            const formRegister = document.getElementById('form-register');
+            const tabLogin = document.getElementById('tab-login');
+            const tabRegister = document.getElementById('tab-register');
+
+            if (tab === 'login') {
+                formLogin.classList.remove('hidden');
+                formRegister.classList.add('hidden');
+                tabLogin.className = "flex-1 py-2 font-semibold text-indigo-600 border-b-2 border-indigo-600";
+                tabRegister.className = "flex-1 py-2 font-semibold text-slate-400 border-b-2 border-transparent hover:text-slate-600";
+            } else {
+                formLogin.classList.add('hidden');
+                formRegister.classList.remove('hidden');
+                tabRegister.className = "flex-1 py-2 font-semibold text-indigo-600 border-b-2 border-indigo-600";
+                tabLogin.className = "flex-1 py-2 font-semibold text-slate-400 border-b-2 border-transparent hover:text-slate-600";
+            }
+        }
+
+        function toggleComplaintForm(show) {
+            const modal = document.getElementById('complaint-modal');
+            const textarea = document.getElementById('complaint-text');
+            const indicator = document.getElementById('draft-indicator');
+            const discardBtn = document.getElementById('discard-draft-btn');
+
+            if (show) {
+                if (!activeDraftId) {
+                    textarea.value = '';
+                    indicator.classList.add('hidden');
+                    discardBtn.classList.add('hidden');
+                }
+                updateCharCounter();
+                modal.classList.remove('hidden');
+            } else {
+                activeDraftId = null;
+                modal.classList.add('hidden');
+            }
+        }
+
+        function updateCharCounter() {
+            const val = document.getElementById('complaint-text').value;
+            document.getElementById('char-count').innerText = val.length;
+        }
+
+        // ================= DRAFT MANAGEMENT =================
+        function getLocalDrafts() {
+            if (!currentUser) return [];
+            return JSON.parse(localStorage.getItem(`user_drafts_${currentUser.name}`) || '[]');
+        }
+
+        function saveLocalDrafts(drafts) {
+            if (!currentUser) return;
+            localStorage.setItem(`user_drafts_${currentUser.name}`, JSON.stringify(drafts));
+        }
+
+        function saveDraft() {
+            const val = document.getElementById('complaint-text').value.trim();
+            if (!val) {
+                showAlert('Cannot save an empty draft.', 'error');
+                return;
+            }
+
+            let drafts = getLocalDrafts();
+            if (activeDraftId) {
+                const idx = drafts.findIndex(d => d.id === activeDraftId);
+                if (idx !== -1) {
+                    drafts[idx].complaint = val;
+                    drafts[idx].updated_at = new Date().toISOString();
+                }
+            } else {
+                const newDraft = {
+                    id: 'draft_' + Date.now(),
+                    complaint: val,
+                    updated_at: new Date().toISOString()
+                };
+                drafts.unshift(newDraft);
+            }
+
+            saveLocalDrafts(drafts);
+            toggleComplaintForm(false);
+            showAlert('Draft saved! It now appears in your ticket list.', 'success');
+            loadCustomerTickets();
+        }
+
+        function openDraftModal(draftId) {
+            const drafts = getLocalDrafts();
+            const draft = drafts.find(d => d.id === draftId);
+            if (!draft) return;
+
+            activeDraftId = draft.id;
+            document.getElementById('complaint-text').value = draft.complaint;
+            document.getElementById('draft-indicator').classList.remove('hidden');
+            document.getElementById('discard-draft-btn').classList.remove('hidden');
+            updateCharCounter();
+            document.getElementById('complaint-modal').classList.remove('hidden');
+        }
+
+        function discardCurrentDraft() {
+            if (!activeDraftId) return;
+            let drafts = getLocalDrafts();
+            drafts = drafts.filter(d => d.id !== activeDraftId);
+            saveLocalDrafts(drafts);
+            toggleComplaintForm(false);
+            showAlert('Draft discarded.', 'success');
+            loadCustomerTickets();
+        }
+
+        // ================= VALIDATION & AUTHENTICATION =================
+        function validateRegistrationInput(email, password) {
+            const domain = email.split('@')[1]?.toLowerCase();
+            if (!domain || !ALLOWED_EMAIL_DOMAINS.includes(domain)) {
+                return `Registration restricted to specific email domains (${ALLOWED_EMAIL_DOMAINS.join(', ')}).`;
+            }
+
+            const hasUppercase = /[A-Z]/.test(password);
+            const hasSpecial = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password);
+
+            if (!hasUppercase || !hasSpecial) {
+                return "Password must contain at least one uppercase letter (A-Z) and one special symbol (!@#$%^&*).";
+            }
+            return null;
+        }
+
+        async function handleLogin(e) {
+            e.preventDefault();
+            hideAlert();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            try {
+                const res = await fetch(`${API_BASE_URL}/auth/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await res.json();
+                if (!res.ok) throw new Error(data.detail || 'Login failed');
+
+                token = data.access_token;
+                currentUser = { name: data.name, role: data.role };
+
+                localStorage.setItem('access_token', token);
+                localStorage.setItem('user_info', JSON.stringify(currentUser));
+
+                initAuthenticatedState();
+            } catch (err) {
+                showAlert(err.message, 'error');
+            }
+        }
+
+        async function handleRegister(e) {
+            e.preventDefault();
+            hideAlert();
+            const name = document.getElementById('reg-name').value;
+            const email = document.getElementById('reg-email').value;
+            const password = document.getElementById('reg-password').value;
+
+            const validationError = validateRegistrationInput(email, password);
+            if (validationError) {
+                showAlert(validationError, 'error');
+                return;
+            }
+
+            try {
+                const res = await fetch(`${API_BASE_URL}/auth/register`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, password })
+                });
+
+                const data = await res.json();
+                if (!res.ok) throw new Error(data.detail || 'Registration failed');
+
+                showAlert('Account registered successfully! Logging you in...', 'success');
+                document.getElementById('login-email').value = email;
+                document.getElementById('login-password').value = password;
+                setTimeout(() => handleLogin(e), 1000);
+
+            } catch (err) {
+                showAlert(err.message, 'error');
+            }
+        }
+
+        function initAuthenticatedState() {
+            document.getElementById('nav-user-controls').classList.remove('hidden');
+            document.getElementById('user-display-name').innerText = currentUser.name || "Customer";
+            showView('tickets');
+        }
+
+        function logout() {
+            token = null;
+            currentUser = null;
+            localStorage.removeItem('access_token');
+            localStorage.removeItem('user_info');
+            document.getElementById('nav-user-controls').classList.add('hidden');
+            hideAlert();
+            showView('auth');
+        }
+
+        // ================= TICKET ACTIONS & SUSPENSION =================
+        async function handleTicketSubmit(e) {
+            e.preventDefault();
+            hideAlert();
+            const complaint = document.getElementById('complaint-text').value.trim();
+
+            if (complaint.length < 3) {
+                showAlert('Complaint must contain at least three visible characters.', 'error');
+                return;
+            }
+
+            const btn = document.getElementById('submit-ticket-btn');
+            btn.disabled = true;
+            btn.innerText = "Submitting...";
+
+            try {
+                const res = await fetch(`${API_BASE_URL}/tickets`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ complaint })
+                });
+
+                const data = await res.json();
+                if (res.status === 401) { logout(); return; }
+                if (!res.ok) throw new Error(data.detail || 'Failed to submit complaint');
+
+                // Clear active draft if submitted from draft state
+                if (activeDraftId) {
+                    let drafts = getLocalDrafts();
+                    drafts = drafts.filter(d => d.id !== activeDraftId);
+                    saveLocalDrafts(drafts);
+                    activeDraftId = null;
+                }
+
+                toggleComplaintForm(false);
+                showAlert('Ticket submitted successfully!', 'success');
+                loadCustomerTickets();
+            } catch (err) {
+                showAlert(err.message, 'error');
+            } finally {
+                btn.disabled = false;
+                btn.innerText = "Submit Ticket";
+            }
+        }
+
+        async function loadCustomerTickets() {
+            try {
+                const res = await fetch(`${API_BASE_URL}/tickets`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (res.status === 401) { logout(); return; }
+                const tickets = await res.json();
+                const drafts = getLocalDrafts();
+
+                const container = document.getElementById('tickets-container');
+                const emptyState = document.getElementById('tickets-empty');
+                container.innerHTML = '';
+
+                if (tickets.length === 0 && drafts.length === 0) {
+                    emptyState.classList.remove('hidden');
+                    return;
+                }
+                emptyState.classList.add('hidden');
+
+                // 1. Render local Drafts (strictly showing "Drafted" status and no other fields)
+                drafts.forEach(draft => {
+                    container.appendChild(renderDraftCard(draft));
+                });
+
+                // 2. Render submitted Backend Tickets
+                tickets.forEach(ticket => {
+                    container.appendChild(renderTicketCard(ticket));
+                });
+            } catch (err) {
+                showAlert('Failed to load tickets', 'error');
+            }
+        }
+
+        async function loadTicketDetail(ticketId) {
+            try {
+                const res = await fetch(`${API_BASE_URL}/tickets/${ticketId}`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (res.status === 401) { logout(); return; }
+                const ticket = await res.json();
+                if (!res.ok) throw new Error(ticket.detail || 'Ticket not found');
+
+                renderTicketDetailCard(ticket);
+                showView('detail');
+            } catch (err) {
+                showAlert(err.message, 'error');
+            }
+        }
+
+        // ================= RENDERING & UI HELPERS =================
+        function formatStatus(status) {
+            if (status === 'pending_classification') {
+                return { text: 'Received - being categorised', bg: 'bg-amber-50 text-amber-700 border-amber-200' };
+            }
+            switch (status) {
+                case 'open': return { text: 'Open', bg: 'bg-blue-50 text-blue-700 border-blue-200' };
+                case 'in_progress': return { text: 'In Progress', bg: 'bg-purple-50 text-purple-700 border-purple-200' };
+                case 'resolved': return { text: 'Resolved', bg: 'bg-emerald-50 text-emerald-700 border-emerald-200' };
+                case 'closed': return { text: 'Closed', bg: 'bg-slate-100 text-slate-600 border-slate-200' };
+                default: return { text: status, bg: 'bg-slate-100 text-slate-600 border-slate-200' };
+            }
+        }
+
+        // Render Draft Card - Strictly displays "Drafted" status only (No priority, no SLA, no dept)
+        function renderDraftCard(draft) {
+            const div = document.createElement('div');
+            div.className = "bg-amber-50/40 p-6 rounded-2xl shadow-sm border border-amber-200/80 hover:shadow-md transition cursor-pointer flex flex-col justify-between space-y-4";
+            div.onclick = () => openDraftModal(draft.id);
+
+            const shortId = draft.id.replace('draft_', '').slice(-4);
+            const dateStr = new Date(draft.updated_at).toLocaleDateString();
+
+            div.innerHTML = `
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start gap-2">
+                        <span class="text-xs font-mono font-bold text-amber-600">#DRAFT-${shortId}</span>
+                        <span class="px-2.5 py-1 text-xs font-bold rounded-full border bg-amber-100 text-amber-800 border-amber-300 flex items-center gap-1">
+                            <i class="fa-solid fa-pen-to-square text-[10px]"></i> Drafted
+                        </span>
+                    </div>
+                    <p class="text-slate-800 line-clamp-2 font-medium">${escapeHtml(draft.complaint)}</p>
+                </div>
+                
+                <div class="flex items-center justify-between text-xs pt-2 border-t border-amber-200/60">
+                    <span class="text-amber-800 font-semibold flex items-center gap-1">
+                        Resume editing <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </span>
+                    <span class="text-slate-400 text-[11px]">${dateStr}</span>
+                </div>
+            `;
+            return div;
+        }
+
+        function renderTicketCard(ticket) {
+            const div = document.createElement('div');
+            div.className = "bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition cursor-pointer flex flex-col justify-between space-y-4";
+            div.onclick = () => loadTicketDetail(ticket.id);
+
+            const statusObj = formatStatus(ticket.status);
+
+            div.innerHTML = `
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start gap-2">
+                        <span class="text-xs font-mono font-bold text-slate-400">#TICK-${ticket.id}</span>
+                        <span class="px-2.5 py-1 text-xs font-semibold rounded-full border ${statusObj.bg}">
+                            ${statusObj.text}
+                        </span>
+                    </div>
+                    <p class="text-slate-800 line-clamp-2 font-medium">${escapeHtml(ticket.complaint)}</p>
+                </div>
+                
+                <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-slate-100 text-xs">
+                    <span class="font-semibold text-slate-500">${ticket.department || 'General Enquiry'}</span>
+                    <span class="font-bold uppercase px-2 py-0.5 rounded border border-slate-200 bg-slate-50 text-slate-600">${ticket.priority || 'medium'}</span>
+                </div>
+            `;
+            return div;
+        }
+
+        function renderTicketDetailCard(ticket) {
+            const card = document.getElementById('ticket-detail-card');
+            const statusObj = formatStatus(ticket.status);
+            const slaDue = ticket.sla_due_at ? new Date(ticket.sla_due_at).toLocaleString() : 'N/A';
+
+            card.innerHTML = `
+                <div class="flex justify-between items-start border-b border-slate-100 pb-4">
+                    <div>
+                        <span class="text-xs font-mono font-bold text-slate-400">Ticket Reference #${ticket.id}</span>
+                        <h2 class="text-xl font-bold text-slate-900 mt-1">Complaint Details</h2>
+                    </div>
+                    <div class="flex flex-col items-end space-y-2">
+                        <span class="px-3 py-1 text-xs font-bold rounded-full border ${statusObj.bg}">
+                            ${statusObj.text}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Submitted Complaint</h4>
+                    <p class="text-slate-800 whitespace-pre-wrap leading-relaxed">${escapeHtml(ticket.complaint)}</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-xs">
+                    <div class="bg-white p-3 rounded-lg border border-slate-200">
+                        <span class="text-slate-400 block font-medium">Assigned Department</span>
+                        <span class="text-slate-800 font-bold text-sm mt-0.5 block">${ticket.department || 'General Enquiry'}</span>
+                    </div>
+
+                    <div class="bg-white p-3 rounded-lg border border-slate-200">
+                        <span class="text-slate-400 block font-medium">Priority</span>
+                        <span class="inline-block px-2 py-0.5 font-bold uppercase rounded border mt-1 border-slate-200 bg-slate-50">${ticket.priority || 'medium'}</span>
+                    </div>
+
+                    <div class="bg-white p-3 rounded-lg border border-slate-200">
+                        <span class="text-slate-400 block font-medium">Target SLA Deadline</span>
+                        <span class="text-slate-800 font-bold text-sm mt-0.5 block">${slaDue}</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        function showAlert(msg, type = 'error') {
+            const container = document.getElementById('alert-container');
+            const box = document.getElementById('alert-box');
+            document.getElementById('alert-message').innerText = msg;
+            container.classList.remove('hidden');
+
+            if (type === 'error') {
+                box.className = "p-4 rounded-xl text-sm font-medium flex justify-between items-center shadow-sm bg-rose-50 text-rose-700 border border-rose-200";
+            } else {
+                box.className = "p-4 rounded-xl text-sm font-medium flex justify-between items-center shadow-sm bg-emerald-50 text-emerald-700 border border-emerald-200";
+            }
+        }
+
+        function hideAlert() {
+            document.getElementById('alert-container').classList.add('hidden');
+        }
+
+        function escapeHtml(str) {
+            return (str || '').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+        }
+    </script>
+</body>
+</html>

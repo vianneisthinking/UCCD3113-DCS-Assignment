@@ -1,0 +1,9 @@
+fastapi[standard]==0.141.1
+uvicorn==0.52.0
+joblib==1.5.3
+# 1.9.0 produced the supplied artifacts but has no Linux CPython 3.12 wheel
+# in the deployment index. 1.7.2 is the newest available compatible wheel;
+# api/main.py applies a narrowly tested persistence compatibility field.
+scikit-learn==1.7.2
+pydantic==2.12.5
+requests>=2.31,<3

@@ -1,0 +1,81 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: DCS assignment bootstrap - AI image repository only
+
+Parameters:
+  ProjectName:
+    Type: String
+    Default: dcs-ticket-system
+  BillingEmail:
+    Type: String
+    Description: Email address that must confirm the $1/$3/$5 budget alerts
+
+Resources:
+  DeploymentArtifactBucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
+    Properties:
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      LifecycleConfiguration:
+        Rules:
+          - Id: ExpireBuildArtifacts
+            Status: Enabled
+            ExpirationInDays: 7
+
+  AiRepository:
+    Type: AWS::ECR::Repository
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
+    Properties:
+      RepositoryName: !Sub "${ProjectName}-ai"
+      EmptyOnDelete: true
+      ImageScanningConfiguration:
+        ScanOnPush: true
+      ImageTagMutability: IMMUTABLE
+      LifecyclePolicy:
+        LifecyclePolicyText: |
+          {"rules":[{"rulePriority":1,"description":"Keep only two images","selection":{"tagStatus":"any","countType":"imageCountMoreThan","countNumber":2},"action":{"type":"expire"}}]}
+
+  CostBudget:
+    Type: AWS::Budgets::Budget
+    Properties:
+      Budget:
+        BudgetName: !Sub "${ProjectName}-monthly-cost"
+        BudgetLimit:
+          Amount: 5
+          Unit: USD
+        BudgetType: COST
+        TimeUnit: MONTHLY
+      NotificationsWithSubscribers:
+        - Notification:
+            ComparisonOperator: GREATER_THAN
+            NotificationType: ACTUAL
+            Threshold: 1
+            ThresholdType: ABSOLUTE_VALUE
+          Subscribers: [{SubscriptionType: EMAIL, Address: !Ref BillingEmail}]
+        - Notification:
+            ComparisonOperator: GREATER_THAN
+            NotificationType: ACTUAL
+            Threshold: 3
+            ThresholdType: ABSOLUTE_VALUE
+          Subscribers: [{SubscriptionType: EMAIL, Address: !Ref BillingEmail}]
+        - Notification:
+            ComparisonOperator: GREATER_THAN
+            NotificationType: ACTUAL
+            Threshold: 5
+            ThresholdType: ABSOLUTE_VALUE
+          Subscribers: [{SubscriptionType: EMAIL, Address: !Ref BillingEmail}]
+
+Outputs:
+  AiRepositoryUri:
+    Value: !GetAtt AiRepository.RepositoryUri
+  DeploymentArtifactBucketName:
+    Value: !Ref DeploymentArtifactBucket

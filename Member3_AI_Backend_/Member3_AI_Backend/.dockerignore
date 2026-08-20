@@ -1,0 +1,9 @@
+.venv
+__pycache__
+*.py[cod]
+data
+.env
+api/test_client.py
+evaluate_models.py
+setup_api.bat
+start_api.bat

@@ -1,0 +1,301 @@
+complaint,category,priority
+Issue requiring attention: my delivery is two days later than the estimated date. I would appreciate your assistance.,delivery_order,medium
+Customer assistance needed: I need help choosing the most suitable service package. I would appreciate your assistance.,general_enquiry,medium
+Support request: my payment fails whenever I try to complete the purchase. Please help me resolve this soon.,billing_payment,medium
+Critical problem: all my saved work disappeared after the latest system update. Please respond as soon as possible.,technical_support,high
+Non-urgent request: I need to change my delivery address before shipping. Please reply when convenient.,delivery_order,low
+General enquiry: I need to know the estimated delivery duration. Thank you.,delivery_order,low
+Urgent issue: an important order was sent to the wrong address. I cannot continue using the service until this is resolved.,delivery_order,high
+General enquiry: I need information about viewing my account login history. There is no urgent deadline.,account_access,low
+Urgent issue: the system displays a critical error and cannot be accessed. I cannot continue using the service until this is resolved.,technical_support,high
+Quick question: I need to know how to update my saved payment method. I only need general guidance.,billing_payment,low
+General enquiry: I want information about delivery charges. Please reply when convenient.,delivery_order,low
+Non-urgent request: I need information about downloading the desktop application. There is no urgent deadline.,technical_support,low
+Customer assistance needed: the parcel tracking information has not updated. Please investigate this when possible.,delivery_order,medium
+Non-urgent request: I want to know whether the service supports an older device. Thank you.,technical_support,low
+Critical problem: an important order was sent to the wrong address. The problem is causing major disruption.,delivery_order,high
+Quick question: I need to change my delivery address before shipping. There is no urgent deadline.,delivery_order,low
+Quick question: I want information about the services provided. Please reply when convenient.,general_enquiry,low
+Support request: my request to reschedule the delivery did not work. Please help me resolve this soon.,delivery_order,medium
+Support request: my subscription renewed even though I intended to cancel it. Please investigate this when possible.,billing_payment,medium
+General enquiry: I want information about the monthly billing cycle. I only need general guidance.,billing_payment,low
+Critical problem: someone logged into my account without permission. This is seriously affecting my ability to use the service.,account_access,high
+General enquiry: I need instructions for updating my profile name. I only need general guidance.,account_access,low
+Immediate assistance required: a critical business enquiry has received no response. Please respond as soon as possible.,general_enquiry,high
+Immediate assistance required: I need urgent service information before an important deadline today. I cannot continue using the service until this is resolved.,general_enquiry,high
+Quick question: I want to know how to delete an inactive account. I only need general guidance.,account_access,low
+Information request: I need instructions for changing the application language. There is no urgent deadline.,technical_support,low
+Information request: I want to know the company operating hours. Thank you.,general_enquiry,low
+Quick question: I want to know the company operating hours. Thank you.,general_enquiry,low
+Issue requiring attention: my subscription renewed even though I intended to cancel it. Please investigate this when possible.,billing_payment,medium
+Non-urgent request: I need to change my delivery address before shipping. Thank you.,delivery_order,low
+Please respond urgently: the system displays a critical error and cannot be accessed. I cannot continue using the service until this is resolved.,technical_support,high
+Non-urgent request: I need to know how to update my saved payment method. Thank you.,billing_payment,low
+Customer assistance needed: my device fails to connect on the first attempt. I would appreciate your assistance.,technical_support,medium
+Customer assistance needed: notifications are not appearing correctly. Please investigate this when possible.,technical_support,medium
+Issue requiring attention: several items are missing from my order. Please help me resolve this soon.,delivery_order,medium
+Information request: I need instructions for updating my profile name. Please reply when convenient.,account_access,low
+Please respond urgently: the service disconnects continuously and no work can be completed. I cannot continue using the service until this is resolved.,technical_support,high
+Please assist: the password reset email is not arriving. Please investigate this when possible.,account_access,medium
+General enquiry: I need instructions for changing the application language. Please reply when convenient.,technical_support,low
+Please respond urgently: my personal account details may have been exposed. Please respond as soon as possible.,account_access,high
+Customer assistance needed: my account is locked after several login attempts. Please investigate this when possible.,account_access,medium
+Please respond urgently: my account was suddenly suspended and I cannot access important information. Please respond as soon as possible.,account_access,high
+General enquiry: I want information about the services provided. Thank you.,general_enquiry,low
+Urgent issue: my personal account details may have been exposed. This is seriously affecting my ability to use the service.,account_access,high
+Please respond urgently: my account password and recovery email were changed by another person. I cannot continue using the service until this is resolved.,account_access,high
+Critical problem: I received a security alert from an unknown device. Please respond as soon as possible.,account_access,high
+Quick question: I want to know whether two orders can be combined. There is no urgent deadline.,delivery_order,low
+Quick question: I want to know how to track my order. Please reply when convenient.,delivery_order,low
+Non-urgent request: I want to know how to change my password. Please reply when convenient.,account_access,low
+Information request: I want information about delivery charges. Please reply when convenient.,delivery_order,low
+Immediate assistance required: my package has been missing for more than one week. I cannot continue using the service until this is resolved.,delivery_order,high
+Support request: the invoice contains an incorrect tax amount. The issue is affecting normal use.,billing_payment,medium
+Information request: I want information about delivery charges. There is no urgent deadline.,delivery_order,low
+Please respond urgently: I received a security alert from an unknown device. Please respond as soon as possible.,account_access,high
+General enquiry: I want to know how to contact customer support. There is no urgent deadline.,general_enquiry,low
+Customer assistance needed: I need a recommendation based on my requirements. The issue is affecting normal use.,general_enquiry,medium
+Support request: my account login works only occasionally. Please help me resolve this soon.,account_access,medium
+Customer assistance needed: the verification code expires before I can use it. The issue is affecting normal use.,account_access,medium
+Urgent issue: my parcel is marked as delivered but I did not receive it. Please respond as soon as possible.,delivery_order,high
+Please assist: notifications are not appearing correctly. Please investigate this when possible.,technical_support,medium
+Information request: I need to change my delivery address before shipping. Thank you.,delivery_order,low
+General enquiry: I need instructions for changing the application language. I only need general guidance.,technical_support,low
+Urgent issue: all my saved work disappeared after the latest system update. I cannot continue using the service until this is resolved.,technical_support,high
+Please respond urgently: my package has been missing for more than one week. Please respond as soon as possible.,delivery_order,high
+Information request: I want to know which payment methods are accepted. There is no urgent deadline.,billing_payment,low
+Customer assistance needed: notifications are not appearing correctly. I would appreciate your assistance.,technical_support,medium
+Please assist: my device fails to connect on the first attempt. Please help me resolve this soon.,technical_support,medium
+Urgent issue: I require immediate safety information about a product. The problem is causing major disruption.,general_enquiry,high
+Non-urgent request: I want to know whether the service supports an older device. There is no urgent deadline.,technical_support,low
+Critical problem: my urgent order is still in transit after the required deadline. I cannot continue using the service until this is resolved.,delivery_order,high
+Information request: I want to enable two-factor authentication. Thank you.,account_access,low
+Immediate assistance required: a completed refund was unexpectedly reversed. This is seriously affecting my ability to use the service.,billing_payment,high
+General enquiry: I need to know the estimated delivery duration. There is no urgent deadline.,delivery_order,low
+Immediate assistance required: an important order was sent to the wrong address. I cannot continue using the service until this is resolved.,delivery_order,high
+Urgent issue: a completed refund was unexpectedly reversed. Please respond as soon as possible.,billing_payment,high
+General enquiry: I need the location of the nearest customer service centre. Please reply when convenient.,general_enquiry,low
+Issue requiring attention: my account is locked after several login attempts. The issue is affecting normal use.,account_access,medium
+Please assist: the verification code expires before I can use it. The issue is affecting normal use.,account_access,medium
+Critical problem: my account password and recovery email were changed by another person. The problem is causing major disruption.,account_access,high
+Information request: I want information about the services provided. I only need general guidance.,general_enquiry,low
+Non-urgent request: I would like another copy of my invoice. I only need general guidance.,billing_payment,low
+Customer assistance needed: my payment fails whenever I try to complete the purchase. I would appreciate your assistance.,billing_payment,medium
+Critical problem: the website has been completely unavailable since yesterday. I cannot continue using the service until this is resolved.,technical_support,high
+Critical problem: the invoice amount is much higher than the agreed price. The problem is causing major disruption.,billing_payment,high
+Critical problem: my account password and recovery email were changed by another person. This is seriously affecting my ability to use the service.,account_access,high
+General enquiry: I want to know how to delete an inactive account. I only need general guidance.,account_access,low
+Quick question: I want to know how to change my password. Please reply when convenient.,account_access,low
+Immediate assistance required: my account was suddenly suspended and I cannot access important information. The problem is causing major disruption.,account_access,high
+Please respond urgently: the website has been completely unavailable since yesterday. This is seriously affecting my ability to use the service.,technical_support,high
+Urgent issue: the website has been completely unavailable since yesterday. This is seriously affecting my ability to use the service.,technical_support,high
+Please respond urgently: an important order was sent to the wrong address. Please respond as soon as possible.,delivery_order,high
+Non-urgent request: I want to enable two-factor authentication. Thank you.,account_access,low
+Immediate assistance required: my account password and recovery email were changed by another person. Please respond as soon as possible.,account_access,high
+Quick question: I want to know whether two orders can be combined. Please reply when convenient.,delivery_order,low
+Support request: the application freezes after several minutes. I would appreciate your assistance.,technical_support,medium
+Please respond urgently: the service disconnects continuously and no work can be completed. This is seriously affecting my ability to use the service.,technical_support,high
+Quick question: I want information about the monthly billing cycle. Thank you.,billing_payment,low
+Please assist: my approved refund has not arrived. The issue is affecting normal use.,billing_payment,medium
+Customer assistance needed: my service enquiry has received no response for two days. Please investigate this when possible.,general_enquiry,medium
+Critical problem: my account password and recovery email were changed by another person. I cannot continue using the service until this is resolved.,account_access,high
+Quick question: I want information about delivery charges. Please reply when convenient.,delivery_order,low
+Immediate assistance required: my personal account details may have been exposed. Please respond as soon as possible.,account_access,high
+Support request: some application buttons do not respond consistently. Please investigate this when possible.,technical_support,medium
+Critical problem: my package has been missing for more than one week. The problem is causing major disruption.,delivery_order,high
+Customer assistance needed: I need clarification about whether the service covers my location. Please investigate this when possible.,general_enquiry,medium
+General enquiry: I need to change my delivery address before shipping. I only need general guidance.,delivery_order,low
+Please assist: the invoice contains an incorrect tax amount. The issue is affecting normal use.,billing_payment,medium
+Urgent issue: all my saved work disappeared after the latest system update. This is seriously affecting my ability to use the service.,technical_support,high
+Immediate assistance required: my urgent order is still in transit after the required deadline. The problem is causing major disruption.,delivery_order,high
+Support request: my account login works only occasionally. I would appreciate your assistance.,account_access,medium
+Critical problem: my bank account was charged multiple times for one purchase. The problem is causing major disruption.,billing_payment,high
+Issue requiring attention: I need a recommendation based on my requirements. I would appreciate your assistance.,general_enquiry,medium
+Issue requiring attention: my account is locked after several login attempts. Please help me resolve this soon.,account_access,medium
+Urgent issue: a critical business enquiry has received no response. The problem is causing major disruption.,general_enquiry,high
+Urgent issue: I require immediate safety information about a product. Please respond as soon as possible.,general_enquiry,high
+Information request: I want to know how to change my password. Thank you.,account_access,low
+Customer assistance needed: my subscription renewed even though I intended to cancel it. Please help me resolve this soon.,billing_payment,medium
+General enquiry: I need the location of the nearest customer service centre. There is no urgent deadline.,general_enquiry,low
+Critical problem: my package has been missing for more than one week. I cannot continue using the service until this is resolved.,delivery_order,high
+Please assist: the parcel tracking information has not updated. I would appreciate your assistance.,delivery_order,medium
+Information request: I want to know whether the service supports an older device. There is no urgent deadline.,technical_support,low
+Non-urgent request: I want to know which payment methods are accepted. Thank you.,billing_payment,low
+Critical problem: my urgent order is still in transit after the required deadline. This is seriously affecting my ability to use the service.,delivery_order,high
+Non-urgent request: I want to know which payment methods are accepted. I only need general guidance.,billing_payment,low
+Critical problem: an unauthorised large payment appeared on my account. Please respond as soon as possible.,billing_payment,high
+Please respond urgently: I need urgent service information before an important deadline today. I cannot continue using the service until this is resolved.,general_enquiry,high
+Please assist: the website loads very slowly during normal use. I would appreciate your assistance.,technical_support,medium
+Please respond urgently: an unauthorised large payment appeared on my account. The problem is causing major disruption.,billing_payment,high
+Urgent issue: my parcel is marked as delivered but I did not receive it. This is seriously affecting my ability to use the service.,delivery_order,high
+Non-urgent request: I need the location of the nearest customer service centre. There is no urgent deadline.,general_enquiry,low
+Immediate assistance required: money was deducted but no order was created. I cannot continue using the service until this is resolved.,billing_payment,high
+General enquiry: I want to enable two-factor authentication. Please reply when convenient.,account_access,low
+General enquiry: I want information about the monthly billing cycle. Thank you.,billing_payment,low
+Quick question: I want to enable two-factor authentication. I only need general guidance.,account_access,low
+Please assist: I need help understanding one of the company policies. Please help me resolve this soon.,general_enquiry,medium
+Support request: my service enquiry has received no response for two days. Please investigate this when possible.,general_enquiry,medium
+Support request: my payment fails whenever I try to complete the purchase. I would appreciate your assistance.,billing_payment,medium
+Information request: I need instructions for downloading a payment receipt. Please reply when convenient.,billing_payment,low
+Information request: I need to know how to update my saved payment method. I only need general guidance.,billing_payment,low
+Immediate assistance required: all my saved work disappeared after the latest system update. The problem is causing major disruption.,technical_support,high
+General enquiry: I need information about viewing my account login history. Please reply when convenient.,account_access,low
+Customer assistance needed: my subscription renewed even though I intended to cancel it. I would appreciate your assistance.,billing_payment,medium
+Quick question: I would like another copy of my invoice. Please reply when convenient.,billing_payment,low
+Please respond urgently: the invoice amount is much higher than the agreed price. This is seriously affecting my ability to use the service.,billing_payment,high
+Customer assistance needed: the parcel tracking information has not updated. The issue is affecting normal use.,delivery_order,medium
+Issue requiring attention: I need clarification about whether the service covers my location. The issue is affecting normal use.,general_enquiry,medium
+Please respond urgently: money was deducted but no order was created. Please respond as soon as possible.,billing_payment,high
+Critical problem: I received a security alert from an unknown device. The problem is causing major disruption.,account_access,high
+Issue requiring attention: the website loads very slowly during normal use. Please investigate this when possible.,technical_support,medium
+Support request: the password reset email is not arriving. Please investigate this when possible.,account_access,medium
+Please assist: I need a recommendation based on my requirements. The issue is affecting normal use.,general_enquiry,medium
+Quick question: I need instructions for updating my profile name. I only need general guidance.,account_access,low
+Quick question: I need to know the estimated delivery duration. Thank you.,delivery_order,low
+Please assist: my payment fails whenever I try to complete the purchase. Please investigate this when possible.,billing_payment,medium
+Non-urgent request: I need the location of the nearest customer service centre. Please reply when convenient.,general_enquiry,low
+Please respond urgently: a critical business enquiry has received no response. I cannot continue using the service until this is resolved.,general_enquiry,high
+Quick question: I need to know the estimated delivery duration. I only need general guidance.,delivery_order,low
+Immediate assistance required: someone logged into my account without permission. This is seriously affecting my ability to use the service.,account_access,high
+Critical problem: my parcel is marked as delivered but I did not receive it. This is seriously affecting my ability to use the service.,delivery_order,high
+Support request: the password reset email is not arriving. Please help me resolve this soon.,account_access,medium
+Please assist: the parcel tracking information has not updated. Please investigate this when possible.,delivery_order,medium
+Issue requiring attention: my subscription renewed even though I intended to cancel it. Please help me resolve this soon.,billing_payment,medium
+Please respond urgently: the service disconnects continuously and no work can be completed. The problem is causing major disruption.,technical_support,high
+Support request: my device fails to connect on the first attempt. Please investigate this when possible.,technical_support,medium
+Issue requiring attention: notifications are not appearing correctly. I would appreciate your assistance.,technical_support,medium
+Please assist: my payment fails whenever I try to complete the purchase. I would appreciate your assistance.,billing_payment,medium
+General enquiry: I want information about the services provided. I only need general guidance.,general_enquiry,low
+Immediate assistance required: I require immediate safety information about a product. The problem is causing major disruption.,general_enquiry,high
+General enquiry: I would like another copy of my invoice. Thank you.,billing_payment,low
+Quick question: I need information about downloading the desktop application. I only need general guidance.,technical_support,low
+Issue requiring attention: my account login works only occasionally. I would appreciate your assistance.,account_access,medium
+Customer assistance needed: my delivery is two days later than the estimated date. I would appreciate your assistance.,delivery_order,medium
+Urgent issue: I need urgent service information before an important deadline today. I cannot continue using the service until this is resolved.,general_enquiry,high
+Non-urgent request: I want to know where to find the user manual. There is no urgent deadline.,technical_support,low
+Support request: the verification code expires before I can use it. Please help me resolve this soon.,account_access,medium
+Urgent issue: I need immediate confirmation for a time-sensitive appointment. This is seriously affecting my ability to use the service.,general_enquiry,high
+Immediate assistance required: my bank account was charged multiple times for one purchase. This is seriously affecting my ability to use the service.,billing_payment,high
+Support request: the website loads very slowly during normal use. Please help me resolve this soon.,technical_support,medium
+Non-urgent request: I want to know how to contact customer support. Please reply when convenient.,general_enquiry,low
+Customer assistance needed: my approved refund has not arrived. Please help me resolve this soon.,billing_payment,medium
+Please assist: the parcel tracking information has not updated. The issue is affecting normal use.,delivery_order,medium
+Urgent issue: all my saved work disappeared after the latest system update. Please respond as soon as possible.,technical_support,high
+Please assist: my service enquiry has received no response for two days. Please help me resolve this soon.,general_enquiry,medium
+Customer assistance needed: I need clarification about whether the service covers my location. Please help me resolve this soon.,general_enquiry,medium
+Non-urgent request: I want to enable two-factor authentication. Please reply when convenient.,account_access,low
+Urgent issue: I need urgent service information before an important deadline today. This is seriously affecting my ability to use the service.,general_enquiry,high
+Critical problem: a critical business enquiry has received no response. The problem is causing major disruption.,general_enquiry,high
+Non-urgent request: I want information about the monthly billing cycle. There is no urgent deadline.,billing_payment,low
+Customer assistance needed: the verification code expires before I can use it. I would appreciate your assistance.,account_access,medium
+Issue requiring attention: my device fails to connect on the first attempt. Please help me resolve this soon.,technical_support,medium
+Critical problem: my account was suddenly suspended and I cannot access important information. This is seriously affecting my ability to use the service.,account_access,high
+Please assist: my payment fails whenever I try to complete the purchase. Please help me resolve this soon.,billing_payment,medium
+Non-urgent request: I want to know whether two orders can be combined. There is no urgent deadline.,delivery_order,low
+Support request: I received a different product from the one ordered. Please help me resolve this soon.,delivery_order,medium
+Critical problem: I require urgent clarification before completing an important application. This is seriously affecting my ability to use the service.,general_enquiry,high
+Please respond urgently: the system displays a critical error and cannot be accessed. Please respond as soon as possible.,technical_support,high
+Information request: I want to know how to contact customer support. There is no urgent deadline.,general_enquiry,low
+Support request: I need a recommendation based on my requirements. Please investigate this when possible.,general_enquiry,medium
+Please assist: the website loads very slowly during normal use. Please help me resolve this soon.,technical_support,medium
+Customer assistance needed: my request to reschedule the delivery did not work. Please help me resolve this soon.,delivery_order,medium
+Immediate assistance required: the service disconnects continuously and no work can be completed. This is seriously affecting my ability to use the service.,technical_support,high
+Critical problem: money was deducted but no order was created. I cannot continue using the service until this is resolved.,billing_payment,high
+Please assist: the application freezes after several minutes. Please investigate this when possible.,technical_support,medium
+Support request: the parcel tracking information has not updated. The issue is affecting normal use.,delivery_order,medium
+General enquiry: I need instructions for downloading a payment receipt. Please reply when convenient.,billing_payment,low
+Please assist: I received a different product from the one ordered. Please investigate this when possible.,delivery_order,medium
+Information request: I want to know the company operating hours. Please reply when convenient.,general_enquiry,low
+Urgent issue: my bank account was charged multiple times for one purchase. This is seriously affecting my ability to use the service.,billing_payment,high
+Immediate assistance required: my personal account details may have been exposed. The problem is causing major disruption.,account_access,high
+Critical problem: a completed refund was unexpectedly reversed. The problem is causing major disruption.,billing_payment,high
+Urgent issue: my bank account was charged multiple times for one purchase. I cannot continue using the service until this is resolved.,billing_payment,high
+General enquiry: I want to know how to contact customer support. Please reply when convenient.,general_enquiry,low
+Urgent issue: the service disconnects continuously and no work can be completed. The problem is causing major disruption.,technical_support,high
+Urgent issue: my account was suddenly suspended and I cannot access important information. I cannot continue using the service until this is resolved.,account_access,high
+Issue requiring attention: I need help understanding one of the company policies. I would appreciate your assistance.,general_enquiry,medium
+Critical problem: my account password and recovery email were changed by another person. Please respond as soon as possible.,account_access,high
+Quick question: I want to know where to find the user manual. I only need general guidance.,technical_support,low
+Customer assistance needed: I need help understanding one of the company policies. Please investigate this when possible.,general_enquiry,medium
+Support request: the invoice contains an incorrect tax amount. I would appreciate your assistance.,billing_payment,medium
+Quick question: I need information about downloading the desktop application. Thank you.,technical_support,low
+Critical problem: money was deducted but no order was created. This is seriously affecting my ability to use the service.,billing_payment,high
+Support request: my service enquiry has received no response for two days. I would appreciate your assistance.,general_enquiry,medium
+Please assist: I received a different product from the one ordered. Please help me resolve this soon.,delivery_order,medium
+Issue requiring attention: my payment fails whenever I try to complete the purchase. The issue is affecting normal use.,billing_payment,medium
+Issue requiring attention: some application buttons do not respond consistently. The issue is affecting normal use.,technical_support,medium
+Please assist: I need help understanding one of the company policies. The issue is affecting normal use.,general_enquiry,medium
+Non-urgent request: I need instructions for updating my profile name. There is no urgent deadline.,account_access,low
+Please assist: the verification code expires before I can use it. Please help me resolve this soon.,account_access,medium
+Please assist: several items are missing from my order. Please investigate this when possible.,delivery_order,medium
+Customer assistance needed: my delivery is two days later than the estimated date. Please help me resolve this soon.,delivery_order,medium
+Customer assistance needed: my device fails to connect on the first attempt. Please investigate this when possible.,technical_support,medium
+Immediate assistance required: a critical business enquiry has received no response. The problem is causing major disruption.,general_enquiry,high
+Information request: I want information about the services provided. Please reply when convenient.,general_enquiry,low
+Immediate assistance required: I require immediate safety information about a product. This is seriously affecting my ability to use the service.,general_enquiry,high
+Urgent issue: my parcel is marked as delivered but I did not receive it. The problem is causing major disruption.,delivery_order,high
+Immediate assistance required: the service disconnects continuously and no work can be completed. I cannot continue using the service until this is resolved.,technical_support,high
+Quick question: I want to know whether the service supports an older device. Thank you.,technical_support,low
+Issue requiring attention: the verification code expires before I can use it. I would appreciate your assistance.,account_access,medium
+Please assist: I need a recommendation based on my requirements. Please help me resolve this soon.,general_enquiry,medium
+General enquiry: I need to change my delivery address before shipping. Please reply when convenient.,delivery_order,low
+Issue requiring attention: I need help choosing the most suitable service package. Please help me resolve this soon.,general_enquiry,medium
+Support request: the parcel tracking information has not updated. Please help me resolve this soon.,delivery_order,medium
+Information request: I want information about the monthly billing cycle. I only need general guidance.,billing_payment,low
+General enquiry: I need information about downloading the desktop application. There is no urgent deadline.,technical_support,low
+Support request: I received a different product from the one ordered. I would appreciate your assistance.,delivery_order,medium
+Please assist: my subscription renewed even though I intended to cancel it. I would appreciate your assistance.,billing_payment,medium
+Urgent issue: an important order was sent to the wrong address. This is seriously affecting my ability to use the service.,delivery_order,high
+Quick question: I need to know the estimated delivery duration. Please reply when convenient.,delivery_order,low
+Critical problem: I need immediate confirmation for a time-sensitive appointment. This is seriously affecting my ability to use the service.,general_enquiry,high
+Immediate assistance required: the service disconnects continuously and no work can be completed. The problem is causing major disruption.,technical_support,high
+Non-urgent request: I need information about viewing my account login history. Thank you.,account_access,low
+General enquiry: I want to know whether the service supports an older device. Thank you.,technical_support,low
+Please respond urgently: a completed refund was unexpectedly reversed. This is seriously affecting my ability to use the service.,billing_payment,high
+Urgent issue: the application crashes immediately every time it is opened. The problem is causing major disruption.,technical_support,high
+Immediate assistance required: a completed refund was unexpectedly reversed. Please respond as soon as possible.,billing_payment,high
+Non-urgent request: I want to know how to delete an inactive account. I only need general guidance.,account_access,low
+Non-urgent request: I want to know whether the service supports an older device. I only need general guidance.,technical_support,low
+Customer assistance needed: the verification code expires before I can use it. Please investigate this when possible.,account_access,medium
+Customer assistance needed: I received a different product from the one ordered. The issue is affecting normal use.,delivery_order,medium
+Support request: notifications are not appearing correctly. The issue is affecting normal use.,technical_support,medium
+Customer assistance needed: I cannot update the telephone number connected to my account. The issue is affecting normal use.,account_access,medium
+Information request: I need information about downloading the desktop application. Thank you.,technical_support,low
+Urgent issue: a critical business enquiry has received no response. I cannot continue using the service until this is resolved.,general_enquiry,high
+Immediate assistance required: the website has been completely unavailable since yesterday. The problem is causing major disruption.,technical_support,high
+Please assist: I cannot update the telephone number connected to my account. I would appreciate your assistance.,account_access,medium
+Non-urgent request: I need to know how to update my saved payment method. I only need general guidance.,billing_payment,low
+Quick question: I want to know how to contact customer support. There is no urgent deadline.,general_enquiry,low
+Immediate assistance required: the invoice amount is much higher than the agreed price. I cannot continue using the service until this is resolved.,billing_payment,high
+Non-urgent request: I want to know how to contact customer support. There is no urgent deadline.,general_enquiry,low
+Please respond urgently: a critical business enquiry has received no response. Please respond as soon as possible.,general_enquiry,high
+Non-urgent request: I want to know where to find the user manual. Thank you.,technical_support,low
+Information request: I want to know where to find the user manual. There is no urgent deadline.,technical_support,low
+Information request: I need to know how to update my saved payment method. There is no urgent deadline.,billing_payment,low
+Immediate assistance required: an important order was sent to the wrong address. This is seriously affecting my ability to use the service.,delivery_order,high
+Quick question: I want to know the company operating hours. I only need general guidance.,general_enquiry,low
+Urgent issue: the delivered package is badly damaged and may be unsafe. The problem is causing major disruption.,delivery_order,high
+Non-urgent request: I want information about the monthly billing cycle. Thank you.,billing_payment,low
+Quick question: I need instructions for changing the application language. I only need general guidance.,technical_support,low
+General enquiry: I want to know whether the service supports an older device. I only need general guidance.,technical_support,low
+General enquiry: I want to know whether two orders can be combined. There is no urgent deadline.,delivery_order,low
+Please respond urgently: I need urgent service information before an important deadline today. Please respond as soon as possible.,general_enquiry,high
+Issue requiring attention: notifications are not appearing correctly. The issue is affecting normal use.,technical_support,medium
+Information request: I would like another copy of my invoice. Please reply when convenient.,billing_payment,low
+Customer assistance needed: I need help choosing the most suitable service package. The issue is affecting normal use.,general_enquiry,medium
+Critical problem: my parcel is marked as delivered but I did not receive it. The problem is causing major disruption.,delivery_order,high
+Urgent issue: a critical business enquiry has received no response. Please respond as soon as possible.,general_enquiry,high
+Issue requiring attention: my approved refund has not arrived. Please investigate this when possible.,billing_payment,medium
+Please respond urgently: money was deducted but no order was created. This is seriously affecting my ability to use the service.,billing_payment,high
+Customer assistance needed: my approved refund has not arrived. Please investigate this when possible.,billing_payment,medium
+Support request: I cannot update the telephone number connected to my account. Please investigate this when possible.,account_access,medium
+Issue requiring attention: the verification code expires before I can use it. Please investigate this when possible.,account_access,medium
+Customer assistance needed: I received a different product from the one ordered. Please investigate this when possible.,delivery_order,medium
+Urgent issue: money was deducted but no order was created. This is seriously affecting my ability to use the service.,billing_payment,high
+Quick question: I need the location of the nearest customer service centre. There is no urgent deadline.,general_enquiry,low
+Customer assistance needed: my device fails to connect on the first attempt. The issue is affecting normal use.,technical_support,medium
+Immediate assistance required: an important order was sent to the wrong address. The problem is causing major disruption.,delivery_order,high
+Immediate assistance required: someone logged into my account without permission. I cannot continue using the service until this is resolved.,account_access,high
+Quick question: I want to enable two-factor authentication. Please reply when convenient.,account_access,low
+Please assist: my service enquiry has received no response for two days. Please investigate this when possible.,general_enquiry,medium
+Information request: I want to know how to delete an inactive account. There is no urgent deadline.,account_access,low

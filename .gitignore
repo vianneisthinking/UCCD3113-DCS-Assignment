@@ -1,0 +1,45 @@
+# Python environments and caches
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Node dependencies and generated frontend output
+node_modules/
+staff-dashboard/dist/
+.pnpm-store/
+
+# Generated Lambda/container deployment artifacts
+.lambda-build-*/
+infrastructure/.build/
+infrastructure/.site/
+member2_backend/lambda_backend.zip
+*.zip
+
+# Local databases, logs, and temporary results
+*.db
+*.sqlite
+*.sqlite3
+*.log
+*.tmp
+*.temp
+
+# Secrets and machine-local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.aws/
+
+# IDE and operating-system metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+

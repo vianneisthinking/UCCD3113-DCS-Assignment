@@ -1,0 +1,248 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: DCS serverless ticket system - application stack (NOT deployed)
+
+Parameters:
+  ProjectName:
+    Type: String
+    Default: dcs-ticket-system
+  AiImageUri:
+    Type: String
+    Description: Immutable ECR image URI including digest or tag
+  ConfigParameterPrefix:
+    Type: String
+    Default: /dcs-ticket-system/prod
+  DatabaseResourceId:
+    Type: String
+    Description: Aurora cluster resource ID used in the rds-db connect ARN
+  DatabaseUser:
+    Type: String
+    Default: postgres
+
+Globals:
+  Function:
+    Architectures: [x86_64]
+    Tracing: Disabled
+    Environment:
+      Variables:
+        CONFIG_PARAMETER_PREFIX: !Ref ConfigParameterPrefix
+        AUTO_CREATE_TABLES: "false"
+
+Resources:
+  FrontendBucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
+    Properties:
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      VersioningConfiguration:
+        Status: Suspended
+      OwnershipControls:
+        Rules:
+          - ObjectOwnership: BucketOwnerEnforced
+
+  FrontendOriginAccessControl:
+    Type: AWS::CloudFront::OriginAccessControl
+    Properties:
+      OriginAccessControlConfig:
+        Name: !Sub "${ProjectName}-s3-oac"
+        OriginAccessControlOriginType: s3
+        SigningBehavior: always
+        SigningProtocol: sigv4
+
+  FrontendDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Comment: !Sub "${ProjectName} static customer and staff frontends"
+        Enabled: true
+        IPV6Enabled: true
+        HttpVersion: http2and3
+        PriceClass: PriceClass_100
+        DefaultRootObject: index.html
+        Origins:
+          - Id: StaticS3Origin
+            DomainName: !GetAtt FrontendBucket.RegionalDomainName
+            OriginAccessControlId: !GetAtt FrontendOriginAccessControl.Id
+            S3OriginConfig:
+              OriginAccessIdentity: ""
+        DefaultCacheBehavior:
+          TargetOriginId: StaticS3Origin
+          ViewerProtocolPolicy: redirect-to-https
+          Compress: true
+          AllowedMethods: [GET, HEAD, OPTIONS]
+          CachedMethods: [GET, HEAD, OPTIONS]
+          CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
+
+  FrontendBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref FrontendBucket
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Sid: AllowCloudFrontReadOnly
+            Effect: Allow
+            Principal:
+              Service: cloudfront.amazonaws.com
+            Action: s3:GetObject
+            Resource: !Sub "${FrontendBucket.Arn}/*"
+            Condition:
+              StringEquals:
+                AWS:SourceArn: !Sub "arn:${AWS::Partition}:cloudfront::${AWS::AccountId}:distribution/${FrontendDistribution}"
+
+  TicketHttpApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      Name: !Sub "${ProjectName}-http-api"
+      StageName: $default
+      CorsConfiguration:
+        AllowOrigins:
+          - !Sub "https://${FrontendDistribution.DomainName}"
+        AllowHeaders: [Authorization, Content-Type]
+        AllowMethods: [GET, POST, PATCH, OPTIONS]
+        MaxAge: 600
+      DefaultRouteSettings:
+        ThrottlingBurstLimit: 20
+        ThrottlingRateLimit: 10
+      AccessLogSettings:
+        DestinationArn: !GetAtt ApiAccessLogGroup.Arn
+        Format: '{"requestId":"$context.requestId","requestTime":"$context.requestTime","httpMethod":"$context.httpMethod","routeKey":"$context.routeKey","status":"$context.status","responseLength":"$context.responseLength","integrationError":"$context.integrationErrorMessage"}'
+
+  AiFunction:
+    Type: AWS::Serverless::Function
+    DependsOn: AiLogGroup
+    Properties:
+      FunctionName: !Sub "${ProjectName}-ai"
+      PackageType: Image
+      ImageUri: !Ref AiImageUri
+      MemorySize: 256
+      Timeout: 30
+
+  BackendFunction:
+    Type: AWS::Serverless::Function
+    DependsOn: BackendLogGroup
+    Properties:
+      FunctionName: !Sub "${ProjectName}-backend"
+      PackageType: Zip
+      # Rebuild this Linux artifact with infrastructure/build-backend.ps1
+      # after every backend code or requirements change.
+      CodeUri: ../member2_backend/lambda_backend.zip
+      Handler: lambda_handler.handler
+      Runtime: python3.12
+      MemorySize: 256
+      Timeout: 28
+      Environment:
+        Variables:
+          AI_INVOCATION_MODE: lambda
+          AI_LAMBDA_FUNCTION_NAME: !Ref AiFunction
+          CORS_ORIGINS: !Sub "https://${FrontendDistribution.DomainName}"
+      Policies:
+        - Statement:
+            - Sid: InvokePrivateAi
+              Effect: Allow
+              Action: lambda:InvokeFunction
+              Resource: !GetAtt AiFunction.Arn
+            - Sid: ReadApplicationParameters
+              Effect: Allow
+              Action: ssm:GetParametersByPath
+              Resource: !Sub "arn:${AWS::Partition}:ssm:${AWS::Region}:${AWS::AccountId}:parameter${ConfigParameterPrefix}/*"
+            - Sid: ConnectAuroraWithIam
+              Effect: Allow
+              Action: rds-db:connect
+              Resource: !Sub "arn:${AWS::Partition}:rds-db:${AWS::Region}:${AWS::AccountId}:dbuser:${DatabaseResourceId}/${DatabaseUser}"
+      Events:
+        Root:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref TicketHttpApi
+            Path: /
+            Method: ANY
+            PayloadFormatVersion: "2.0"
+        Proxy:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref TicketHttpApi
+            Path: /{proxy+}
+            Method: ANY
+            PayloadFormatVersion: "2.0"
+
+  MigrationFunction:
+    Type: AWS::Serverless::Function
+    DependsOn: MigrationLogGroup
+    Properties:
+      FunctionName: !Sub "${ProjectName}-migrate"
+      PackageType: Zip
+      CodeUri: ../member2_backend/lambda_backend.zip
+      Handler: migration_handler.handler
+      Runtime: python3.12
+      MemorySize: 256
+      Timeout: 60
+      Policies:
+        - Statement:
+            - Sid: ReadApplicationParameters
+              Effect: Allow
+              Action: ssm:GetParametersByPath
+              Resource: !Sub "arn:${AWS::Partition}:ssm:${AWS::Region}:${AWS::AccountId}:parameter${ConfigParameterPrefix}/*"
+            - Sid: ConnectAuroraWithIam
+              Effect: Allow
+              Action: rds-db:connect
+              Resource: !Sub "arn:${AWS::Partition}:rds-db:${AWS::Region}:${AWS::AccountId}:dbuser:${DatabaseResourceId}/${DatabaseUser}"
+
+  BackendLogGroup:
+    Type: AWS::Logs::LogGroup
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
+    Properties:
+      LogGroupName: !Sub "/aws/lambda/${ProjectName}-backend"
+      RetentionInDays: 3
+
+  AiLogGroup:
+    Type: AWS::Logs::LogGroup
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
+    Properties:
+      LogGroupName: !Sub "/aws/lambda/${ProjectName}-ai"
+      RetentionInDays: 3
+
+  MigrationLogGroup:
+    Type: AWS::Logs::LogGroup
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
+    Properties:
+      LogGroupName: !Sub "/aws/lambda/${ProjectName}-migrate"
+      RetentionInDays: 3
+
+  ApiAccessLogGroup:
+    Type: AWS::Logs::LogGroup
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
+    Properties:
+      LogGroupName: !Sub "/aws/apigateway/${ProjectName}-http-api"
+      RetentionInDays: 3
+
+Outputs:
+  ApiUrl:
+    Value: !Sub "https://${TicketHttpApi}.execute-api.${AWS::Region}.${AWS::URLSuffix}"
+  FrontendUrl:
+    Value: !Sub "https://${FrontendDistribution.DomainName}"
+  StaffFrontendUrl:
+    Value: !Sub "https://${FrontendDistribution.DomainName}/staff/index.html"
+  FrontendDistributionId:
+    Value: !Ref FrontendDistribution
+  FrontendBucketName:
+    Value: !Ref FrontendBucket
+  BackendFunctionName:
+    Value: !Ref BackendFunction
+  AiFunctionName:
+    Value: !Ref AiFunction
+  MigrationFunctionName:
+    Value: !Ref MigrationFunction

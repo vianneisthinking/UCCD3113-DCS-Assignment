@@ -615,6 +615,19 @@
             }
         }
 
+        function formatClassification(ticket) {
+            if (ticket.status === 'pending_classification') {
+                return {
+                    department: 'Awaiting AI classification',
+                    priority: 'Pending'
+                };
+            }
+            return {
+                department: ticket.department || 'General Enquiry',
+                priority: ticket.priority || 'medium'
+            };
+        }
+
         // Render Draft Card - Strictly displays "Drafted" status only (No priority, no SLA, no dept)
         function renderDraftCard(draft) {
             const div = document.createElement('div');
@@ -651,6 +664,7 @@
             div.onclick = () => loadTicketDetail(ticket.id);
 
             const statusObj = formatStatus(ticket.status);
+            const classification = formatClassification(ticket);
 
             div.innerHTML = `
                 <div class="space-y-2">
@@ -664,8 +678,8 @@
                 </div>
                 
                 <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-slate-100 text-xs">
-                    <span class="font-semibold text-slate-500">${ticket.department || 'General Enquiry'}</span>
-                    <span class="font-bold uppercase px-2 py-0.5 rounded border border-slate-200 bg-slate-50 text-slate-600">${ticket.priority || 'medium'}</span>
+                    <span class="font-semibold text-slate-500">${classification.department}</span>
+                    <span class="font-bold uppercase px-2 py-0.5 rounded border border-slate-200 bg-slate-50 text-slate-600">${classification.priority}</span>
                 </div>
             `;
             return div;
@@ -674,6 +688,7 @@
         function renderTicketDetailCard(ticket) {
             const card = document.getElementById('ticket-detail-card');
             const statusObj = formatStatus(ticket.status);
+            const classification = formatClassification(ticket);
             const slaDue = ticket.sla_due_at ? new Date(ticket.sla_due_at).toLocaleString() : 'N/A';
 
             card.innerHTML = `
@@ -697,12 +712,12 @@
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-xs">
                     <div class="bg-white p-3 rounded-lg border border-slate-200">
                         <span class="text-slate-400 block font-medium">Assigned Department</span>
-                        <span class="text-slate-800 font-bold text-sm mt-0.5 block">${ticket.department || 'General Enquiry'}</span>
+                        <span class="text-slate-800 font-bold text-sm mt-0.5 block">${classification.department}</span>
                     </div>
 
                     <div class="bg-white p-3 rounded-lg border border-slate-200">
                         <span class="text-slate-400 block font-medium">Priority</span>
-                        <span class="inline-block px-2 py-0.5 font-bold uppercase rounded border mt-1 border-slate-200 bg-slate-50">${ticket.priority || 'medium'}</span>
+                        <span class="inline-block px-2 py-0.5 font-bold uppercase rounded border mt-1 border-slate-200 bg-slate-50">${classification.priority}</span>
                     </div>
 
                     <div class="bg-white p-3 rounded-lg border border-slate-200">

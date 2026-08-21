@@ -39,6 +39,30 @@ TESTING
 While the API is running, open Command Prompt in this folder and run:
 .venv\Scripts\python.exe api\test_client.py
 
+MODEL DEVELOPMENT WORKFLOW
+The legacy data\customer_support_tickets_expanded.csv file is retained only as
+an historical artifact. It is not the official test dataset.
+
+1. Generate the fixed, disjoint datasets:
+   .venv\Scripts\python.exe prepare_datasets.py
+2. Train and select models using only the training and validation datasets:
+   .venv\Scripts\python.exe train_models.py
+3. Evaluate the exact saved artifacts once on the locked test dataset:
+   .venv\Scripts\python.exe evaluate_models.py
+4. Run all automated regression tests:
+   .venv\Scripts\python.exe -m unittest discover -s tests -v
+
+The training workflow requires scikit-learn 1.7.2, matching deployment. The
+training script does not open the locked test file. Do not retrain after reading
+locked-test results.
+
+PRIORITY CONFIDENCE
+For ordinary cases, priority_confidence is the selected model probability. A
+narrow internal safety policy routes clearly severe financial fraud, account
+takeover, large financial harm, and complete multi-user outages to high. A
+policy match returns 1.0 as deterministic routing confidence, not as an ML
+probability. The external response fields remain unchanged.
+
 IMPORTANT
 - The API uses the trained models in models\final.
 - Do not move the model files unless main.py is updated.

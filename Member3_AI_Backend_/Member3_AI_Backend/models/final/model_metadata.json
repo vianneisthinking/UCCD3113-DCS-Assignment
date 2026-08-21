@@ -1,0 +1,143 @@
+{
+  "category_labels": [
+    "account_access",
+    "billing_payment",
+    "delivery_order",
+    "general_enquiry",
+    "technical_support"
+  ],
+  "category_model_selection": {
+    "candidate_validation_metrics": [
+      {
+        "accuracy": 0.7666666666666667,
+        "kind": "logistic",
+        "macro_f1": 0.7760014488554041,
+        "name": "logistic_regression_C_0.1",
+        "value": 0.1,
+        "weighted_f1": 0.7760014488554042
+      },
+      {
+        "accuracy": 0.7555555555555555,
+        "kind": "logistic",
+        "macro_f1": 0.7644677871148459,
+        "name": "logistic_regression_C_0.75",
+        "value": 0.75,
+        "weighted_f1": 0.764467787114846
+      },
+      {
+        "accuracy": 0.7444444444444445,
+        "kind": "multinomial_nb",
+        "macro_f1": 0.7539733511270513,
+        "name": "multinomial_nb_alpha_0.5",
+        "value": 0.5,
+        "weighted_f1": 0.7539733511270513
+      },
+      {
+        "accuracy": 0.7444444444444445,
+        "kind": "multinomial_nb",
+        "macro_f1": 0.7539733511270513,
+        "name": "multinomial_nb_alpha_1.0",
+        "value": 1.0,
+        "weighted_f1": 0.7539733511270513
+      }
+    ],
+    "selected_candidate": "logistic_regression_C_0.1",
+    "selected_validation_metrics": {
+      "accuracy": 0.7666666666666667,
+      "kind": "logistic",
+      "macro_f1": 0.7760014488554041,
+      "name": "logistic_regression_C_0.1",
+      "value": 0.1,
+      "weighted_f1": 0.7760014488554042
+    }
+  },
+  "category_model_sha256": "beba12c000d9fbcc3928e7a6febace26ba0f164703a749468d99bf13fe33dde9",
+  "dataset_type": "Curated synthetic academic prototype with fixed disjoint splits",
+  "joblib_version": "1.5.3",
+  "model_version": "2.0.0",
+  "priority_labels": [
+    "high",
+    "low",
+    "medium"
+  ],
+  "priority_model_selection": {
+    "candidate_validation_metrics": [
+      {
+        "accuracy": 0.7222222222222222,
+        "kind": "logistic",
+        "macro_f1": 0.7256752993595098,
+        "name": "logistic_regression_C_0.1",
+        "value": 0.1,
+        "weighted_f1": 0.7256752993595098
+      },
+      {
+        "accuracy": 0.7444444444444445,
+        "kind": "logistic",
+        "macro_f1": 0.7482792802902779,
+        "name": "logistic_regression_C_0.75",
+        "value": 0.75,
+        "weighted_f1": 0.7482792802902779
+      },
+      {
+        "accuracy": 0.7111111111111111,
+        "kind": "multinomial_nb",
+        "macro_f1": 0.7171762702526733,
+        "name": "multinomial_nb_alpha_0.5",
+        "value": 0.5,
+        "weighted_f1": 0.7171762702526732
+      },
+      {
+        "accuracy": 0.6888888888888889,
+        "kind": "multinomial_nb",
+        "macro_f1": 0.6958473625140291,
+        "name": "multinomial_nb_alpha_1.0",
+        "value": 1.0,
+        "weighted_f1": 0.6958473625140292
+      }
+    ],
+    "selected_candidate": "logistic_regression_C_0.75",
+    "selected_validation_metrics": {
+      "accuracy": 0.7444444444444445,
+      "kind": "logistic",
+      "macro_f1": 0.7482792802902779,
+      "name": "logistic_regression_C_0.75",
+      "value": 0.75,
+      "weighted_f1": 0.7482792802902779
+    }
+  },
+  "priority_model_sha256": "a28455718d1f2e9da0886f8d60bc87931320e9e1bbd32eca0189ed088650d715",
+  "priority_policy": {
+    "confidence_semantics": "Model probability for ordinary predictions; deterministic final routing confidence for a narrow safety-policy override.",
+    "override_confidence": 1.0,
+    "severe_financial_amount_threshold": "50000"
+  },
+  "scikit_learn_version": "1.7.2",
+  "training_category_distribution": {
+    "account_access": 120,
+    "billing_payment": 120,
+    "delivery_order": 120,
+    "general_enquiry": 120,
+    "technical_support": 120
+  },
+  "training_dataset_sha256": "dd208dc59c2f9574f084329efe86d1bbca4379feb71cb7b1d0efc32ab5808357",
+  "training_priority_distribution": {
+    "high": 200,
+    "low": 200,
+    "medium": 200
+  },
+  "training_records": 600,
+  "validation_category_distribution": {
+    "account_access": 18,
+    "billing_payment": 18,
+    "delivery_order": 18,
+    "general_enquiry": 18,
+    "technical_support": 18
+  },
+  "validation_dataset_sha256": "9e93c4637293a39bcaedf5213d31e7155396b682b9c32db089130556c0003e92",
+  "validation_priority_distribution": {
+    "high": 30,
+    "low": 30,
+    "medium": 30
+  },
+  "validation_records": 90
+}

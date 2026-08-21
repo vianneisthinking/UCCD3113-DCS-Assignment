@@ -1,0 +1,76 @@
+complaint,category,priority,group_id
+I think my acct got hijacked; somebody swapped the recovery email.,account_access,high,test-account_access-high-01
+An intruder changed my password while I was asleep and now owns the login.,account_access,high,test-account_access-high-02
+"The security page shows a device I do not recognise, and my backup number was replaced.",account_access,high,test-account_access-high-03
+cant get in anymore because another person reset all my sign-in details,account_access,high,test-account_access-high-04
+My account is compromised and messages are being sent under my name.,account_access,high,test-account_access-high-05
+Where do I turn on login alerts?,account_access,low,test-account_access-low-01
+I'd like to edit the name shown on my profile.,account_access,low,test-account_access-low-02
+How many devices may stay signed in at once?,account_access,low,test-account_access-low-03
+Can I add a second recovery phone number?,account_access,low,test-account_access-low-04
+Please point me to the account deletion instructions.,account_access,low,test-account_access-low-05
+2fa codes are not working after I moved to a new handset.,account_access,medium,test-account_access-medium-01
+The login link keeps expiring before the page loads.,account_access,medium,test-account_access-medium-02
+"I still own the account, but it has been locked since yesterday.",account_access,medium,test-account_access-medium-03
+Why does the sign-in form keep returning me to the same screen?,account_access,medium,test-account_access-medium-04
+Recovery mail is delayed and I need access for work tomorrow.,account_access,medium,test-account_access-medium-05
+"A card payment for $87,500 appeared while the card was locked in my drawer.",billing_payment,high,test-billing_payment-high-01
+Fraudsters withdrew RM60000 from my bank balance.,billing_payment,high,test-billing_payment-high-02
+Three payments I never authorised have taken my entire salary.,billing_payment,high,test-billing_payment-high-03
+usd 120000 was transferred out and I have no idea who did it,billing_payment,high,test-billing_payment-high-04
+My bank shows a massive card debit that definitely isn't mine.,billing_payment,high,test-billing_payment-high-05
+Is PayPal one of the available ways to pay?,billing_payment,low,test-billing_payment-low-01
+Where is the button for downloading old invoices?,billing_payment,low,test-billing_payment-low-02
+Can prices be displayed in Malaysian ringgit?,billing_payment,low,test-billing_payment-low-03
+When will the next routine subscription invoice be issued?,billing_payment,low,test-billing_payment-low-04
+Do debit cards have an extra processing fee?,billing_payment,low,test-billing_payment-low-05
+It's been nine days and the approved refund is still missing.,billing_payment,medium,test-billing_payment-medium-01
+My checkout payment keeps failing with a valid card.,billing_payment,medium,test-billing_payment-medium-02
+Could you correct a duplicate $25 charge on yesterday's order?,billing_payment,medium,test-billing_payment-medium-03
+The subscription cancellation did not stop this month's bill.,billing_payment,medium,test-billing_payment-medium-04
+My reciept shows the wrong discount and total.,billing_payment,medium,test-billing_payment-medium-05
+The courier lost the insulin shipment that must stay refrigerated.,delivery_order,high,test-delivery_order-high-01
+My parcel is leaking an unknown liquid and smells like chemicals.,delivery_order,high,test-delivery_order-high-02
+A package containing my immigration documents went to someone else.,delivery_order,high,test-delivery_order-high-03
+The replacement part for essential medical equipment is missing in transit.,delivery_order,high,test-delivery_order-high-04
+Broken glass is sticking through the box that was just delivered.,delivery_order,high,test-delivery_order-high-05
+What would regular postage cost to Penang?,delivery_order,low,test-delivery_order-low-01
+Is store pickup available instead of home delivery?,delivery_order,low,test-delivery_order-low-02
+May I alter the address before dispatch?,delivery_order,low,test-delivery_order-low-03
+Which company transports your standard shipments?,delivery_order,low,test-delivery_order-low-04
+Roughly how many days does local shipping take?,delivery_order,low,test-delivery_order-low-05
+Trackng hasn't moved for nearly a week; where is my parcel?,delivery_order,medium,test-delivery_order-medium-01
+Only two of the three products were inside the delivery box.,delivery_order,medium,test-delivery_order-medium-02
+"The driver marked it delivered, but nothing is outside my flat.",delivery_order,medium,test-delivery_order-medium-03
+I ordered blue and received the same product in red.,delivery_order,medium,test-delivery_order-medium-04
+The estimated date passed three days ago for a normal order.,delivery_order,medium,test-delivery_order-medium-05
+The charger is sparking; where are the product safety directions?,general_enquiry,high,test-general_enquiry-high-01
+Is this serial number part of the dangerous-device recall?,general_enquiry,high,test-general_enquiry-high-02
+We need the compliance statement before today's legal deadline.,general_enquiry,high,test-general_enquiry-high-03
+A severe allergy warning differs between your website and packaging.,general_enquiry,high,test-general_enquiry-high-04
+Where can a disabled customer get immediate safety assistance?,general_enquiry,high,test-general_enquiry-high-05
+What are the weekday opening hours?,general_enquiry,low,test-general_enquiry-low-01
+How do I reach your general enquiries team?,general_enquiry,low,test-general_enquiry-low-02
+Is there a branch anywhere near Ipoh?,general_enquiry,low,test-general_enquiry-low-03
+Where can I see a list of the services you provide?,general_enquiry,low,test-general_enquiry-low-04
+Are support centres closed on national holidays?,general_enquiry,low,test-general_enquiry-low-05
+Could an adviser help pick a plan for our new office?,general_enquiry,medium,test-general_enquiry-medium-01
+One requirement in the application form is unclear.,general_enquiry,medium,test-general_enquiry-medium-02
+I am still waiting to learn when this week's appointment will be.,general_enquiry,medium,test-general_enquiry-medium-03
+Can someone compare the benefits of two service packages?,general_enquiry,medium,test-general_enquiry-medium-04
+Our partnership question has gone unanswered for several days.,general_enquiry,medium,test-general_enquiry-medium-05
+Our platform is completely down and every user gets an offline message.,technical_support,high,test-technical_support-high-01
+Nobody across the company can open the service at all.,technical_support,high,test-technical_support-high-02
+All customer-facing systems stopped working at the same time.,technical_support,high,test-technical_support-high-03
+The production update wiped the shared records for the entire team.,technical_support,high,test-technical_support-high-04
+Every branch has lost access because the central server is unavailable.,technical_support,high,test-technical_support-high-05
+Does this tool run on macOS?,technical_support,low,test-technical_support-low-01
+How can I switch the app to Bahasa Melayu?,technical_support,low,test-technical_support-low-02
+Where's the documentation for keyboard commands?,technical_support,low,test-technical_support-low-03
+Is high-contrast mode supported?,technical_support,low,test-technical_support-low-04
+Which image types can be uploaded?,technical_support,low,test-technical_support-low-05
+app crashes when i tap the analytics tab,technical_support,medium,test-technical_support-medium-01
+"Uploads stall at the end, but everything else works.",technical_support,medium,test-technical_support-medium-02
+The site becomes sluggish on my computer after lunch.,technical_support,medium,test-technical_support-medium-03
+I no longer receive alerts for new messages.,technical_support,medium,test-technical_support-medium-04
+Exporting a spreadsheet gives me an error in Chrome.,technical_support,medium,test-technical_support-medium-05

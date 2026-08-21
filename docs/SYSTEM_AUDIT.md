@@ -21,7 +21,7 @@ Scope: all application source, configuration, dependency, test, model, and datas
 
 ## Current Project Structure
 
-- `member1_index.html`: complete customer-facing static page with registration, login, ticket submission, listing, details, and local drafts.
+- `member2_backend/index.html`: complete customer-facing static page colocated beside the backend `api/` directory, with registration, login, ticket submission, listing, details, and local drafts. Deployment still publishes it as `/customer/index.html` through S3 and CloudFront.
 - `member2_backend/`: independently runnable FastAPI backend, SQLAlchemy models, JWT/bcrypt authentication, routing/SLA logic, seed script, API contract, and HTTP smoke test.
 - `Member3_AI_Backend_/Member3_AI_Backend/`: independently runnable FastAPI inference service, two trained Joblib models, a 300-row synthetic CSV dataset, contract, and client test.
 - `member5_staff_dashboard.jsx`: visually substantial but isolated React component backed entirely by generated mock data.

@@ -11,21 +11,21 @@
 </head>
 <body class="bg-slate-50 min-h-screen text-slate-800 flex flex-col font-sans">
 
-    <a href="/" class="fixed bottom-5 right-5 z-50 rounded-full bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+    <a href="/" class="fixed bottom-16 right-3 sm:bottom-5 sm:right-5 z-40 rounded-full bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400">
         <i class="fa-solid fa-house mr-2"></i>Portal Home
     </a>
 
     <!-- Navigation Header -->
     <header class="bg-indigo-600 text-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-3 cursor-pointer" onclick="showView('tickets')">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center gap-3">
+            <div class="flex items-center space-x-3 cursor-pointer shrink-0" onclick="showView('tickets')">
                 <i class="fa-solid fa-headset text-2xl"></i>
                 <h1 class="text-xl font-bold tracking-tight">Support Desk</h1>
             </div>
             
-            <div id="nav-user-controls" class="hidden flex items-center space-x-4">
-                <span id="user-display-name" class="text-sm font-medium bg-indigo-700 px-3 py-1.5 rounded-full border border-indigo-500"></span>
-                <button onclick="logout()" class="text-sm font-semibold hover:text-indigo-200 transition">
+            <div id="nav-user-controls" class="hidden flex items-center justify-end gap-2 sm:gap-4 min-w-0">
+                <span id="user-display-name" class="text-sm font-medium bg-indigo-700 px-3 py-1.5 rounded-full border border-indigo-500 truncate max-w-28 sm:max-w-56"></span>
+                <button onclick="logout()" class="text-sm font-semibold hover:text-indigo-200 transition shrink-0" aria-label="Log out">
                     <i class="fa-solid fa-right-from-bracket mr-1"></i> Logout
                 </button>
             </div>
@@ -33,10 +33,10 @@
     </header>
 
     <!-- Global Alert / Toast Box -->
-    <div id="alert-container" class="max-w-6xl mx-auto px-4 mt-4 w-full hidden">
+    <div id="alert-container" class="max-w-6xl mx-auto px-4 mt-4 w-full hidden" role="alert" aria-live="assertive" aria-atomic="true" tabindex="-1">
         <div id="alert-box" class="p-4 rounded-lg text-sm font-medium flex justify-between items-center shadow-sm">
             <span id="alert-message"></span>
-            <button onclick="hideAlert()" class="text-lg leading-none ml-4">&times;</button>
+            <button onclick="hideAlert()" class="text-lg leading-none ml-4" aria-label="Dismiss message">&times;</button>
         </div>
     </div>
 
@@ -45,6 +45,10 @@
 
         <!-- ================= AUTH VIEW (LOGIN / REGISTER) ================= -->
         <section id="auth-view" class="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-xl border border-slate-100">
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-slate-900">Customer support</h2>
+                <p class="mt-2 text-sm leading-relaxed text-slate-500">New customer? Create an account to submit and track support tickets.</p>
+            </div>
             <!-- Tabs -->
             <div class="flex border-b border-slate-200 mb-6">
                 <button id="tab-login" onclick="switchAuthTab('login')" class="flex-1 py-2 font-semibold text-indigo-600 border-b-2 border-indigo-600">Login</button>
@@ -54,12 +58,12 @@
             <!-- Login Form -->
             <form id="form-login" onsubmit="handleLogin(event)" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Email Address</label>
-                    <input type="email" id="login-email" required placeholder="alice@gmail.com" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                    <label for="login-email" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Email Address</label>
+                    <input type="email" id="login-email" required autocomplete="email" placeholder="alice@gmail.com" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Password</label>
-                    <input type="password" id="login-password" required placeholder="••••••••" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                    <label for="login-password" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Password</label>
+                    <input type="password" id="login-password" required autocomplete="current-password" placeholder="••••••••" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
                 </div>
                 <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-lg font-semibold transition shadow-md">
                     Sign In
@@ -69,22 +73,24 @@
             <!-- Register Form -->
             <form id="form-register" onsubmit="handleRegister(event)" class="space-y-4 hidden">
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Full Name</label>
-                    <input type="text" id="reg-name" required minlength="1" maxlength="100" placeholder="Alice Smith" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                    <label for="reg-name" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Full Name</label>
+                    <input type="text" id="reg-name" required minlength="1" maxlength="100" autocomplete="name" placeholder="Alice Smith" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Email Address</label>
+                    <label for="reg-email" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Email Address</label>
                     <input type="email" id="reg-email" required maxlength="254" autocomplete="email" placeholder="name@example.com" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
                     <p class="text-[11px] text-slate-400 mt-0.5">Use any valid email address.</p>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Password</label>
-                    <input type="password" id="reg-password" required minlength="8" maxlength="72" placeholder="e.g. Secret123!" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                    <label for="reg-password" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Password</label>
+                    <input type="password" id="reg-password" required minlength="8" maxlength="72" autocomplete="new-password" placeholder="e.g. Secret123!" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
                     <p class="text-[11px] text-slate-400 mt-0.5">Must be 8–72 characters, with at least 1 uppercase letter and 1 special symbol (!@#$%^&*).</p>
                 </div>
-                <button type="submit" id="register-submit" class="w-full bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-300 disabled:cursor-not-allowed text-white py-3 rounded-lg font-semibold transition shadow-md">
-                    Create Account
+                <button type="submit" id="register-submit" aria-busy="false" class="w-full bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-300 disabled:cursor-not-allowed text-white py-3 rounded-lg font-semibold transition shadow-md flex items-center justify-center gap-2">
+                    <i id="register-spinner" class="fa-solid fa-circle-notch animate-spin hidden" aria-hidden="true"></i>
+                    <span id="register-submit-text">Create Account</span>
                 </button>
+                <p id="register-status" class="hidden text-center text-sm font-medium text-indigo-700" role="status" aria-live="polite" aria-atomic="true"></p>
             </form>
         </section>
 
@@ -94,22 +100,24 @@
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
                 <div>
                     <h2 class="text-2xl font-bold text-slate-900">Your Support Tickets</h2>
-                    <p class="text-sm text-slate-500 mt-1">You could track existing inquiries, view saved drafts, or submit a new complaint.</p>
-                    <p class="text-sm text-slate-500 mt-1">Thank you for using our system, We will did our best!</p>
+                    <p class="text-sm text-slate-500 mt-1 max-w-2xl">Submit a complaint and our AI-assisted system will classify and route it automatically. You can track its status here.</p>
                 </div>
-                <button onclick="toggleComplaintForm(true)" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl font-semibold transition flex items-center space-x-2 shadow-md">
+                <button id="open-ticket-btn" onclick="toggleComplaintForm(true, event.currentTarget)" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl font-semibold transition flex items-center space-x-2 shadow-md">
                     <i class="fa-solid fa-plus"></i>
                     <span>Submit New Ticket</span>
                 </button>
             </div>
 
             <!-- Complaint Form Modal -->
-            <div id="complaint-modal" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex justify-center items-center p-4">
+            <div id="complaint-modal" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex justify-center items-center p-4" role="dialog" aria-modal="true" aria-labelledby="complaint-modal-title">
                 <div class="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl relative border border-slate-100 max-h-[92vh] overflow-y-auto">
                     <div class="flex justify-between items-center mb-4">
                         <h3 class="text-xl font-bold text-slate-900" id="complaint-modal-title">Submit Support Ticket</h3>
-                        <button onclick="toggleComplaintForm(false)" class="text-slate-400 hover:text-slate-600 text-xl font-bold">&times;</button>
+                        <button type="button" onclick="toggleComplaintForm(false)" class="text-slate-400 hover:text-slate-600 text-xl font-bold" aria-label="Close ticket form">&times;</button>
                     </div>
+
+                    <div id="ticket-modal-alert" class="hidden mb-4 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm font-medium text-rose-700" role="alert" aria-live="assertive" aria-atomic="true" tabindex="-1"></div>
+                    <div id="ticket-modal-status" class="hidden mb-4 rounded-xl border border-indigo-100 bg-indigo-50 px-4 py-3 text-sm font-medium text-indigo-800" role="status" aria-live="polite" aria-atomic="true"></div>
                     
                     <form onsubmit="handleTicketSubmit(event)" class="space-y-4">
                         <div>
@@ -120,22 +128,8 @@
                         </div>
 
                         <div>
-                            <label for="ticket-topic" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
-                                What can we help you with? <span class="normal-case font-normal text-slate-400">Optional</span>
-                            </label>
-                            <select id="ticket-topic" onchange="updateCharCounter()" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-white focus:ring-2 focus:ring-indigo-500 focus:outline-none text-slate-700">
-                                <option value="General enquiry">General enquiry</option>
-                                <option value="Account access">Account access</option>
-                                <option value="Billing or payment">Billing or payment</option>
-                                <option value="Delivery or order">Delivery or order</option>
-                                <option value="Technical support">Technical support</option>
-                                <option value="">Let AI decide</option>
-                            </select>
-                        </div>
-
-                        <div>
                             <div class="flex justify-between items-center mb-1">
-                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-500">
+                                <label for="complaint-text" class="block text-xs font-bold uppercase tracking-wider text-slate-500">
                                     Describe your issue
                                 </label>
                                 <span id="draft-indicator" class="hidden text-xs text-amber-600 font-semibold bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
@@ -169,7 +163,7 @@
 
                         <div class="rounded-xl border border-indigo-100 bg-indigo-50 px-4 py-3 text-sm text-indigo-800 flex gap-3">
                             <i class="fa-solid fa-wand-magic-sparkles mt-0.5"></i>
-                            <p>AI classification will automatically determine the appropriate support category and priority after submission.</p>
+                            <p>AI-assisted classification suggests a support category and priority for routing. Support staff remain responsible for handling your ticket.</p>
                         </div>
 
                         <div class="flex flex-wrap justify-between items-center gap-2 pt-2 border-t border-slate-100">
@@ -185,8 +179,9 @@
 
                             <div class="flex space-x-2">
                                 <button type="button" onclick="toggleComplaintForm(false)" class="px-4 py-2 rounded-xl text-slate-600 hover:bg-slate-100 text-xs font-semibold transition">Cancel</button>
-                                <button type="submit" id="submit-ticket-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-xl text-xs font-semibold transition shadow-md">
-                                    Submit Ticket
+                                <button type="submit" id="submit-ticket-btn" aria-busy="false" class="bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-300 disabled:cursor-not-allowed text-white px-5 py-2 rounded-xl text-xs font-semibold transition shadow-md flex items-center gap-2">
+                                    <i id="ticket-submit-spinner" class="fa-solid fa-circle-notch animate-spin hidden" aria-hidden="true"></i>
+                                    <span id="ticket-submit-text">Submit Ticket</span>
                                 </button>
                             </div>
                         </div>
@@ -195,11 +190,18 @@
             </div>
 
             <!-- Unified List Grid (Drafts + Submitted Tickets) -->
+            <div id="tickets-loading" class="hidden text-center py-10 text-sm font-medium text-slate-500" role="status" aria-live="polite">
+                <i class="fa-solid fa-circle-notch animate-spin mr-2" aria-hidden="true"></i>Loading your tickets...
+            </div>
+
             <div id="tickets-container" class="grid gap-4 md:grid-cols-2"></div>
             
             <div id="tickets-empty" class="hidden text-center py-12 bg-white rounded-2xl border border-dashed border-slate-300">
                 <i class="fa-regular fa-folder-open text-4xl text-slate-300 mb-3"></i>
                 <p class="text-slate-500 font-medium">No support tickets or drafts found.</p>
+                <button onclick="toggleComplaintForm(true, event.currentTarget)" class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl font-semibold transition shadow-md">
+                    Submit New Ticket
+                </button>
             </div>
         </section>
 
@@ -210,6 +212,9 @@
                 <span>Back to Tickets</span>
             </button>
 
+            <div id="ticket-detail-loading" class="hidden bg-white rounded-2xl border border-slate-200 p-8 text-center text-sm font-medium text-slate-500" role="status" aria-live="polite">
+                <i class="fa-solid fa-circle-notch animate-spin mr-2" aria-hidden="true"></i>Loading ticket details...
+            </div>
             <div id="ticket-detail-card" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 space-y-6"></div>
         </section>
 
@@ -224,12 +229,23 @@
         // Deployment replaces config.js; keeping configuration outside this
         // file avoids rebuilding the customer site for every API environment.
         const API_BASE_URL = (window.APP_CONFIG?.API_BASE_URL || window.location.origin).replace(/\/$/, "");
+        const REQUEST_TIMEOUT_MS = 15000;
 
         let token = localStorage.getItem("access_token") || null;
         let currentUser = JSON.parse(localStorage.getItem("user_info")) || null;
         let activeDraftId = null; // Tracks if an existing draft is currently opened in the modal
+        let modalTriggerElement = null;
+
+        class ApiRequestError extends Error {
+            constructor(message, status = 0) {
+                super(message);
+                this.name = 'ApiRequestError';
+                this.status = status;
+            }
+        }
 
         document.addEventListener("DOMContentLoaded", () => {
+            document.addEventListener('keydown', handleModalKeydown);
             if (token && currentUser) {
                 initAuthenticatedState();
             } else {
@@ -253,7 +269,7 @@
             }
         }
 
-        function switchAuthTab(tab) {
+        function switchAuthTab(tab, focusField = false) {
             hideAlert();
             const formLogin = document.getElementById('form-login');
             const formRegister = document.getElementById('form-register');
@@ -271,13 +287,17 @@
                 tabRegister.className = "flex-1 py-2 font-semibold text-indigo-600 border-b-2 border-indigo-600";
                 tabLogin.className = "flex-1 py-2 font-semibold text-slate-400 border-b-2 border-transparent hover:text-slate-600";
             }
+
+            if (focusField) {
+                const target = tab === 'login' ? document.getElementById('login-email') : document.getElementById('reg-name');
+                requestAnimationFrame(() => target.focus());
+            }
         }
 
         function getTicketFormData() {
             const contact = document.querySelector('input[name="contact-method"]:checked');
             return {
                 subject: document.getElementById('ticket-subject').value.trim(),
-                topic: document.getElementById('ticket-topic').value,
                 description: document.getElementById('complaint-text').value.trim(),
                 reference: document.getElementById('ticket-reference').value.trim(),
                 contact_method: contact?.value || 'Email'
@@ -287,7 +307,6 @@
         function buildComplaint(data) {
             const lines = [
                 `Subject: ${data.subject}`,
-                data.topic ? `Customer-selected topic: ${data.topic}` : null,
                 '',
                 data.description,
                 data.reference ? `\nOrder / Reference ID: ${data.reference}` : null,
@@ -298,30 +317,102 @@
 
         function resetTicketForm() {
             document.getElementById('ticket-subject').value = '';
-            document.getElementById('ticket-topic').value = 'General enquiry';
             document.getElementById('complaint-text').value = '';
             document.getElementById('ticket-reference').value = '';
             document.querySelector('input[name="contact-method"][value="Email"]').checked = true;
         }
 
-        function toggleComplaintForm(show) {
+        function toggleComplaintForm(show, triggerElement = null) {
             const modal = document.getElementById('complaint-modal');
-            const textarea = document.getElementById('complaint-text');
             const indicator = document.getElementById('draft-indicator');
             const discardBtn = document.getElementById('discard-draft-btn');
 
             if (show) {
+                modalTriggerElement = triggerElement || document.activeElement;
                 if (!activeDraftId) {
                     resetTicketForm();
                     indicator.classList.add('hidden');
                     discardBtn.classList.add('hidden');
                 }
+                hideTicketModalAlert();
+                setTicketModalStatus('');
                 updateCharCounter();
                 modal.classList.remove('hidden');
+                document.body.classList.add('overflow-hidden');
+                requestAnimationFrame(() => document.getElementById('ticket-subject').focus());
             } else {
                 activeDraftId = null;
                 modal.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+                hideTicketModalAlert();
+                setTicketModalStatus('');
+                const restoreTarget = modalTriggerElement;
+                modalTriggerElement = null;
+                if (restoreTarget && restoreTarget.isConnected) {
+                    requestAnimationFrame(() => restoreTarget.focus());
+                }
             }
+        }
+
+        function getModalFocusableElements() {
+            const modal = document.getElementById('complaint-modal');
+            return Array.from(modal.querySelectorAll(
+                'button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [href], [tabindex]:not([tabindex="-1"])'
+            )).filter(element => !element.classList.contains('hidden') && element.getClientRects().length > 0);
+        }
+
+        function handleModalKeydown(event) {
+            const modal = document.getElementById('complaint-modal');
+            if (!modal || modal.classList.contains('hidden')) return;
+
+            if (event.key === 'Escape') {
+                event.preventDefault();
+                toggleComplaintForm(false);
+                return;
+            }
+
+            if (event.key !== 'Tab') return;
+            const focusable = getModalFocusableElements();
+            if (focusable.length === 0) {
+                event.preventDefault();
+                return;
+            }
+
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            } else if (!modal.contains(document.activeElement)) {
+                event.preventDefault();
+                first.focus();
+            }
+        }
+
+        function showTicketModalAlert(message) {
+            const alert = document.getElementById('ticket-modal-alert');
+            alert.textContent = message;
+            alert.classList.remove('hidden');
+            setTicketModalStatus('');
+            requestAnimationFrame(() => {
+                alert.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                alert.focus({ preventScroll: true });
+            });
+        }
+
+        function hideTicketModalAlert() {
+            const alert = document.getElementById('ticket-modal-alert');
+            alert.textContent = '';
+            alert.classList.add('hidden');
+        }
+
+        function setTicketModalStatus(message) {
+            const status = document.getElementById('ticket-modal-status');
+            status.textContent = message;
+            status.classList.toggle('hidden', !message);
         }
 
         function updateCharCounter() {
@@ -335,7 +426,12 @@
         // ================= DRAFT MANAGEMENT =================
         function getLocalDrafts() {
             if (!currentUser) return [];
-            return JSON.parse(localStorage.getItem(`user_drafts_${currentUser.name}`) || '[]');
+            try {
+                const drafts = JSON.parse(localStorage.getItem(`user_drafts_${currentUser.name}`) || '[]');
+                return Array.isArray(drafts) ? drafts : [];
+            } catch (error) {
+                return [];
+            }
         }
 
         function saveLocalDrafts(drafts) {
@@ -343,53 +439,70 @@
             localStorage.setItem(`user_drafts_${currentUser.name}`, JSON.stringify(drafts));
         }
 
+        function getLegacyDraftDescription(draft) {
+            if (typeof draft.description === 'string') return draft.description;
+            return String(draft.complaint || '')
+                .split('\n')
+                .filter(line => !line.trim().toLowerCase().startsWith('customer-selected topic:'))
+                .join('\n')
+                .trim();
+        }
+
         function saveDraft() {
             const formData = getTicketFormData();
             const complaint = buildComplaint(formData);
             if (!formData.subject && !formData.description) {
-                showAlert('Cannot save an empty draft.', 'error');
+                showTicketModalAlert('Cannot save an empty draft. Add a subject or description first.');
                 return;
             }
 
-            let drafts = getLocalDrafts();
-            if (activeDraftId) {
-                const idx = drafts.findIndex(d => d.id === activeDraftId);
-                if (idx !== -1) {
-                    drafts[idx] = { ...drafts[idx], ...formData, complaint };
-                    drafts[idx].updated_at = new Date().toISOString();
+            try {
+                let drafts = getLocalDrafts();
+                if (activeDraftId) {
+                    const idx = drafts.findIndex(d => d.id === activeDraftId);
+                    if (idx !== -1) {
+                        // Preserve old draft content, but drop the legacy topic
+                        // property so it cannot be displayed or submitted.
+                        const { topic: ignoredLegacyTopic, ...draftWithoutTopic } = drafts[idx];
+                        drafts[idx] = { ...draftWithoutTopic, ...formData, complaint };
+                        drafts[idx].updated_at = new Date().toISOString();
+                    }
+                } else {
+                    const newDraft = {
+                        id: 'draft_' + Date.now(),
+                        ...formData,
+                        complaint,
+                        updated_at: new Date().toISOString()
+                    };
+                    drafts.unshift(newDraft);
                 }
-            } else {
-                const newDraft = {
-                    id: 'draft_' + Date.now(),
-                    ...formData,
-                    complaint,
-                    updated_at: new Date().toISOString()
-                };
-                drafts.unshift(newDraft);
-            }
 
-            saveLocalDrafts(drafts);
-            toggleComplaintForm(false);
-            showAlert('Draft saved! It now appears in your ticket list.', 'success');
-            loadCustomerTickets();
+                saveLocalDrafts(drafts);
+                toggleComplaintForm(false);
+                showAlert('Draft saved! It now appears in your ticket list.', 'success');
+                loadCustomerTickets();
+            } catch (error) {
+                showTicketModalAlert('The draft could not be saved in this browser. Please copy your text and try again.');
+            }
         }
 
-        function openDraftModal(draftId) {
+        function openDraftModal(draftId, triggerElement = null) {
             const drafts = getLocalDrafts();
             const draft = drafts.find(d => d.id === draftId);
-            if (!draft) return;
+            if (!draft) {
+                showAlert('This saved draft is no longer available.', 'error');
+                return;
+            }
 
             activeDraftId = draft.id;
             document.getElementById('ticket-subject').value = draft.subject || '';
-            document.getElementById('ticket-topic').value = draft.topic ?? 'General enquiry';
-            document.getElementById('complaint-text').value = draft.description || draft.complaint || '';
+            document.getElementById('complaint-text').value = getLegacyDraftDescription(draft);
             document.getElementById('ticket-reference').value = draft.reference || '';
             const contact = document.querySelector(`input[name="contact-method"][value="${draft.contact_method || 'Email'}"]`);
             if (contact) contact.checked = true;
             document.getElementById('draft-indicator').classList.remove('hidden');
             document.getElementById('discard-draft-btn').classList.remove('hidden');
-            updateCharCounter();
-            document.getElementById('complaint-modal').classList.remove('hidden');
+            toggleComplaintForm(true, triggerElement);
         }
 
         function discardCurrentDraft() {
@@ -424,6 +537,92 @@
             return fallback;
         }
 
+        async function requestJson(url, options = {}, timeoutMs = REQUEST_TIMEOUT_MS) {
+            const controller = new AbortController();
+            const timeoutId = window.setTimeout(() => controller.abort(), timeoutMs);
+
+            try {
+                let response;
+                try {
+                    response = await fetch(url, { ...options, signal: controller.signal });
+                } catch (error) {
+                    if (error.name === 'AbortError') {
+                        throw new ApiRequestError('The request timed out. Please check your connection and try again.');
+                    }
+                    throw new ApiRequestError('Unable to connect to the support service. Please check your connection and try again.');
+                }
+
+                let responseText = '';
+                try {
+                    responseText = await response.text();
+                } catch (error) {
+                    if (error.name === 'AbortError') {
+                        throw new ApiRequestError('The request timed out. Please check your connection and try again.', response.status);
+                    }
+                    throw new ApiRequestError('The support service returned an unreadable response. Please try again.', response.status);
+                }
+
+                let data = null;
+                if (responseText) {
+                    try {
+                        data = JSON.parse(responseText);
+                    } catch (error) {
+                        const message = response.ok
+                            ? 'The support service returned an unexpected response. Please try again.'
+                            : `The support service returned an unexpected error response (${response.status}). Please try again.`;
+                        throw new ApiRequestError(message, response.status);
+                    }
+                }
+
+                if (!response.ok) {
+                    throw new ApiRequestError(
+                        getApiErrorMessage(data, `Request failed (${response.status}). Please try again.`),
+                        response.status
+                    );
+                }
+
+                if (data === null) {
+                    throw new ApiRequestError('The support service returned an empty response. Please try again.', response.status);
+                }
+
+                return data;
+            } finally {
+                window.clearTimeout(timeoutId);
+            }
+        }
+
+        function setRegistrationState(isProcessing, phase = '') {
+            const button = document.getElementById('register-submit');
+            const buttonText = document.getElementById('register-submit-text');
+            const spinner = document.getElementById('register-spinner');
+            const status = document.getElementById('register-status');
+
+            button.disabled = isProcessing;
+            button.setAttribute('aria-busy', String(isProcessing));
+            spinner.classList.toggle('hidden', !isProcessing);
+            buttonText.textContent = isProcessing ? phase : 'Create Account';
+            status.textContent = isProcessing ? phase : '';
+            status.classList.toggle('hidden', !isProcessing);
+        }
+
+        async function authenticateAndStartSession(email, password) {
+            const data = await requestJson(`${API_BASE_URL}/auth/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
+
+            if (!data.access_token) {
+                throw new ApiRequestError('Login succeeded but no access token was returned. Please sign in again.');
+            }
+
+            token = data.access_token;
+            currentUser = { name: data.name, role: data.role };
+            localStorage.setItem('access_token', token);
+            localStorage.setItem('user_info', JSON.stringify(currentUser));
+            initAuthenticatedState();
+        }
+
         async function handleLogin(e) {
             e.preventDefault();
             hideAlert();
@@ -431,22 +630,7 @@
             const password = document.getElementById('login-password').value;
 
             try {
-                const res = await fetch(`${API_BASE_URL}/auth/login`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, password })
-                });
-
-                const data = await res.json();
-                if (!res.ok) throw new Error(getApiErrorMessage(data, 'Login failed'));
-
-                token = data.access_token;
-                currentUser = { name: data.name, role: data.role };
-
-                localStorage.setItem('access_token', token);
-                localStorage.setItem('user_info', JSON.stringify(currentUser));
-
-                initAuthenticatedState();
+                await authenticateAndStartSession(email, password);
             } catch (err) {
                 showAlert(err.message, 'error');
             }
@@ -468,30 +652,37 @@
                 return;
             }
 
-            submitButton.disabled = true;
-            submitButton.textContent = 'Creating Account...';
+            setRegistrationState(true, 'Creating account...');
+            let accountCreated = false;
 
             try {
-                const res = await fetch(`${API_BASE_URL}/auth/register`, {
+                await requestJson(`${API_BASE_URL}/auth/register`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ name, email, password })
                 });
+                accountCreated = true;
 
-                const data = await res.json();
-                if (!res.ok) throw new Error(getApiErrorMessage(data, 'Registration failed'));
-
-                showAlert('Account registered successfully! Logging you in...', 'success');
                 document.getElementById('login-email').value = email;
                 document.getElementById('login-password').value = password;
-                await new Promise(resolve => setTimeout(resolve, 600));
-                await handleLogin(new Event('submit'));
+                setRegistrationState(true, 'Signing you in...');
+
+                try {
+                    await authenticateAndStartSession(email, password);
+                } catch (loginError) {
+                    switchAuthTab('login', true);
+                    showAlert('Account created successfully. Please sign in.', 'success');
+                }
 
             } catch (err) {
-                showAlert(err.message, 'error');
+                if (accountCreated) {
+                    switchAuthTab('login', true);
+                    showAlert('Account created successfully. Please sign in.', 'success');
+                } else {
+                    showAlert(err.message, 'error');
+                }
             } finally {
-                submitButton.disabled = false;
-                submitButton.textContent = 'Create Account';
+                setRegistrationState(false);
             }
         }
 
@@ -512,28 +703,38 @@
         }
 
         // ================= TICKET ACTIONS & SUSPENSION =================
+        function setTicketSubmitState(isProcessing) {
+            const button = document.getElementById('submit-ticket-btn');
+            const text = document.getElementById('ticket-submit-text');
+            const spinner = document.getElementById('ticket-submit-spinner');
+
+            button.disabled = isProcessing;
+            button.setAttribute('aria-busy', String(isProcessing));
+            text.textContent = isProcessing ? 'Submitting...' : 'Submit Ticket';
+            spinner.classList.toggle('hidden', !isProcessing);
+            setTicketModalStatus(isProcessing ? 'Submitting your ticket. Please wait...' : '');
+        }
+
         async function handleTicketSubmit(e) {
             e.preventDefault();
-            hideAlert();
+            hideTicketModalAlert();
             const formData = getTicketFormData();
             const complaint = buildComplaint(formData);
 
             if (formData.subject.length < 3 || formData.description.length < 3) {
-                showAlert('Enter a subject and at least three visible characters describing the issue.', 'error');
+                showTicketModalAlert('Enter a subject and at least three visible characters describing the issue.');
                 return;
             }
 
             if (complaint.length > 2000) {
-                showAlert('The combined ticket details exceed 2000 characters. Please shorten the description or supporting information.', 'error');
+                showTicketModalAlert('The combined ticket details exceed 2000 characters. Please shorten the description or supporting information.');
                 return;
             }
 
-            const btn = document.getElementById('submit-ticket-btn');
-            btn.disabled = true;
-            btn.innerText = "Submitting...";
+            setTicketSubmitState(true);
 
             try {
-                const res = await fetch(`${API_BASE_URL}/tickets`, {
+                await requestJson(`${API_BASE_URL}/tickets`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -541,10 +742,6 @@
                     },
                     body: JSON.stringify({ complaint })
                 });
-
-                const data = await res.json();
-                if (res.status === 401) { logout(); return; }
-                if (!res.ok) throw new Error(data.detail || 'Failed to submit complaint');
 
                 // Clear active draft if submitted from draft state
                 if (activeDraftId) {
@@ -558,25 +755,35 @@
                 showAlert('Ticket submitted successfully!', 'success');
                 loadCustomerTickets();
             } catch (err) {
-                showAlert(err.message, 'error');
+                if (err.status === 401) {
+                    toggleComplaintForm(false);
+                    logout();
+                    return;
+                }
+                showTicketModalAlert(err.message);
             } finally {
-                btn.disabled = false;
-                btn.innerText = "Submit Ticket";
+                setTicketSubmitState(false);
             }
         }
 
         async function loadCustomerTickets() {
+            const loading = document.getElementById('tickets-loading');
+            const container = document.getElementById('tickets-container');
+            const emptyState = document.getElementById('tickets-empty');
+            loading.classList.remove('hidden');
+            container.classList.add('hidden');
+            emptyState.classList.add('hidden');
+
             try {
-                const res = await fetch(`${API_BASE_URL}/tickets`, {
+                const tickets = await requestJson(`${API_BASE_URL}/tickets`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
 
-                if (res.status === 401) { logout(); return; }
-                const tickets = await res.json();
+                if (!Array.isArray(tickets)) {
+                    throw new ApiRequestError('The support service returned an unexpected ticket list. Please try again.');
+                }
                 const drafts = getLocalDrafts();
 
-                const container = document.getElementById('tickets-container');
-                const emptyState = document.getElementById('tickets-empty');
                 container.innerHTML = '';
 
                 if (tickets.length === 0 && drafts.length === 0) {
@@ -595,24 +802,40 @@
                     container.appendChild(renderTicketCard(ticket));
                 });
             } catch (err) {
-                showAlert('Failed to load tickets', 'error');
+                if (err.status === 401) {
+                    logout();
+                    return;
+                }
+                showAlert(err.message || 'Failed to load tickets.', 'error');
+            } finally {
+                loading.classList.add('hidden');
+                container.classList.remove('hidden');
             }
         }
 
         async function loadTicketDetail(ticketId) {
+            const loading = document.getElementById('ticket-detail-loading');
+            const card = document.getElementById('ticket-detail-card');
+            showView('detail');
+            loading.classList.remove('hidden');
+            card.classList.add('hidden');
+
             try {
-                const res = await fetch(`${API_BASE_URL}/tickets/${ticketId}`, {
+                const ticket = await requestJson(`${API_BASE_URL}/tickets/${ticketId}`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
 
-                if (res.status === 401) { logout(); return; }
-                const ticket = await res.json();
-                if (!res.ok) throw new Error(ticket.detail || 'Ticket not found');
-
                 renderTicketDetailCard(ticket);
-                showView('detail');
+                card.classList.remove('hidden');
             } catch (err) {
-                showAlert(err.message, 'error');
+                if (err.status === 401) {
+                    logout();
+                    return;
+                }
+                showView('tickets');
+                showAlert(err.message || 'Ticket details could not be loaded.', 'error');
+            } finally {
+                loading.classList.add('hidden');
             }
         }
 
@@ -638,8 +861,8 @@
                 };
             }
             return {
-                department: ticket.department || 'General Enquiry',
-                priority: ticket.priority || 'medium'
+                department: ticket.category && ticket.department ? ticket.department : 'Unavailable',
+                priority: ticket.priority || 'Unavailable'
             };
         }
 
@@ -647,7 +870,15 @@
         function renderDraftCard(draft) {
             const div = document.createElement('div');
             div.className = "bg-amber-50/40 p-6 rounded-2xl shadow-sm border border-amber-200/80 hover:shadow-md transition cursor-pointer flex flex-col justify-between space-y-4";
-            div.onclick = () => openDraftModal(draft.id);
+            div.setAttribute('role', 'button');
+            div.setAttribute('tabindex', '0');
+            div.onclick = () => openDraftModal(draft.id, div);
+            div.onkeydown = event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openDraftModal(draft.id, div);
+                }
+            };
 
             const shortId = draft.id.replace('draft_', '').slice(-4);
             const dateStr = new Date(draft.updated_at).toLocaleDateString();
@@ -677,6 +908,14 @@
             const div = document.createElement('div');
             div.className = "bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition cursor-pointer flex flex-col justify-between space-y-4";
             div.onclick = () => loadTicketDetail(ticket.id);
+            div.setAttribute('role', 'button');
+            div.setAttribute('tabindex', '0');
+            div.onkeydown = event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    loadTicketDetail(ticket.id);
+                }
+            };
 
             const statusObj = formatStatus(ticket.status);
             const classification = formatClassification(ticket);
@@ -704,7 +943,11 @@
             const card = document.getElementById('ticket-detail-card');
             const statusObj = formatStatus(ticket.status);
             const classification = formatClassification(ticket);
-            const slaDue = ticket.sla_due_at ? new Date(ticket.sla_due_at).toLocaleString() : 'N/A';
+            const slaDue = ticket.status === 'pending_classification'
+                ? 'Available after AI classification'
+                : ticket.priority && ticket.sla_due_at
+                    ? new Date(ticket.sla_due_at).toLocaleString()
+                    : 'Unavailable';
 
             card.innerHTML = `
                 <div class="flex justify-between items-start border-b border-slate-100 pb-4">
@@ -724,7 +967,7 @@
                     <p class="text-slate-800 whitespace-pre-wrap leading-relaxed">${escapeHtml(ticket.complaint)}</p>
                 </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-xs">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-xs">
                     <div class="bg-white p-3 rounded-lg border border-slate-200">
                         <span class="text-slate-400 block font-medium">Assigned Department</span>
                         <span class="text-slate-800 font-bold text-sm mt-0.5 block">${classification.department}</span>
@@ -748,6 +991,8 @@
             const box = document.getElementById('alert-box');
             document.getElementById('alert-message').innerText = msg;
             container.classList.remove('hidden');
+            container.setAttribute('role', type === 'error' ? 'alert' : 'status');
+            container.setAttribute('aria-live', type === 'error' ? 'assertive' : 'polite');
 
             if (type === 'error') {
                 box.className = "p-4 rounded-xl text-sm font-medium flex justify-between items-center shadow-sm bg-rose-50 text-rose-700 border border-rose-200";

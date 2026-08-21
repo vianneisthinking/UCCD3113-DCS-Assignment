@@ -1,5 +1,7 @@
 # Integration Fixes
 
+> Current source location: the customer frontend now lives at `member2_backend/index.html`. Historical file lists below retain the filenames used when each fix was originally made.
+
 ## 1. Runtime-configurable customer API URL
 
 **Problem:** The customer website always called `http://127.0.0.1:8001`.

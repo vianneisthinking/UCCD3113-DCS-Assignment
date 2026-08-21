@@ -14,7 +14,7 @@ Expected response:
     "category_model": true,
     "priority_model": true
   },
-  "model_version": "1.0"
+  "model_version": "2.0.0"
 }
 ```
 
@@ -36,10 +36,10 @@ Successful response:
 {
   "complaint": "My credit card was charged twice for one order.",
   "category": "billing_payment",
-  "category_confidence": 0.3177,
-  "priority": "high",
-  "priority_confidence": 0.4453,
-  "model_version": "1.0"
+  "category_confidence": 0.3544,
+  "priority": "medium",
+  "priority_confidence": 0.5952,
+  "model_version": "2.0.0"
 }
 ```
 
@@ -57,6 +57,16 @@ Successful response:
 
 ## Validation
 Complaints shorter than three characters return HTTP `422`.
+
+## Confidence Semantics
+
+The response schema is unchanged. For ordinary predictions, each confidence is
+the selected model class probability. A narrow deterministic priority safety
+policy can override the model for clearly severe unauthorized financial
+activity, account takeover, large financial harm, or complete multi-user
+outages. For those cases, `priority_confidence` is `1.0`, meaning that the final
+routing rule matched deterministically; it is not presented as the probability
+of an ML-selected class. The policy decision source remains internal.
 
 ## Important
 The original customer complaint should still be stored if the AI service is unavailable.

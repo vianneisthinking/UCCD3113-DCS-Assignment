@@ -1,10 +1,11 @@
 from pathlib import Path
 import json
-import sklearn
 
 import joblib
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
+
+from api.priority_policy import apply_priority_policy
 
 
 # ============================================================
@@ -14,7 +15,7 @@ from pydantic import BaseModel, Field
 # main.py is stored inside the "api" folder.
 API_DIR = Path(__file__).resolve().parent
 
-# The parent of the "api" folder is AI_Ticket_System.
+# The parent of the "api" folder is the Member 3 AI package.
 PROJECT_DIR = API_DIR.parent
 
 # Final trained models are stored here.
@@ -52,18 +53,6 @@ def load_joblib_model(model_path: Path):
 
     try:
         model = joblib.load(model_path)
-
-        # The supplied artifacts were serialized by scikit-learn 1.9.0, for
-        # which no Linux CPython 3.12 wheel is available in the deployment
-        # package index. Version 1.7 expects the legacy multi_class attribute
-        # during predict_proba. Restoring only that removed state was verified
-        # to produce byte-for-byte identical predictions and probabilities for
-        # all 300 supplied records; the trained coefficients are unchanged.
-        runtime_version = tuple(int(part) for part in sklearn.__version__.split(".")[:2])
-        classifier = getattr(model, "named_steps", {}).get("classifier")
-        if runtime_version < (1, 8) and classifier is not None and not hasattr(classifier, "multi_class"):
-            classifier.multi_class = "deprecated"
-
         return model
 
     except Exception as error:
@@ -87,9 +76,9 @@ priority_model = load_joblib_model(
 # ============================================================
 
 model_metadata = {
-    "model_version": "1.0",
-    "training_records": 300,
-    "dataset_type": "Synthetic academic prototype"
+    "model_version": "2.0.0",
+    "training_records": 600,
+    "dataset_type": "Curated synthetic academic prototype"
 }
 
 if METADATA_PATH.exists():
@@ -226,31 +215,19 @@ def predict_ticket(
         # Category prediction
         # --------------------------------------------
 
-        predicted_category = (
-            category_model.predict(
-                [complaint_text]
-            )[0]
-        )
-
         category_probabilities = (
             category_model.predict_proba(
                 [complaint_text]
             )[0]
         )
 
-        category_confidence = float(
-            category_probabilities.max()
-        )
+        category_index = int(category_probabilities.argmax())
+        predicted_category = category_model.classes_[category_index]
+        category_confidence = float(category_probabilities[category_index])
 
         # --------------------------------------------
         # Priority prediction
         # --------------------------------------------
-
-        predicted_priority = (
-            priority_model.predict(
-                [complaint_text]
-            )[0]
-        )
 
         priority_probabilities = (
             priority_model.predict_proba(
@@ -258,9 +235,22 @@ def predict_ticket(
             )[0]
         )
 
-        priority_confidence = float(
-            priority_probabilities.max()
+        priority_index = int(priority_probabilities.argmax())
+        model_priority = str(priority_model.classes_[priority_index])
+        probability_by_priority = {
+            str(label): float(probability)
+            for label, probability in zip(
+                priority_model.classes_,
+                priority_probabilities,
+            )
+        }
+        priority_decision = apply_priority_policy(
+            complaint_text,
+            model_priority,
+            probability_by_priority,
         )
+        predicted_priority = priority_decision.label
+        priority_confidence = priority_decision.confidence
 
         # --------------------------------------------
         # Return the prediction as JSON

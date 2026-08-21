@@ -1,0 +1,91 @@
+complaint,category,priority,group_id
+A stranger replaced both my login password and backup address.,account_access,high,validation-account_access-high-01
+Hello team — a stranger replaced both my login password and backup address. Please advise.,account_access,high,validation-account_access-high-01
+My profile was taken over overnight and I no longer control its security settings.,account_access,high,validation-account_access-high-02
+Hello team — my profile was taken over overnight and I no longer control its security settings. Please advise.,account_access,high,validation-account_access-high-02
+There are unknown sessions in my account and the recovery details are not mine.,account_access,high,validation-account_access-high-03
+Hello team — there are unknown sessions in my account and the recovery details are not mine. Please advise.,account_access,high,validation-account_access-high-03
+Please show me how to update my profile photograph.,account_access,low,validation-account_access-low-01
+Hello team — please show me how to update my profile photograph. Please advise.,account_access,low,validation-account_access-low-01
+Can users rename their account after registration?,account_access,low,validation-account_access-low-02
+Hello team — can users rename their account after registration? Please advise.,account_access,low,validation-account_access-low-02
+Where is the option to review active devices?,account_access,low,validation-account_access-low-03
+Hello team — where is the option to review active devices? Please advise.,account_access,low,validation-account_access-low-03
+"My authenticator codes suddenly fail, but I still control the email address.",account_access,medium,validation-account_access-medium-01
+"Hello team — my authenticator codes suddenly fail, but I still control the email address. Please advise.",account_access,medium,validation-account_access-medium-01
+I cannot sign in after changing phones and need recovery assistance.,account_access,medium,validation-account_access-medium-02
+Hello team — i cannot sign in after changing phones and need recovery assistance. Please advise.,account_access,medium,validation-account_access-medium-02
+The reset link says expired as soon as I open it.,account_access,medium,validation-account_access-medium-03
+Hello team — the reset link says expired as soon as I open it. Please advise.,account_access,medium,validation-account_access-medium-03
+I found a fraudulent USD 65000 card purchase that I did not approve.,billing_payment,high,validation-billing_payment-high-01
+Hello team — i found a fraudulent USD 65000 card purchase that I did not approve. Please advise.,billing_payment,high,validation-billing_payment-high-01
+Someone transferred RM100000 from my balance without consent.,billing_payment,high,validation-billing_payment-high-02
+Hello team — someone transferred RM100000 from my balance without consent. Please advise.,billing_payment,high,validation-billing_payment-high-02
+Unknown charges have consumed nearly all of the money in my bank account.,billing_payment,high,validation-billing_payment-high-03
+Hello team — unknown charges have consumed nearly all of the money in my bank account. Please advise.,billing_payment,high,validation-billing_payment-high-03
+Do you support bank transfers for ordinary invoices?,billing_payment,low,validation-billing_payment-low-01
+Hello team — do you support bank transfers for ordinary invoices? Please advise.,billing_payment,low,validation-billing_payment-low-01
+How can I print a tax receipt?,billing_payment,low,validation-billing_payment-low-02
+Hello team — how can I print a tax receipt? Please advise.,billing_payment,low,validation-billing_payment-low-02
+May I change the currency displayed on the payment page?,billing_payment,low,validation-billing_payment-low-03
+Hello team — may I change the currency displayed on the payment page? Please advise.,billing_payment,low,validation-billing_payment-low-03
+"The refund status says completed, although no money has arrived.",billing_payment,medium,validation-billing_payment-medium-01
+"Hello team — the refund status says completed, although no money has arrived. Please advise.",billing_payment,medium,validation-billing_payment-medium-01
+Checkout declined two valid cards and I cannot place the order.,billing_payment,medium,validation-billing_payment-medium-02
+Hello team — checkout declined two valid cards and I cannot place the order. Please advise.,billing_payment,medium,validation-billing_payment-medium-02
+My annual plan renewed after I requested cancellation.,billing_payment,medium,validation-billing_payment-medium-03
+Hello team — my annual plan renewed after I requested cancellation. Please advise.,billing_payment,medium,validation-billing_payment-medium-03
+A box of prescription supplies went to the wrong address and cannot be found.,delivery_order,high,validation-delivery_order-high-01
+Hello team — a box of prescription supplies went to the wrong address and cannot be found. Please advise.,delivery_order,high,validation-delivery_order-high-01
+The delivered battery is swollen and the parcel is hot to touch.,delivery_order,high,validation-delivery_order-high-02
+Hello team — the delivered battery is swollen and the parcel is hot to touch. Please advise.,delivery_order,high,validation-delivery_order-high-02
+My confidential identity documents were left outside another home.,delivery_order,high,validation-delivery_order-high-03
+Hello team — my confidential identity documents were left outside another home. Please advise.,delivery_order,high,validation-delivery_order-high-03
+Do weekend deliveries cost extra?,delivery_order,low,validation-delivery_order-low-01
+Hello team — do weekend deliveries cost extra? Please advise.,delivery_order,low,validation-delivery_order-low-01
+Can I select a parcel locker during checkout?,delivery_order,low,validation-delivery_order-low-02
+Hello team — can I select a parcel locker during checkout? Please advise.,delivery_order,low,validation-delivery_order-low-02
+How long is economy shipping normally?,delivery_order,low,validation-delivery_order-low-03
+Hello team — how long is economy shipping normally? Please advise.,delivery_order,low,validation-delivery_order-low-03
+The tracking page has shown customs processing for six days.,delivery_order,medium,validation-delivery_order-medium-01
+Hello team — the tracking page has shown customs processing for six days. Please advise.,delivery_order,medium,validation-delivery_order-medium-01
+One product in my shipment is different from what I ordered.,delivery_order,medium,validation-delivery_order-medium-02
+Hello team — one product in my shipment is different from what I ordered. Please advise.,delivery_order,medium,validation-delivery_order-medium-02
+My package missed its expected arrival date this week.,delivery_order,medium,validation-delivery_order-medium-03
+Hello team — my package missed its expected arrival date this week. Please advise.,delivery_order,medium,validation-delivery_order-medium-03
+The manual omits what to do after smoke comes from the product.,general_enquiry,high,validation-general_enquiry-high-01
+Hello team — the manual omits what to do after smoke comes from the product. Please advise.,general_enquiry,high,validation-general_enquiry-high-01
+We need a safety certificate before equipment inspection this afternoon.,general_enquiry,high,validation-general_enquiry-high-02
+Hello team — we need a safety certificate before equipment inspection this afternoon. Please advise.,general_enquiry,high,validation-general_enquiry-high-02
+Please confirm whether this batch is included in the health recall.,general_enquiry,high,validation-general_enquiry-high-03
+Hello team — please confirm whether this batch is included in the health recall. Please advise.,general_enquiry,high,validation-general_enquiry-high-03
+Is live chat available during the weekend?,general_enquiry,low,validation-general_enquiry-low-01
+Hello team — is live chat available during the weekend? Please advise.,general_enquiry,low,validation-general_enquiry-low-01
+What is the mailing address of your main office?,general_enquiry,low,validation-general_enquiry-low-02
+Hello team — what is the mailing address of your main office? Please advise.,general_enquiry,low,validation-general_enquiry-low-02
+Where can I read an overview of your services?,general_enquiry,low,validation-general_enquiry-low-03
+Hello team — where can I read an overview of your services? Please advise.,general_enquiry,low,validation-general_enquiry-low-03
+Which plan would suit a team of twenty people?,general_enquiry,medium,validation-general_enquiry-medium-01
+Hello team — which plan would suit a team of twenty people? Please advise.,general_enquiry,medium,validation-general_enquiry-medium-01
+My application needs one document clarified before Friday.,general_enquiry,medium,validation-general_enquiry-medium-02
+Hello team — my application needs one document clarified before Friday. Please advise.,general_enquiry,medium,validation-general_enquiry-medium-02
+I have not received the date for my upcoming consultation.,general_enquiry,medium,validation-general_enquiry-medium-03
+Hello team — i have not received the date for my upcoming consultation. Please advise.,general_enquiry,medium,validation-general_enquiry-medium-03
+Our whole organisation has been offline since the database failure.,technical_support,high,validation-technical_support-high-01
+Hello team — our whole organisation has been offline since the database failure. Please advise.,technical_support,high,validation-technical_support-high-01
+Every customer receives a service unavailable page across the platform.,technical_support,high,validation-technical_support-high-02
+Hello team — every customer receives a service unavailable page across the platform. Please advise.,technical_support,high,validation-technical_support-high-02
+The latest upgrade deleted all shared project records for our team.,technical_support,high,validation-technical_support-high-03
+Hello team — the latest upgrade deleted all shared project records for our team. Please advise.,technical_support,high,validation-technical_support-high-03
+Is the application available for Linux?,technical_support,low,validation-technical_support-low-01
+Hello team — is the application available for Linux? Please advise.,technical_support,low,validation-technical_support-low-01
+Where are notification preferences located?,technical_support,low,validation-technical_support-low-02
+Hello team — where are notification preferences located? Please advise.,technical_support,low,validation-technical_support-low-02
+Can I increase the text size in settings?,technical_support,low,validation-technical_support-low-03
+Hello team — can I increase the text size in settings? Please advise.,technical_support,low,validation-technical_support-low-03
+Search returns an error only when I filter by date.,technical_support,medium,validation-technical_support-medium-01
+Hello team — search returns an error only when I filter by date. Please advise.,technical_support,medium,validation-technical_support-medium-01
+The desktop client disconnects a few times each hour.,technical_support,medium,validation-technical_support-medium-02
+Hello team — the desktop client disconnects a few times each hour. Please advise.,technical_support,medium,validation-technical_support-medium-02
+I cannot attach a PDF even though smaller files work.,technical_support,medium,validation-technical_support-medium-03
+Hello team — i cannot attach a PDF even though smaller files work. Please advise.,technical_support,medium,validation-technical_support-medium-03

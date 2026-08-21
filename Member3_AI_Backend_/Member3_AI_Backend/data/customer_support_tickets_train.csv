@@ -1,0 +1,601 @@
+complaint,category,priority,group_id
+"Someone changed my password and recovery email, and now I am locked out.",account_access,high,train-account_access-high-01
+"Hi support, someone changed my password and recovery email, and now I am locked out.",account_access,high,train-account_access-high-01
+"hey, someone changed my password and recovery email, and now I am locked out. can someone check?",account_access,high,train-account_access-high-01
+"Someone changed my password and recovery email, and now I am locked out. I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,high,train-account_access-high-01
+"Can you look into this for me: someone changed my password and recovery email, and now I am locked out.",account_access,high,train-account_access-high-01
+I can see logins from another country and my account settings were altered.,account_access,high,train-account_access-high-02
+"Hi support, i can see logins from another country and my account settings were altered.",account_access,high,train-account_access-high-02
+"hey, i can see logins from another country and my account settings were altered. can someone check?",account_access,high,train-account_access-high-02
+"I can see logins from another country and my account settings were altered. I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,high,train-account_access-high-02
+Can you look into this for me: i can see logins from another country and my account settings were altered.,account_access,high,train-account_access-high-02
+My account has been hacked and the intruder enabled their own two-factor device.,account_access,high,train-account_access-high-03
+"Hi support, my account has been hacked and the intruder enabled their own two-factor device.",account_access,high,train-account_access-high-03
+"hey, my account has been hacked and the intruder enabled their own two-factor device. can someone check?",account_access,high,train-account_access-high-03
+"My account has been hacked and the intruder enabled their own two-factor device. I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,high,train-account_access-high-03
+Can you look into this for me: my account has been hacked and the intruder enabled their own two-factor device.,account_access,high,train-account_access-high-03
+An unknown person took over my profile and removed my sign-in options.,account_access,high,train-account_access-high-04
+"Hi support, an unknown person took over my profile and removed my sign-in options.",account_access,high,train-account_access-high-04
+"hey, an unknown person took over my profile and removed my sign-in options. can someone check?",account_access,high,train-account_access-high-04
+"An unknown person took over my profile and removed my sign-in options. I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,high,train-account_access-high-04
+Can you look into this for me: an unknown person took over my profile and removed my sign-in options.,account_access,high,train-account_access-high-04
+"I did not reset my password, but it was changed and I cannot get back in.",account_access,high,train-account_access-high-05
+"Hi support, i did not reset my password, but it was changed and I cannot get back in.",account_access,high,train-account_access-high-05
+"hey, i did not reset my password, but it was changed and I cannot get back in. can someone check?",account_access,high,train-account_access-high-05
+"I did not reset my password, but it was changed and I cannot get back in. I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,high,train-account_access-high-05
+"Can you look into this for me: i did not reset my password, but it was changed and I cannot get back in.",account_access,high,train-account_access-high-05
+My recovery phone now belongs to someone else and the account is compromised.,account_access,high,train-account_access-high-06
+"Hi support, my recovery phone now belongs to someone else and the account is compromised.",account_access,high,train-account_access-high-06
+"hey, my recovery phone now belongs to someone else and the account is compromised. can someone check?",account_access,high,train-account_access-high-06
+"My recovery phone now belongs to someone else and the account is compromised. I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,high,train-account_access-high-06
+Can you look into this for me: my recovery phone now belongs to someone else and the account is compromised.,account_access,high,train-account_access-high-06
+A person I do not know changed the login credentials and locked me out.,account_access,high,train-account_access-high-07
+"Hi support, a person I do not know changed the login credentials and locked me out.",account_access,high,train-account_access-high-07
+"hey, a person I do not know changed the login credentials and locked me out. can someone check?",account_access,high,train-account_access-high-07
+"A person I do not know changed the login credentials and locked me out. I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,high,train-account_access-high-07
+Can you look into this for me: a person I do not know changed the login credentials and locked me out.,account_access,high,train-account_access-high-07
+The account is sending messages by itself after an unfamiliar security change.,account_access,high,train-account_access-high-08
+"Hi support, the account is sending messages by itself after an unfamiliar security change.",account_access,high,train-account_access-high-08
+"hey, the account is sending messages by itself after an unfamiliar security change. can someone check?",account_access,high,train-account_access-high-08
+"The account is sending messages by itself after an unfamiliar security change. I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,high,train-account_access-high-08
+Can you look into this for me: the account is sending messages by itself after an unfamiliar security change.,account_access,high,train-account_access-high-08
+How do I enable two-factor authentication on my profile?,account_access,low,train-account_access-low-01
+"Hi support, how do I enable two-factor authentication on my profile?",account_access,low,train-account_access-low-01
+"hey, how do I enable two-factor authentication on my profile? can someone check?",account_access,low,train-account_access-low-01
+"How do I enable two-factor authentication on my profile? I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,low,train-account_access-low-01
+Can you look into this for me: how do I enable two-factor authentication on my profile?,account_access,low,train-account_access-low-01
+Where can I view my recent account login history?,account_access,low,train-account_access-low-02
+"Hi support, where can I view my recent account login history?",account_access,low,train-account_access-low-02
+"hey, where can I view my recent account login history? can someone check?",account_access,low,train-account_access-low-02
+"Where can I view my recent account login history? I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,low,train-account_access-low-02
+Can you look into this for me: where can I view my recent account login history?,account_access,low,train-account_access-low-02
+I would like instructions for changing my display name.,account_access,low,train-account_access-low-03
+"Hi support, i would like instructions for changing my display name.",account_access,low,train-account_access-low-03
+"hey, i would like instructions for changing my display name. can someone check?",account_access,low,train-account_access-low-03
+"I would like instructions for changing my display name. I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,low,train-account_access-low-03
+Can you look into this for me: i would like instructions for changing my display name.,account_access,low,train-account_access-low-03
+Can I remove an old phone number from my account settings?,account_access,low,train-account_access-low-04
+"Hi support, can I remove an old phone number from my account settings?",account_access,low,train-account_access-low-04
+"hey, can I remove an old phone number from my account settings? can someone check?",account_access,low,train-account_access-low-04
+"Can I remove an old phone number from my account settings? I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,low,train-account_access-low-04
+Can you look into this for me: can I remove an old phone number from my account settings?,account_access,low,train-account_access-low-04
+What are the password length and character requirements?,account_access,low,train-account_access-low-05
+"Hi support, what are the password length and character requirements?",account_access,low,train-account_access-low-05
+"hey, what are the password length and character requirements? can someone check?",account_access,low,train-account_access-low-05
+"What are the password length and character requirements? I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,low,train-account_access-low-05
+Can you look into this for me: what are the password length and character requirements?,account_access,low,train-account_access-low-05
+How can I close an unused account that I can still access?,account_access,low,train-account_access-low-06
+"Hi support, how can I close an unused account that I can still access?",account_access,low,train-account_access-low-06
+"hey, how can I close an unused account that I can still access? can someone check?",account_access,low,train-account_access-low-06
+"How can I close an unused account that I can still access? I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,low,train-account_access-low-06
+Can you look into this for me: how can I close an unused account that I can still access?,account_access,low,train-account_access-low-06
+Can I choose a different username without opening a new account?,account_access,low,train-account_access-low-07
+"Hi support, can I choose a different username without opening a new account?",account_access,low,train-account_access-low-07
+"hey, can I choose a different username without opening a new account? can someone check?",account_access,low,train-account_access-low-07
+"Can I choose a different username without opening a new account? I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,low,train-account_access-low-07
+Can you look into this for me: can I choose a different username without opening a new account?,account_access,low,train-account_access-low-07
+Where is the setting for routine sign-in notifications?,account_access,low,train-account_access-low-08
+"Hi support, where is the setting for routine sign-in notifications?",account_access,low,train-account_access-low-08
+"hey, where is the setting for routine sign-in notifications? can someone check?",account_access,low,train-account_access-low-08
+"Where is the setting for routine sign-in notifications? I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,low,train-account_access-low-08
+Can you look into this for me: where is the setting for routine sign-in notifications?,account_access,low,train-account_access-low-08
+The password reset email has not arrived after several attempts.,account_access,medium,train-account_access-medium-01
+"Hi support, the password reset email has not arrived after several attempts.",account_access,medium,train-account_access-medium-01
+"hey, the password reset email has not arrived after several attempts. can someone check?",account_access,medium,train-account_access-medium-01
+"The password reset email has not arrived after several attempts. I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,medium,train-account_access-medium-01
+Can you look into this for me: the password reset email has not arrived after several attempts.,account_access,medium,train-account_access-medium-01
+My correct verification code keeps being rejected on my own account.,account_access,medium,train-account_access-medium-02
+"Hi support, my correct verification code keeps being rejected on my own account.",account_access,medium,train-account_access-medium-02
+"hey, my correct verification code keeps being rejected on my own account. can someone check?",account_access,medium,train-account_access-medium-02
+"My correct verification code keeps being rejected on my own account. I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,medium,train-account_access-medium-02
+Can you look into this for me: my correct verification code keeps being rejected on my own account.,account_access,medium,train-account_access-medium-02
+I am temporarily locked out after entering the wrong password too many times.,account_access,medium,train-account_access-medium-03
+"Hi support, i am temporarily locked out after entering the wrong password too many times.",account_access,medium,train-account_access-medium-03
+"hey, i am temporarily locked out after entering the wrong password too many times. can someone check?",account_access,medium,train-account_access-medium-03
+"I am temporarily locked out after entering the wrong password too many times. I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,medium,train-account_access-medium-03
+Can you look into this for me: i am temporarily locked out after entering the wrong password too many times.,account_access,medium,train-account_access-medium-03
+The sign-in page loops back to login even though my password is correct.,account_access,medium,train-account_access-medium-04
+"Hi support, the sign-in page loops back to login even though my password is correct.",account_access,medium,train-account_access-medium-04
+"hey, the sign-in page loops back to login even though my password is correct. can someone check?",account_access,medium,train-account_access-medium-04
+"The sign-in page loops back to login even though my password is correct. I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,medium,train-account_access-medium-04
+Can you look into this for me: the sign-in page loops back to login even though my password is correct.,account_access,medium,train-account_access-medium-04
+I replaced my phone and need help restoring my authenticator access.,account_access,medium,train-account_access-medium-05
+"Hi support, i replaced my phone and need help restoring my authenticator access.",account_access,medium,train-account_access-medium-05
+"hey, i replaced my phone and need help restoring my authenticator access. can someone check?",account_access,medium,train-account_access-medium-05
+"I replaced my phone and need help restoring my authenticator access. I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,medium,train-account_access-medium-05
+Can you look into this for me: i replaced my phone and need help restoring my authenticator access.,account_access,medium,train-account_access-medium-05
+My profile email will not update and I need it corrected this week.,account_access,medium,train-account_access-medium-06
+"Hi support, my profile email will not update and I need it corrected this week.",account_access,medium,train-account_access-medium-06
+"hey, my profile email will not update and I need it corrected this week. can someone check?",account_access,medium,train-account_access-medium-06
+"My profile email will not update and I need it corrected this week. I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,medium,train-account_access-medium-06
+Can you look into this for me: my profile email will not update and I need it corrected this week.,account_access,medium,train-account_access-medium-06
+I can log in on the website but the mobile sign-in rejects the same credentials.,account_access,medium,train-account_access-medium-07
+"Hi support, i can log in on the website but the mobile sign-in rejects the same credentials.",account_access,medium,train-account_access-medium-07
+"hey, i can log in on the website but the mobile sign-in rejects the same credentials. can someone check?",account_access,medium,train-account_access-medium-07
+"I can log in on the website but the mobile sign-in rejects the same credentials. I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,medium,train-account_access-medium-07
+Can you look into this for me: i can log in on the website but the mobile sign-in rejects the same credentials.,account_access,medium,train-account_access-medium-07
+The account recovery form cannot verify my legitimate identity document.,account_access,medium,train-account_access-medium-08
+"Hi support, the account recovery form cannot verify my legitimate identity document.",account_access,medium,train-account_access-medium-08
+"hey, the account recovery form cannot verify my legitimate identity document. can someone check?",account_access,medium,train-account_access-medium-08
+"The account recovery form cannot verify my legitimate identity document. I checked the help page and tried the usual steps, but I still need a clear answer from support.",account_access,medium,train-account_access-medium-08
+Can you look into this for me: the account recovery form cannot verify my legitimate identity document.,account_access,medium,train-account_access-medium-08
+A transfer of USD 90000 left my bank account without my permission.,billing_payment,high,train-billing_payment-high-01
+"Hi support, a transfer of USD 90000 left my bank account without my permission.",billing_payment,high,train-billing_payment-high-01
+"hey, a transfer of USD 90000 left my bank account without my permission. can someone check?",billing_payment,high,train-billing_payment-high-01
+"A transfer of USD 90000 left my bank account without my permission. I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,high,train-billing_payment-high-01
+Can you look into this for me: a transfer of USD 90000 left my bank account without my permission.,billing_payment,high,train-billing_payment-high-01
+My stolen card is being used for several payments that are not mine.,billing_payment,high,train-billing_payment-high-02
+"Hi support, my stolen card is being used for several payments that are not mine.",billing_payment,high,train-billing_payment-high-02
+"hey, my stolen card is being used for several payments that are not mine. can someone check?",billing_payment,high,train-billing_payment-high-02
+"My stolen card is being used for several payments that are not mine. I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,high,train-billing_payment-high-02
+Can you look into this for me: my stolen card is being used for several payments that are not mine.,billing_payment,high,train-billing_payment-high-02
+"RM75,000 was deducted from my account and I never approved the transaction.",billing_payment,high,train-billing_payment-high-03
+"Hi support, rM75,000 was deducted from my account and I never approved the transaction.",billing_payment,high,train-billing_payment-high-03
+"hey, rM75,000 was deducted from my account and I never approved the transaction. can someone check?",billing_payment,high,train-billing_payment-high-03
+"RM75,000 was deducted from my account and I never approved the transaction. I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,high,train-billing_payment-high-03
+"Can you look into this for me: rM75,000 was deducted from my account and I never approved the transaction.",billing_payment,high,train-billing_payment-high-03
+Someone made a fraudulent payment using my saved card details.,billing_payment,high,train-billing_payment-high-04
+"Hi support, someone made a fraudulent payment using my saved card details.",billing_payment,high,train-billing_payment-high-04
+"hey, someone made a fraudulent payment using my saved card details. can someone check?",billing_payment,high,train-billing_payment-high-04
+"Someone made a fraudulent payment using my saved card details. I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,high,train-billing_payment-high-04
+Can you look into this for me: someone made a fraudulent payment using my saved card details.,billing_payment,high,train-billing_payment-high-04
+The service withdrew $100000 from my bank even though I authorised no purchase.,billing_payment,high,train-billing_payment-high-05
+"Hi support, the service withdrew $100000 from my bank even though I authorised no purchase.",billing_payment,high,train-billing_payment-high-05
+"hey, the service withdrew $100000 from my bank even though I authorised no purchase. can someone check?",billing_payment,high,train-billing_payment-high-05
+"The service withdrew $100000 from my bank even though I authorised no purchase. I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,high,train-billing_payment-high-05
+Can you look into this for me: the service withdrew $100000 from my bank even though I authorised no purchase.,billing_payment,high,train-billing_payment-high-05
+My card was charged repeatedly and the total has emptied my account.,billing_payment,high,train-billing_payment-high-06
+"Hi support, my card was charged repeatedly and the total has emptied my account.",billing_payment,high,train-billing_payment-high-06
+"hey, my card was charged repeatedly and the total has emptied my account. can someone check?",billing_payment,high,train-billing_payment-high-06
+"My card was charged repeatedly and the total has emptied my account. I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,high,train-billing_payment-high-06
+Can you look into this for me: my card was charged repeatedly and the total has emptied my account.,billing_payment,high,train-billing_payment-high-06
+A bank transfer I never made removed RM 1 million from my balance.,billing_payment,high,train-billing_payment-high-07
+"Hi support, a bank transfer I never made removed RM 1 million from my balance.",billing_payment,high,train-billing_payment-high-07
+"hey, a bank transfer I never made removed RM 1 million from my balance. can someone check?",billing_payment,high,train-billing_payment-high-07
+"A bank transfer I never made removed RM 1 million from my balance. I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,high,train-billing_payment-high-07
+Can you look into this for me: a bank transfer I never made removed RM 1 million from my balance.,billing_payment,high,train-billing_payment-high-07
+There is a huge cash withdrawal on the statement that I did not authorise.,billing_payment,high,train-billing_payment-high-08
+"Hi support, there is a huge cash withdrawal on the statement that I did not authorise.",billing_payment,high,train-billing_payment-high-08
+"hey, there is a huge cash withdrawal on the statement that I did not authorise. can someone check?",billing_payment,high,train-billing_payment-high-08
+"There is a huge cash withdrawal on the statement that I did not authorise. I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,high,train-billing_payment-high-08
+Can you look into this for me: there is a huge cash withdrawal on the statement that I did not authorise.,billing_payment,high,train-billing_payment-high-08
+What payment methods do you accept?,billing_payment,low,train-billing_payment-low-01
+"Hi support, what payment methods do you accept?",billing_payment,low,train-billing_payment-low-01
+"hey, what payment methods do you accept? can someone check?",billing_payment,low,train-billing_payment-low-01
+"What payment methods do you accept? I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,low,train-billing_payment-low-01
+Can you look into this for me: what payment methods do you accept?,billing_payment,low,train-billing_payment-low-01
+Can I pay an invoice using a debit card?,billing_payment,low,train-billing_payment-low-02
+"Hi support, can I pay an invoice using a debit card?",billing_payment,low,train-billing_payment-low-02
+"hey, can I pay an invoice using a debit card? can someone check?",billing_payment,low,train-billing_payment-low-02
+"Can I pay an invoice using a debit card? I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,low,train-billing_payment-low-02
+Can you look into this for me: can I pay an invoice using a debit card?,billing_payment,low,train-billing_payment-low-02
+Where can I download another copy of my receipt?,billing_payment,low,train-billing_payment-low-03
+"Hi support, where can I download another copy of my receipt?",billing_payment,low,train-billing_payment-low-03
+"hey, where can I download another copy of my receipt? can someone check?",billing_payment,low,train-billing_payment-low-03
+"Where can I download another copy of my receipt? I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,low,train-billing_payment-low-03
+Can you look into this for me: where can I download another copy of my receipt?,billing_payment,low,train-billing_payment-low-03
+How do I replace the saved card used for future payments?,billing_payment,low,train-billing_payment-low-04
+"Hi support, how do I replace the saved card used for future payments?",billing_payment,low,train-billing_payment-low-04
+"hey, how do I replace the saved card used for future payments? can someone check?",billing_payment,low,train-billing_payment-low-04
+"How do I replace the saved card used for future payments? I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,low,train-billing_payment-low-04
+Can you look into this for me: how do I replace the saved card used for future payments?,billing_payment,low,train-billing_payment-low-04
+Which currencies can be used at checkout?,billing_payment,low,train-billing_payment-low-05
+"Hi support, which currencies can be used at checkout?",billing_payment,low,train-billing_payment-low-05
+"hey, which currencies can be used at checkout? can someone check?",billing_payment,low,train-billing_payment-low-05
+"Which currencies can be used at checkout? I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,low,train-billing_payment-low-05
+Can you look into this for me: which currencies can be used at checkout?,billing_payment,low,train-billing_payment-low-05
+When does the normal monthly billing cycle begin?,billing_payment,low,train-billing_payment-low-06
+"Hi support, when does the normal monthly billing cycle begin?",billing_payment,low,train-billing_payment-low-06
+"hey, when does the normal monthly billing cycle begin? can someone check?",billing_payment,low,train-billing_payment-low-06
+"When does the normal monthly billing cycle begin? I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,low,train-billing_payment-low-06
+Can you look into this for me: when does the normal monthly billing cycle begin?,billing_payment,low,train-billing_payment-low-06
+Is there a minimum amount for paying by bank transfer?,billing_payment,low,train-billing_payment-low-07
+"Hi support, is there a minimum amount for paying by bank transfer?",billing_payment,low,train-billing_payment-low-07
+"hey, is there a minimum amount for paying by bank transfer? can someone check?",billing_payment,low,train-billing_payment-low-07
+"Is there a minimum amount for paying by bank transfer? I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,low,train-billing_payment-low-07
+Can you look into this for me: is there a minimum amount for paying by bank transfer?,billing_payment,low,train-billing_payment-low-07
+Can you explain where to find the billing date on an invoice?,billing_payment,low,train-billing_payment-low-08
+"Hi support, can you explain where to find the billing date on an invoice?",billing_payment,low,train-billing_payment-low-08
+"hey, can you explain where to find the billing date on an invoice? can someone check?",billing_payment,low,train-billing_payment-low-08
+"Can you explain where to find the billing date on an invoice? I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,low,train-billing_payment-low-08
+Can you look into this for me: can you explain where to find the billing date on an invoice?,billing_payment,low,train-billing_payment-low-08
+My refund was approved last week but it still has not reached my card.,billing_payment,medium,train-billing_payment-medium-01
+"Hi support, my refund was approved last week but it still has not reached my card.",billing_payment,medium,train-billing_payment-medium-01
+"hey, my refund was approved last week but it still has not reached my card. can someone check?",billing_payment,medium,train-billing_payment-medium-01
+"My refund was approved last week but it still has not reached my card. I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,medium,train-billing_payment-medium-01
+Can you look into this for me: my refund was approved last week but it still has not reached my card.,billing_payment,medium,train-billing_payment-medium-01
+Payment fails each time I try to finish the order.,billing_payment,medium,train-billing_payment-medium-02
+"Hi support, payment fails each time I try to finish the order.",billing_payment,medium,train-billing_payment-medium-02
+"hey, payment fails each time I try to finish the order. can someone check?",billing_payment,medium,train-billing_payment-medium-02
+"Payment fails each time I try to finish the order. I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,medium,train-billing_payment-medium-02
+Can you look into this for me: payment fails each time I try to finish the order.,billing_payment,medium,train-billing_payment-medium-02
+I was charged twice for a small purchase and need one charge reversed.,billing_payment,medium,train-billing_payment-medium-03
+"Hi support, i was charged twice for a small purchase and need one charge reversed.",billing_payment,medium,train-billing_payment-medium-03
+"hey, i was charged twice for a small purchase and need one charge reversed. can someone check?",billing_payment,medium,train-billing_payment-medium-03
+"I was charged twice for a small purchase and need one charge reversed. I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,medium,train-billing_payment-medium-03
+Can you look into this for me: i was charged twice for a small purchase and need one charge reversed.,billing_payment,medium,train-billing_payment-medium-03
+The invoice total does not match the price shown at checkout.,billing_payment,medium,train-billing_payment-medium-04
+"Hi support, the invoice total does not match the price shown at checkout.",billing_payment,medium,train-billing_payment-medium-04
+"hey, the invoice total does not match the price shown at checkout. can someone check?",billing_payment,medium,train-billing_payment-medium-04
+"The invoice total does not match the price shown at checkout. I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,medium,train-billing_payment-medium-04
+Can you look into this for me: the invoice total does not match the price shown at checkout.,billing_payment,medium,train-billing_payment-medium-04
+A cancelled monthly subscription was billed again this month.,billing_payment,medium,train-billing_payment-medium-05
+"Hi support, a cancelled monthly subscription was billed again this month.",billing_payment,medium,train-billing_payment-medium-05
+"hey, a cancelled monthly subscription was billed again this month. can someone check?",billing_payment,medium,train-billing_payment-medium-05
+"A cancelled monthly subscription was billed again this month. I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,medium,train-billing_payment-medium-05
+Can you look into this for me: a cancelled monthly subscription was billed again this month.,billing_payment,medium,train-billing_payment-medium-05
+My promocode worked on screen but the discount is missing from the receipt.,billing_payment,medium,train-billing_payment-medium-06
+"Hi support, my promocode worked on screen but the discount is missing from the receipt.",billing_payment,medium,train-billing_payment-medium-06
+"hey, my promocode worked on screen but the discount is missing from the receipt. can someone check?",billing_payment,medium,train-billing_payment-medium-06
+"My promocode worked on screen but the discount is missing from the receipt. I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,medium,train-billing_payment-medium-06
+Can you look into this for me: my promocode worked on screen but the discount is missing from the receipt.,billing_payment,medium,train-billing_payment-medium-06
+The refund money has not arrived in my account even though the return was accepted.,billing_payment,medium,train-billing_payment-medium-07
+"Hi support, the refund money has not arrived in my account even though the return was accepted.",billing_payment,medium,train-billing_payment-medium-07
+"hey, the refund money has not arrived in my account even though the return was accepted. can someone check?",billing_payment,medium,train-billing_payment-medium-07
+"The refund money has not arrived in my account even though the return was accepted. I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,medium,train-billing_payment-medium-07
+Can you look into this for me: the refund money has not arrived in my account even though the return was accepted.,billing_payment,medium,train-billing_payment-medium-07
+I am still waiting for a refund that the merchant marked as processed.,billing_payment,medium,train-billing_payment-medium-08
+"Hi support, i am still waiting for a refund that the merchant marked as processed.",billing_payment,medium,train-billing_payment-medium-08
+"hey, i am still waiting for a refund that the merchant marked as processed. can someone check?",billing_payment,medium,train-billing_payment-medium-08
+"I am still waiting for a refund that the merchant marked as processed. I checked the help page and tried the usual steps, but I still need a clear answer from support.",billing_payment,medium,train-billing_payment-medium-08
+Can you look into this for me: i am still waiting for a refund that the merchant marked as processed.,billing_payment,medium,train-billing_payment-medium-08
+My temperature-sensitive medicine never arrived and the replacement is needed today.,delivery_order,high,train-delivery_order-high-01
+"Hi support, my temperature-sensitive medicine never arrived and the replacement is needed today.",delivery_order,high,train-delivery_order-high-01
+"hey, my temperature-sensitive medicine never arrived and the replacement is needed today. can someone check?",delivery_order,high,train-delivery_order-high-01
+"My temperature-sensitive medicine never arrived and the replacement is needed today. I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,high,train-delivery_order-high-01
+Can you look into this for me: my temperature-sensitive medicine never arrived and the replacement is needed today.,delivery_order,high,train-delivery_order-high-01
+"The parcel contains broken glass and leaking chemicals, so it may be unsafe.",delivery_order,high,train-delivery_order-high-02
+"Hi support, the parcel contains broken glass and leaking chemicals, so it may be unsafe.",delivery_order,high,train-delivery_order-high-02
+"hey, the parcel contains broken glass and leaking chemicals, so it may be unsafe. can someone check?",delivery_order,high,train-delivery_order-high-02
+"The parcel contains broken glass and leaking chemicals, so it may be unsafe. I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,high,train-delivery_order-high-02
+"Can you look into this for me: the parcel contains broken glass and leaking chemicals, so it may be unsafe.",delivery_order,high,train-delivery_order-high-02
+A valuable package was marked delivered to a stranger and is now missing.,delivery_order,high,train-delivery_order-high-03
+"Hi support, a valuable package was marked delivered to a stranger and is now missing.",delivery_order,high,train-delivery_order-high-03
+"hey, a valuable package was marked delivered to a stranger and is now missing. can someone check?",delivery_order,high,train-delivery_order-high-03
+"A valuable package was marked delivered to a stranger and is now missing. I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,high,train-delivery_order-high-03
+Can you look into this for me: a valuable package was marked delivered to a stranger and is now missing.,delivery_order,high,train-delivery_order-high-03
+The courier left my passport shipment at the wrong building.,delivery_order,high,train-delivery_order-high-04
+"Hi support, the courier left my passport shipment at the wrong building.",delivery_order,high,train-delivery_order-high-04
+"hey, the courier left my passport shipment at the wrong building. can someone check?",delivery_order,high,train-delivery_order-high-04
+"The courier left my passport shipment at the wrong building. I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,high,train-delivery_order-high-04
+Can you look into this for me: the courier left my passport shipment at the wrong building.,delivery_order,high,train-delivery_order-high-04
+An essential medical device is lost after the tracking stopped for a week.,delivery_order,high,train-delivery_order-high-05
+"Hi support, an essential medical device is lost after the tracking stopped for a week.",delivery_order,high,train-delivery_order-high-05
+"hey, an essential medical device is lost after the tracking stopped for a week. can someone check?",delivery_order,high,train-delivery_order-high-05
+"An essential medical device is lost after the tracking stopped for a week. I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,high,train-delivery_order-high-05
+Can you look into this for me: an essential medical device is lost after the tracking stopped for a week.,delivery_order,high,train-delivery_order-high-05
+The food delivery arrived with damaged packaging and signs of contamination.,delivery_order,high,train-delivery_order-high-06
+"Hi support, the food delivery arrived with damaged packaging and signs of contamination.",delivery_order,high,train-delivery_order-high-06
+"hey, the food delivery arrived with damaged packaging and signs of contamination. can someone check?",delivery_order,high,train-delivery_order-high-06
+"The food delivery arrived with damaged packaging and signs of contamination. I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,high,train-delivery_order-high-06
+Can you look into this for me: the food delivery arrived with damaged packaging and signs of contamination.,delivery_order,high,train-delivery_order-high-06
+A live-saving prescription parcel is missing and the patient has no spare supply.,delivery_order,high,train-delivery_order-high-07
+"Hi support, a live-saving prescription parcel is missing and the patient has no spare supply.",delivery_order,high,train-delivery_order-high-07
+"hey, a live-saving prescription parcel is missing and the patient has no spare supply. can someone check?",delivery_order,high,train-delivery_order-high-07
+"A live-saving prescription parcel is missing and the patient has no spare supply. I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,high,train-delivery_order-high-07
+Can you look into this for me: a live-saving prescription parcel is missing and the patient has no spare supply.,delivery_order,high,train-delivery_order-high-07
+The courier delivered a badly crushed gas canister that could be dangerous.,delivery_order,high,train-delivery_order-high-08
+"Hi support, the courier delivered a badly crushed gas canister that could be dangerous.",delivery_order,high,train-delivery_order-high-08
+"hey, the courier delivered a badly crushed gas canister that could be dangerous. can someone check?",delivery_order,high,train-delivery_order-high-08
+"The courier delivered a badly crushed gas canister that could be dangerous. I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,high,train-delivery_order-high-08
+Can you look into this for me: the courier delivered a badly crushed gas canister that could be dangerous.,delivery_order,high,train-delivery_order-high-08
+How much is standard delivery to Kuala Lumpur?,delivery_order,low,train-delivery_order-low-01
+"Hi support, how much is standard delivery to Kuala Lumpur?",delivery_order,low,train-delivery_order-low-01
+"hey, how much is standard delivery to Kuala Lumpur? can someone check?",delivery_order,low,train-delivery_order-low-01
+"How much is standard delivery to Kuala Lumpur? I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,low,train-delivery_order-low-01
+Can you look into this for me: how much is standard delivery to Kuala Lumpur?,delivery_order,low,train-delivery_order-low-01
+Can two orders be combined before they are shipped?,delivery_order,low,train-delivery_order-low-02
+"Hi support, can two orders be combined before they are shipped?",delivery_order,low,train-delivery_order-low-02
+"hey, can two orders be combined before they are shipped? can someone check?",delivery_order,low,train-delivery_order-low-02
+"Can two orders be combined before they are shipped? I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,low,train-delivery_order-low-02
+Can you look into this for me: can two orders be combined before they are shipped?,delivery_order,low,train-delivery_order-low-02
+What is the usual delivery time for local orders?,delivery_order,low,train-delivery_order-low-03
+"Hi support, what is the usual delivery time for local orders?",delivery_order,low,train-delivery_order-low-03
+"hey, what is the usual delivery time for local orders? can someone check?",delivery_order,low,train-delivery_order-low-03
+"What is the usual delivery time for local orders? I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,low,train-delivery_order-low-03
+Can you look into this for me: what is the usual delivery time for local orders?,delivery_order,low,train-delivery_order-low-03
+Where do I enter a different shipping address?,delivery_order,low,train-delivery_order-low-04
+"Hi support, where do I enter a different shipping address?",delivery_order,low,train-delivery_order-low-04
+"hey, where do I enter a different shipping address? can someone check?",delivery_order,low,train-delivery_order-low-04
+"Where do I enter a different shipping address? I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,low,train-delivery_order-low-04
+Can you look into this for me: where do I enter a different shipping address?,delivery_order,low,train-delivery_order-low-04
+Do you offer collection from a nearby service point?,delivery_order,low,train-delivery_order-low-05
+"Hi support, do you offer collection from a nearby service point?",delivery_order,low,train-delivery_order-low-05
+"hey, do you offer collection from a nearby service point? can someone check?",delivery_order,low,train-delivery_order-low-05
+"Do you offer collection from a nearby service point? I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,low,train-delivery_order-low-05
+Can you look into this for me: do you offer collection from a nearby service point?,delivery_order,low,train-delivery_order-low-05
+Which courier company handles normal parcels?,delivery_order,low,train-delivery_order-low-06
+"Hi support, which courier company handles normal parcels?",delivery_order,low,train-delivery_order-low-06
+"hey, which courier company handles normal parcels? can someone check?",delivery_order,low,train-delivery_order-low-06
+"Which courier company handles normal parcels? I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,low,train-delivery_order-low-06
+Can you look into this for me: which courier company handles normal parcels?,delivery_order,low,train-delivery_order-low-06
+Is signature confirmation available as a delivery option?,delivery_order,low,train-delivery_order-low-07
+"Hi support, is signature confirmation available as a delivery option?",delivery_order,low,train-delivery_order-low-07
+"hey, is signature confirmation available as a delivery option? can someone check?",delivery_order,low,train-delivery_order-low-07
+"Is signature confirmation available as a delivery option? I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,low,train-delivery_order-low-07
+Can you look into this for me: is signature confirmation available as a delivery option?,delivery_order,low,train-delivery_order-low-07
+Can the delivery date be selected before I place an order?,delivery_order,low,train-delivery_order-low-08
+"Hi support, can the delivery date be selected before I place an order?",delivery_order,low,train-delivery_order-low-08
+"hey, can the delivery date be selected before I place an order? can someone check?",delivery_order,low,train-delivery_order-low-08
+"Can the delivery date be selected before I place an order? I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,low,train-delivery_order-low-08
+Can you look into this for me: can the delivery date be selected before I place an order?,delivery_order,low,train-delivery_order-low-08
+My regular parcel is four days late and tracking has not changed.,delivery_order,medium,train-delivery_order-medium-01
+"Hi support, my regular parcel is four days late and tracking has not changed.",delivery_order,medium,train-delivery_order-medium-01
+"hey, my regular parcel is four days late and tracking has not changed. can someone check?",delivery_order,medium,train-delivery_order-medium-01
+"My regular parcel is four days late and tracking has not changed. I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,medium,train-delivery_order-medium-01
+Can you look into this for me: my regular parcel is four days late and tracking has not changed.,delivery_order,medium,train-delivery_order-medium-01
+The order arrived with one item missing from the box.,delivery_order,medium,train-delivery_order-medium-02
+"Hi support, the order arrived with one item missing from the box.",delivery_order,medium,train-delivery_order-medium-02
+"hey, the order arrived with one item missing from the box. can someone check?",delivery_order,medium,train-delivery_order-medium-02
+"The order arrived with one item missing from the box. I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,medium,train-delivery_order-medium-02
+Can you look into this for me: the order arrived with one item missing from the box.,delivery_order,medium,train-delivery_order-medium-02
+I received the wrong size and need an exchange.,delivery_order,medium,train-delivery_order-medium-03
+"Hi support, i received the wrong size and need an exchange.",delivery_order,medium,train-delivery_order-medium-03
+"hey, i received the wrong size and need an exchange. can someone check?",delivery_order,medium,train-delivery_order-medium-03
+"I received the wrong size and need an exchange. I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,medium,train-delivery_order-medium-03
+Can you look into this for me: i received the wrong size and need an exchange.,delivery_order,medium,train-delivery_order-medium-03
+"Tracking says delivered, but the package is not at my door.",delivery_order,medium,train-delivery_order-medium-04
+"Hi support, tracking says delivered, but the package is not at my door.",delivery_order,medium,train-delivery_order-medium-04
+"hey, tracking says delivered, but the package is not at my door. can someone check?",delivery_order,medium,train-delivery_order-medium-04
+"Tracking says delivered, but the package is not at my door. I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,medium,train-delivery_order-medium-04
+"Can you look into this for me: tracking says delivered, but the package is not at my door.",delivery_order,medium,train-delivery_order-medium-04
+The courier attempted delivery while I was home and did not call.,delivery_order,medium,train-delivery_order-medium-05
+"Hi support, the courier attempted delivery while I was home and did not call.",delivery_order,medium,train-delivery_order-medium-05
+"hey, the courier attempted delivery while I was home and did not call. can someone check?",delivery_order,medium,train-delivery_order-medium-05
+"The courier attempted delivery while I was home and did not call. I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,medium,train-delivery_order-medium-05
+Can you look into this for me: the courier attempted delivery while I was home and did not call.,delivery_order,medium,train-delivery_order-medium-05
+My order has stayed at the sorting centre since Monday.,delivery_order,medium,train-delivery_order-medium-06
+"Hi support, my order has stayed at the sorting centre since Monday.",delivery_order,medium,train-delivery_order-medium-06
+"hey, my order has stayed at the sorting centre since Monday. can someone check?",delivery_order,medium,train-delivery_order-medium-06
+"My order has stayed at the sorting centre since Monday. I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,medium,train-delivery_order-medium-06
+Can you look into this for me: my order has stayed at the sorting centre since Monday.,delivery_order,medium,train-delivery_order-medium-06
+The parcel came two days late and one accessory was not included.,delivery_order,medium,train-delivery_order-medium-07
+"Hi support, the parcel came two days late and one accessory was not included.",delivery_order,medium,train-delivery_order-medium-07
+"hey, the parcel came two days late and one accessory was not included. can someone check?",delivery_order,medium,train-delivery_order-medium-07
+"The parcel came two days late and one accessory was not included. I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,medium,train-delivery_order-medium-07
+Can you look into this for me: the parcel came two days late and one accessory was not included.,delivery_order,medium,train-delivery_order-medium-07
+I need help finding an ordinary shipment whose tracking is stuck.,delivery_order,medium,train-delivery_order-medium-08
+"Hi support, i need help finding an ordinary shipment whose tracking is stuck.",delivery_order,medium,train-delivery_order-medium-08
+"hey, i need help finding an ordinary shipment whose tracking is stuck. can someone check?",delivery_order,medium,train-delivery_order-medium-08
+"I need help finding an ordinary shipment whose tracking is stuck. I checked the help page and tried the usual steps, but I still need a clear answer from support.",delivery_order,medium,train-delivery_order-medium-08
+Can you look into this for me: i need help finding an ordinary shipment whose tracking is stuck.,delivery_order,medium,train-delivery_order-medium-08
+I need product safety information because the device is overheating near a child.,general_enquiry,high,train-general_enquiry-high-01
+"Hi support, i need product safety information because the device is overheating near a child.",general_enquiry,high,train-general_enquiry-high-01
+"hey, i need product safety information because the device is overheating near a child. can someone check?",general_enquiry,high,train-general_enquiry-high-01
+"I need product safety information because the device is overheating near a child. I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,high,train-general_enquiry-high-01
+Can you look into this for me: i need product safety information because the device is overheating near a child.,general_enquiry,high,train-general_enquiry-high-01
+"A recall notice mentions this model, but the safety instructions are unavailable.",general_enquiry,high,train-general_enquiry-high-02
+"Hi support, a recall notice mentions this model, but the safety instructions are unavailable.",general_enquiry,high,train-general_enquiry-high-02
+"hey, a recall notice mentions this model, but the safety instructions are unavailable. can someone check?",general_enquiry,high,train-general_enquiry-high-02
+"A recall notice mentions this model, but the safety instructions are unavailable. I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,high,train-general_enquiry-high-02
+"Can you look into this for me: a recall notice mentions this model, but the safety instructions are unavailable.",general_enquiry,high,train-general_enquiry-high-02
+We need confirmation today for a legal filing that closes in a few hours.,general_enquiry,high,train-general_enquiry-high-03
+"Hi support, we need confirmation today for a legal filing that closes in a few hours.",general_enquiry,high,train-general_enquiry-high-03
+"hey, we need confirmation today for a legal filing that closes in a few hours. can someone check?",general_enquiry,high,train-general_enquiry-high-03
+"We need confirmation today for a legal filing that closes in a few hours. I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,high,train-general_enquiry-high-03
+Can you look into this for me: we need confirmation today for a legal filing that closes in a few hours.,general_enquiry,high,train-general_enquiry-high-03
+A customer with a medical accessibility need cannot find the emergency support channel.,general_enquiry,high,train-general_enquiry-high-04
+"Hi support, a customer with a medical accessibility need cannot find the emergency support channel.",general_enquiry,high,train-general_enquiry-high-04
+"hey, a customer with a medical accessibility need cannot find the emergency support channel. can someone check?",general_enquiry,high,train-general_enquiry-high-04
+"A customer with a medical accessibility need cannot find the emergency support channel. I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,high,train-general_enquiry-high-04
+Can you look into this for me: a customer with a medical accessibility need cannot find the emergency support channel.,general_enquiry,high,train-general_enquiry-high-04
+The published allergy information conflicts with the product label.,general_enquiry,high,train-general_enquiry-high-05
+"Hi support, the published allergy information conflicts with the product label.",general_enquiry,high,train-general_enquiry-high-05
+"hey, the published allergy information conflicts with the product label. can someone check?",general_enquiry,high,train-general_enquiry-high-05
+"The published allergy information conflicts with the product label. I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,high,train-general_enquiry-high-05
+Can you look into this for me: the published allergy information conflicts with the product label.,general_enquiry,high,train-general_enquiry-high-05
+I need immediate clarification about a safety warning before the equipment is used.,general_enquiry,high,train-general_enquiry-high-06
+"Hi support, i need immediate clarification about a safety warning before the equipment is used.",general_enquiry,high,train-general_enquiry-high-06
+"hey, i need immediate clarification about a safety warning before the equipment is used. can someone check?",general_enquiry,high,train-general_enquiry-high-06
+"I need immediate clarification about a safety warning before the equipment is used. I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,high,train-general_enquiry-high-06
+Can you look into this for me: i need immediate clarification about a safety warning before the equipment is used.,general_enquiry,high,train-general_enquiry-high-06
+The product guide gives no first-aid advice after contact with the leaking material.,general_enquiry,high,train-general_enquiry-high-07
+"Hi support, the product guide gives no first-aid advice after contact with the leaking material.",general_enquiry,high,train-general_enquiry-high-07
+"hey, the product guide gives no first-aid advice after contact with the leaking material. can someone check?",general_enquiry,high,train-general_enquiry-high-07
+"The product guide gives no first-aid advice after contact with the leaking material. I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,high,train-general_enquiry-high-07
+Can you look into this for me: the product guide gives no first-aid advice after contact with the leaking material.,general_enquiry,high,train-general_enquiry-high-07
+A regulatory submission closes today and the required compliance answer is missing.,general_enquiry,high,train-general_enquiry-high-08
+"Hi support, a regulatory submission closes today and the required compliance answer is missing.",general_enquiry,high,train-general_enquiry-high-08
+"hey, a regulatory submission closes today and the required compliance answer is missing. can someone check?",general_enquiry,high,train-general_enquiry-high-08
+"A regulatory submission closes today and the required compliance answer is missing. I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,high,train-general_enquiry-high-08
+Can you look into this for me: a regulatory submission closes today and the required compliance answer is missing.,general_enquiry,high,train-general_enquiry-high-08
+What time does the customer service centre open?,general_enquiry,low,train-general_enquiry-low-01
+"Hi support, what time does the customer service centre open?",general_enquiry,low,train-general_enquiry-low-01
+"hey, what time does the customer service centre open? can someone check?",general_enquiry,low,train-general_enquiry-low-01
+"What time does the customer service centre open? I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,low,train-general_enquiry-low-01
+Can you look into this for me: what time does the customer service centre open?,general_enquiry,low,train-general_enquiry-low-01
+Where is the nearest branch located?,general_enquiry,low,train-general_enquiry-low-02
+"Hi support, where is the nearest branch located?",general_enquiry,low,train-general_enquiry-low-02
+"hey, where is the nearest branch located? can someone check?",general_enquiry,low,train-general_enquiry-low-02
+"Where is the nearest branch located? I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,low,train-general_enquiry-low-02
+Can you look into this for me: where is the nearest branch located?,general_enquiry,low,train-general_enquiry-low-02
+How can I contact the sales team?,general_enquiry,low,train-general_enquiry-low-03
+"Hi support, how can I contact the sales team?",general_enquiry,low,train-general_enquiry-low-03
+"hey, how can I contact the sales team? can someone check?",general_enquiry,low,train-general_enquiry-low-03
+"How can I contact the sales team? I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,low,train-general_enquiry-low-03
+Can you look into this for me: how can I contact the sales team?,general_enquiry,low,train-general_enquiry-low-03
+Are your offices open on public holidays?,general_enquiry,low,train-general_enquiry-low-04
+"Hi support, are your offices open on public holidays?",general_enquiry,low,train-general_enquiry-low-04
+"hey, are your offices open on public holidays? can someone check?",general_enquiry,low,train-general_enquiry-low-04
+"Are your offices open on public holidays? I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,low,train-general_enquiry-low-04
+Can you look into this for me: are your offices open on public holidays?,general_enquiry,low,train-general_enquiry-low-04
+What services are included in the basic package?,general_enquiry,low,train-general_enquiry-low-05
+"Hi support, what services are included in the basic package?",general_enquiry,low,train-general_enquiry-low-05
+"hey, what services are included in the basic package? can someone check?",general_enquiry,low,train-general_enquiry-low-05
+"What services are included in the basic package? I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,low,train-general_enquiry-low-05
+Can you look into this for me: what services are included in the basic package?,general_enquiry,low,train-general_enquiry-low-05
+Is there a general telephone number for enquiries?,general_enquiry,low,train-general_enquiry-low-06
+"Hi support, is there a general telephone number for enquiries?",general_enquiry,low,train-general_enquiry-low-06
+"hey, is there a general telephone number for enquiries? can someone check?",general_enquiry,low,train-general_enquiry-low-06
+"Is there a general telephone number for enquiries? I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,low,train-general_enquiry-low-06
+Can you look into this for me: is there a general telephone number for enquiries?,general_enquiry,low,train-general_enquiry-low-06
+Where can I see the normal price list for your service packages?,general_enquiry,low,train-general_enquiry-low-07
+"Hi support, where can I see the normal price list for your service packages?",general_enquiry,low,train-general_enquiry-low-07
+"hey, where can I see the normal price list for your service packages? can someone check?",general_enquiry,low,train-general_enquiry-low-07
+"Where can I see the normal price list for your service packages? I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,low,train-general_enquiry-low-07
+Can you look into this for me: where can I see the normal price list for your service packages?,general_enquiry,low,train-general_enquiry-low-07
+Do you publish a calendar of office closure dates?,general_enquiry,low,train-general_enquiry-low-08
+"Hi support, do you publish a calendar of office closure dates?",general_enquiry,low,train-general_enquiry-low-08
+"hey, do you publish a calendar of office closure dates? can someone check?",general_enquiry,low,train-general_enquiry-low-08
+"Do you publish a calendar of office closure dates? I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,low,train-general_enquiry-low-08
+Can you look into this for me: do you publish a calendar of office closure dates?,general_enquiry,low,train-general_enquiry-low-08
+I need help choosing a service package for a small business.,general_enquiry,medium,train-general_enquiry-medium-01
+"Hi support, i need help choosing a service package for a small business.",general_enquiry,medium,train-general_enquiry-medium-01
+"hey, i need help choosing a service package for a small business. can someone check?",general_enquiry,medium,train-general_enquiry-medium-01
+"I need help choosing a service package for a small business. I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,medium,train-general_enquiry-medium-01
+Can you look into this for me: i need help choosing a service package for a small business.,general_enquiry,medium,train-general_enquiry-medium-01
+Could someone clarify the documents needed for my application?,general_enquiry,medium,train-general_enquiry-medium-02
+"Hi support, could someone clarify the documents needed for my application?",general_enquiry,medium,train-general_enquiry-medium-02
+"hey, could someone clarify the documents needed for my application? can someone check?",general_enquiry,medium,train-general_enquiry-medium-02
+"Could someone clarify the documents needed for my application? I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,medium,train-general_enquiry-medium-02
+Can you look into this for me: could someone clarify the documents needed for my application?,general_enquiry,medium,train-general_enquiry-medium-02
+I am waiting for confirmation of an appointment scheduled this week.,general_enquiry,medium,train-general_enquiry-medium-03
+"Hi support, i am waiting for confirmation of an appointment scheduled this week.",general_enquiry,medium,train-general_enquiry-medium-03
+"hey, i am waiting for confirmation of an appointment scheduled this week. can someone check?",general_enquiry,medium,train-general_enquiry-medium-03
+"I am waiting for confirmation of an appointment scheduled this week. I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,medium,train-general_enquiry-medium-03
+Can you look into this for me: i am waiting for confirmation of an appointment scheduled this week.,general_enquiry,medium,train-general_enquiry-medium-03
+A business enquiry sent several days ago has not received a reply.,general_enquiry,medium,train-general_enquiry-medium-04
+"Hi support, a business enquiry sent several days ago has not received a reply.",general_enquiry,medium,train-general_enquiry-medium-04
+"hey, a business enquiry sent several days ago has not received a reply. can someone check?",general_enquiry,medium,train-general_enquiry-medium-04
+"A business enquiry sent several days ago has not received a reply. I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,medium,train-general_enquiry-medium-04
+Can you look into this for me: a business enquiry sent several days ago has not received a reply.,general_enquiry,medium,train-general_enquiry-medium-04
+Please explain which support plan includes weekend assistance.,general_enquiry,medium,train-general_enquiry-medium-05
+"Hi support, please explain which support plan includes weekend assistance.",general_enquiry,medium,train-general_enquiry-medium-05
+"hey, please explain which support plan includes weekend assistance. can someone check?",general_enquiry,medium,train-general_enquiry-medium-05
+"Please explain which support plan includes weekend assistance. I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,medium,train-general_enquiry-medium-05
+Can you look into this for me: please explain which support plan includes weekend assistance.,general_enquiry,medium,train-general_enquiry-medium-05
+I need advice comparing the standard and premium services.,general_enquiry,medium,train-general_enquiry-medium-06
+"Hi support, i need advice comparing the standard and premium services.",general_enquiry,medium,train-general_enquiry-medium-06
+"hey, i need advice comparing the standard and premium services. can someone check?",general_enquiry,medium,train-general_enquiry-medium-06
+"I need advice comparing the standard and premium services. I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,medium,train-general_enquiry-medium-06
+Can you look into this for me: i need advice comparing the standard and premium services.,general_enquiry,medium,train-general_enquiry-medium-06
+Could an adviser explain the eligibility conditions for this programme?,general_enquiry,medium,train-general_enquiry-medium-07
+"Hi support, could an adviser explain the eligibility conditions for this programme?",general_enquiry,medium,train-general_enquiry-medium-07
+"hey, could an adviser explain the eligibility conditions for this programme? can someone check?",general_enquiry,medium,train-general_enquiry-medium-07
+"Could an adviser explain the eligibility conditions for this programme? I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,medium,train-general_enquiry-medium-07
+Can you look into this for me: could an adviser explain the eligibility conditions for this programme?,general_enquiry,medium,train-general_enquiry-medium-07
+My scheduled consultation needs a confirmed time before the end of the week.,general_enquiry,medium,train-general_enquiry-medium-08
+"Hi support, my scheduled consultation needs a confirmed time before the end of the week.",general_enquiry,medium,train-general_enquiry-medium-08
+"hey, my scheduled consultation needs a confirmed time before the end of the week. can someone check?",general_enquiry,medium,train-general_enquiry-medium-08
+"My scheduled consultation needs a confirmed time before the end of the week. I checked the help page and tried the usual steps, but I still need a clear answer from support.",general_enquiry,medium,train-general_enquiry-medium-08
+Can you look into this for me: my scheduled consultation needs a confirmed time before the end of the week.,general_enquiry,medium,train-general_enquiry-medium-08
+The entire platform is offline for every employee in our company.,technical_support,high,train-technical_support-high-01
+"Hi support, the entire platform is offline for every employee in our company.",technical_support,high,train-technical_support-high-01
+"hey, the entire platform is offline for every employee in our company. can someone check?",technical_support,high,train-technical_support-high-01
+"The entire platform is offline for every employee in our company. I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,high,train-technical_support-high-01
+Can you look into this for me: the entire platform is offline for every employee in our company.,technical_support,high,train-technical_support-high-01
+All users see a blank page and none of our staff can access the service.,technical_support,high,train-technical_support-high-02
+"Hi support, all users see a blank page and none of our staff can access the service.",technical_support,high,train-technical_support-high-02
+"hey, all users see a blank page and none of our staff can access the service. can someone check?",technical_support,high,train-technical_support-high-02
+"All users see a blank page and none of our staff can access the service. I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,high,train-technical_support-high-02
+Can you look into this for me: all users see a blank page and none of our staff can access the service.,technical_support,high,train-technical_support-high-02
+A system update erased our shared production data and there is no backup visible.,technical_support,high,train-technical_support-high-03
+"Hi support, a system update erased our shared production data and there is no backup visible.",technical_support,high,train-technical_support-high-03
+"hey, a system update erased our shared production data and there is no backup visible. can someone check?",technical_support,high,train-technical_support-high-03
+"A system update erased our shared production data and there is no backup visible. I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,high,train-technical_support-high-03
+Can you look into this for me: a system update erased our shared production data and there is no backup visible.,technical_support,high,train-technical_support-high-03
+The service has a complete outage across every office location.,technical_support,high,train-technical_support-high-04
+"Hi support, the service has a complete outage across every office location.",technical_support,high,train-technical_support-high-04
+"hey, the service has a complete outage across every office location. can someone check?",technical_support,high,train-technical_support-high-04
+"The service has a complete outage across every office location. I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,high,train-technical_support-high-04
+Can you look into this for me: the service has a complete outage across every office location.,technical_support,high,train-technical_support-high-04
+Everyone in our organisation is locked out because the authentication server is down.,technical_support,high,train-technical_support-high-05
+"Hi support, everyone in our organisation is locked out because the authentication server is down.",technical_support,high,train-technical_support-high-05
+"hey, everyone in our organisation is locked out because the authentication server is down. can someone check?",technical_support,high,train-technical_support-high-05
+"Everyone in our organisation is locked out because the authentication server is down. I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,high,train-technical_support-high-05
+Can you look into this for me: everyone in our organisation is locked out because the authentication server is down.,technical_support,high,train-technical_support-high-05
+Our public application is unavailable to all customers after the latest release.,technical_support,high,train-technical_support-high-06
+"Hi support, our public application is unavailable to all customers after the latest release.",technical_support,high,train-technical_support-high-06
+"hey, our public application is unavailable to all customers after the latest release. can someone check?",technical_support,high,train-technical_support-high-06
+"Our public application is unavailable to all customers after the latest release. I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,high,train-technical_support-high-06
+Can you look into this for me: our public application is unavailable to all customers after the latest release.,technical_support,high,train-technical_support-high-06
+"The whole network service is down, leaving every department unable to work.",technical_support,high,train-technical_support-high-07
+"Hi support, the whole network service is down, leaving every department unable to work.",technical_support,high,train-technical_support-high-07
+"hey, the whole network service is down, leaving every department unable to work. can someone check?",technical_support,high,train-technical_support-high-07
+"The whole network service is down, leaving every department unable to work. I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,high,train-technical_support-high-07
+"Can you look into this for me: the whole network service is down, leaving every department unable to work.",technical_support,high,train-technical_support-high-07
+A failed deployment destroyed the complete shared dataset used by all users.,technical_support,high,train-technical_support-high-08
+"Hi support, a failed deployment destroyed the complete shared dataset used by all users.",technical_support,high,train-technical_support-high-08
+"hey, a failed deployment destroyed the complete shared dataset used by all users. can someone check?",technical_support,high,train-technical_support-high-08
+"A failed deployment destroyed the complete shared dataset used by all users. I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,high,train-technical_support-high-08
+Can you look into this for me: a failed deployment destroyed the complete shared dataset used by all users.,technical_support,high,train-technical_support-high-08
+Where can I find the desktop application user guide?,technical_support,low,train-technical_support-low-01
+"Hi support, where can I find the desktop application user guide?",technical_support,low,train-technical_support-low-01
+"hey, where can I find the desktop application user guide? can someone check?",technical_support,low,train-technical_support-low-01
+"Where can I find the desktop application user guide? I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,low,train-technical_support-low-01
+Can you look into this for me: where can I find the desktop application user guide?,technical_support,low,train-technical_support-low-01
+Does the software support an older version of Windows?,technical_support,low,train-technical_support-low-02
+"Hi support, does the software support an older version of Windows?",technical_support,low,train-technical_support-low-02
+"hey, does the software support an older version of Windows? can someone check?",technical_support,low,train-technical_support-low-02
+"Does the software support an older version of Windows? I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,low,train-technical_support-low-02
+Can you look into this for me: does the software support an older version of Windows?,technical_support,low,train-technical_support-low-02
+How do I change the interface language?,technical_support,low,train-technical_support-low-03
+"Hi support, how do I change the interface language?",technical_support,low,train-technical_support-low-03
+"hey, how do I change the interface language? can someone check?",technical_support,low,train-technical_support-low-03
+"How do I change the interface language? I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,low,train-technical_support-low-03
+Can you look into this for me: how do I change the interface language?,technical_support,low,train-technical_support-low-03
+Can dark mode be enabled on the mobile app?,technical_support,low,train-technical_support-low-04
+"Hi support, can dark mode be enabled on the mobile app?",technical_support,low,train-technical_support-low-04
+"hey, can dark mode be enabled on the mobile app? can someone check?",technical_support,low,train-technical_support-low-04
+"Can dark mode be enabled on the mobile app? I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,low,train-technical_support-low-04
+Can you look into this for me: can dark mode be enabled on the mobile app?,technical_support,low,train-technical_support-low-04
+What file formats are supported for uploads?,technical_support,low,train-technical_support-low-05
+"Hi support, what file formats are supported for uploads?",technical_support,low,train-technical_support-low-05
+"hey, what file formats are supported for uploads? can someone check?",technical_support,low,train-technical_support-low-05
+"What file formats are supported for uploads? I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,low,train-technical_support-low-05
+Can you look into this for me: what file formats are supported for uploads?,technical_support,low,train-technical_support-low-05
+Is there a keyboard shortcut for opening search?,technical_support,low,train-technical_support-low-06
+"Hi support, is there a keyboard shortcut for opening search?",technical_support,low,train-technical_support-low-06
+"hey, is there a keyboard shortcut for opening search? can someone check?",technical_support,low,train-technical_support-low-06
+"Is there a keyboard shortcut for opening search? I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,low,train-technical_support-low-06
+Can you look into this for me: is there a keyboard shortcut for opening search?,technical_support,low,train-technical_support-low-06
+Where can I read the API format documentation?,technical_support,low,train-technical_support-low-07
+"Hi support, where can I read the API format documentation?",technical_support,low,train-technical_support-low-07
+"hey, where can I read the API format documentation? can someone check?",technical_support,low,train-technical_support-low-07
+"Where can I read the API format documentation? I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,low,train-technical_support-low-07
+Can you look into this for me: where can I read the API format documentation?,technical_support,low,train-technical_support-low-07
+Does the desktop program have an automatic update setting?,technical_support,low,train-technical_support-low-08
+"Hi support, does the desktop program have an automatic update setting?",technical_support,low,train-technical_support-low-08
+"hey, does the desktop program have an automatic update setting? can someone check?",technical_support,low,train-technical_support-low-08
+"Does the desktop program have an automatic update setting? I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,low,train-technical_support-low-08
+Can you look into this for me: does the desktop program have an automatic update setting?,technical_support,low,train-technical_support-low-08
+The mobile app crashes whenever I open the reports screen.,technical_support,medium,train-technical_support-medium-01
+"Hi support, the mobile app crashes whenever I open the reports screen.",technical_support,medium,train-technical_support-medium-01
+"hey, the mobile app crashes whenever I open the reports screen. can someone check?",technical_support,medium,train-technical_support-medium-01
+"The mobile app crashes whenever I open the reports screen. I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,medium,train-technical_support-medium-01
+Can you look into this for me: the mobile app crashes whenever I open the reports screen.,technical_support,medium,train-technical_support-medium-01
+File upload reaches ninety percent and then fails on my laptop.,technical_support,medium,train-technical_support-medium-02
+"Hi support, file upload reaches ninety percent and then fails on my laptop.",technical_support,medium,train-technical_support-medium-02
+"hey, file upload reaches ninety percent and then fails on my laptop. can someone check?",technical_support,medium,train-technical_support-medium-02
+"File upload reaches ninety percent and then fails on my laptop. I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,medium,train-technical_support-medium-02
+Can you look into this for me: file upload reaches ninety percent and then fails on my laptop.,technical_support,medium,train-technical_support-medium-02
+The website is very slow for me during the afternoon.,technical_support,medium,train-technical_support-medium-03
+"Hi support, the website is very slow for me during the afternoon.",technical_support,medium,train-technical_support-medium-03
+"hey, the website is very slow for me during the afternoon. can someone check?",technical_support,medium,train-technical_support-medium-03
+"The website is very slow for me during the afternoon. I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,medium,train-technical_support-medium-03
+Can you look into this for me: the website is very slow for me during the afternoon.,technical_support,medium,train-technical_support-medium-03
+Notifications stopped appearing even though they are enabled.,technical_support,medium,train-technical_support-medium-04
+"Hi support, notifications stopped appearing even though they are enabled.",technical_support,medium,train-technical_support-medium-04
+"hey, notifications stopped appearing even though they are enabled. can someone check?",technical_support,medium,train-technical_support-medium-04
+"Notifications stopped appearing even though they are enabled. I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,medium,train-technical_support-medium-04
+Can you look into this for me: notifications stopped appearing even though they are enabled.,technical_support,medium,train-technical_support-medium-04
+Video playback freezes every few minutes on one device.,technical_support,medium,train-technical_support-medium-05
+"Hi support, video playback freezes every few minutes on one device.",technical_support,medium,train-technical_support-medium-05
+"hey, video playback freezes every few minutes on one device. can someone check?",technical_support,medium,train-technical_support-medium-05
+"Video playback freezes every few minutes on one device. I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,medium,train-technical_support-medium-05
+Can you look into this for me: video playback freezes every few minutes on one device.,technical_support,medium,train-technical_support-medium-05
+The export button does nothing in my browser.,technical_support,medium,train-technical_support-medium-06
+"Hi support, the export button does nothing in my browser.",technical_support,medium,train-technical_support-medium-06
+"hey, the export button does nothing in my browser. can someone check?",technical_support,medium,train-technical_support-medium-06
+"The export button does nothing in my browser. I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,medium,train-technical_support-medium-06
+Can you look into this for me: the export button does nothing in my browser.,technical_support,medium,train-technical_support-medium-06
+One dashboard widget shows an error while the rest of the system works.,technical_support,medium,train-technical_support-medium-07
+"Hi support, one dashboard widget shows an error while the rest of the system works.",technical_support,medium,train-technical_support-medium-07
+"hey, one dashboard widget shows an error while the rest of the system works. can someone check?",technical_support,medium,train-technical_support-medium-07
+"One dashboard widget shows an error while the rest of the system works. I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,medium,train-technical_support-medium-07
+Can you look into this for me: one dashboard widget shows an error while the rest of the system works.,technical_support,medium,train-technical_support-medium-07
+The app closes on my phone when I try to save a new record.,technical_support,medium,train-technical_support-medium-08
+"Hi support, the app closes on my phone when I try to save a new record.",technical_support,medium,train-technical_support-medium-08
+"hey, the app closes on my phone when I try to save a new record. can someone check?",technical_support,medium,train-technical_support-medium-08
+"The app closes on my phone when I try to save a new record. I checked the help page and tried the usual steps, but I still need a clear answer from support.",technical_support,medium,train-technical_support-medium-08
+Can you look into this for me: the app closes on my phone when I try to save a new record.,technical_support,medium,train-technical_support-medium-08

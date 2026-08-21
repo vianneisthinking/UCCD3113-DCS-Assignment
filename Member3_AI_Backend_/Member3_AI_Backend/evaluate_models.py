@@ -47,11 +47,12 @@ def read_rows(path: Path) -> list[dict[str, str]]:
 
 
 def file_sha256(path: Path) -> str:
-    digest = sha256()
-    with path.open("rb") as source:
-        for chunk in iter(lambda: source.read(65536), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
+    # Git can check text CSVs out with CRLF on Windows while the recorded
+    # provenance hashes were generated from the committed LF bytes.
+    data = path.read_bytes()
+    if path.suffix.lower() == ".csv":
+        data = data.replace(b"\r\n", b"\n")
+    return sha256(data).hexdigest()
 
 
 def verify_provenance(

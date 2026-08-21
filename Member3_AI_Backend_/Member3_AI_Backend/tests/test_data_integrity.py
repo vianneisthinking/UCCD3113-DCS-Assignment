@@ -19,11 +19,13 @@ def read_rows(name: str) -> list[dict[str, str]]:
 
 
 def file_sha256(path: Path) -> str:
-    digest = sha256()
-    with path.open("rb") as source:
-        for chunk in iter(lambda: source.read(65536), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
+    # Git may materialize text CSVs with CRLF on Windows even though the
+    # committed/provenance bytes use LF. Hash canonical LF content so this
+    # integrity assertion has identical meaning on every development OS.
+    data = path.read_bytes()
+    if path.suffix.lower() == ".csv":
+        data = data.replace(b"\r\n", b"\n")
+    return sha256(data).hexdigest()
 
 
 class DatasetIntegrityTests(unittest.TestCase):
